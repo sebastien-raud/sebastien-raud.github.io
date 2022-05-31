@@ -125,11 +125,8 @@
 			image = (!imgIndex ? '' : '<img src="img/' + i + '">');
 			img.innerHTML = image;
 
-			console.log(imgIndex);
-
 			if (imgIndex > 0 && imgIndex <= titres.length) {
 				titre.innerHTML = ' : ' + titres[imgIndex - 1];
-				console.log(titres[imgIndex - 1]);
 			} else {
 				titre.innerHTML = '';
 			}
