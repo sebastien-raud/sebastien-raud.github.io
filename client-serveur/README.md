@@ -184,7 +184,7 @@ Comment sait-on à qui renvoyer la réponse ?
 
 - Dans la vie : sur l'enveloppe on indique le destinataire et l'émetteur (pour la réponse).  
   Le courrier est écrit en fonction du destinataire ("Je vous prie d'agréer...").
-- Dans l'informatique : le **protocole IP** possède un **en-tête** dont la structure est fixe (fixé par le **protocole**). Cet **en-tête** contient entre autre les **adresses IP** du **client** et du **serveur**. L'**en-tête** est comme l'enveloppe.  
+- Dans l'informatique : le **protocole IP** possède un **en-tête** dont la structure est fixe (fixée par le **protocole**). Cet **en-tête** contient entre autre les **adresses IP** du **client** et du **serveur**. L'**en-tête** est comme l'enveloppe.  
   Â la suite de l'**en-tête** il y a le **message**, comme il y a le courrier dans l'enveloppe.  
   Le **message** est au format défini par le **protocole de communication**, par exemple le **protocole HTTP**.
 
