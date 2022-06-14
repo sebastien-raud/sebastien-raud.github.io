@@ -11,9 +11,9 @@ Il a créé une bibliothèque logicielle en langage C et y a ajouter des fonctio
 Faire ce que l'on sait faire aujourd'hui facilement.
 
 ## 4 - La naissance de PHP
-Il a publié son code en 1995, sous forme de code ouvert et gratuit, sous le nom de **PHP/FI**
+Il a publié son code en 1995, sous forme de code ouvert et gratuit, sous le nom de **PHP/FI**.
 
-Le nom est parlant : *outils pour page personnelle / interpréteur de formulaires*
+Le nom est parlant : *outils pour page personnelle / interpréteur de formulaires*.
 
 ## 5 - PHP "moderne"
 En 1997 le code est complètement réécrit, avec de nombreuses améliorations.  
