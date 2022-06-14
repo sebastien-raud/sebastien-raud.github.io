@@ -16,7 +16,7 @@ Il a publié son code en 1995, sous forme de code ouvert et gratuit, sous le nom
 Le nom est parlant : *outils pour page personnelle / interpréteur de formulaires*
 
 ## 5 - PHP "moderne"
-En 1998 le code est complètement réécrit, avec de nombreuses améliorations.  
+En 1997 le code est complètement réécrit, avec de nombreuses améliorations.  
 C'est la sortie de PHP 3 avec un nouveau nom, un sigle récursif qui veut dire *PHP : préprocesseur hypertexte*  (comprendre "programme qui va générer de l'hypertexte").
 
 ## 6 - Pour faire quoi et où (1/3)
