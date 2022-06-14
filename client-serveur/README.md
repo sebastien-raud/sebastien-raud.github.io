@@ -189,11 +189,11 @@ Comment sait-on à qui renvoyer la réponse ?
   Le **message** est au format défini par le **protocole de communication**, par exemple le **protocole HTTP**.
 
 > :memo: Le **protocole IP** sert à faire transiter les **messages** par le **réseau Internet**.  
-Les **messages** sont structurés selon le **protocole de communication** utilisé :  
-- **HTTP** pour le web
-- **FTP** pour le transfert de fichiers
-- **SMTP** pour l'envoi de mails
-- ...
+> Les **messages** sont structurés selon le **protocole de communication** utilisé :   
+>  - **HTTP** pour le web
+>  - **FTP** pour le transfert de fichiers
+>  - **SMTP** pour l'envoi de mails
+>  - ...
 
 L'ensemble **en-tête IP** + **message** est appelé **paquet**. Si le message est trop volumineux (par exemple envoyer une image), il est découpé en plusieurs **paquets**.  
 Chaque **paquet** est numéroté afin de reconstruire le **message** dans l'ordre.
