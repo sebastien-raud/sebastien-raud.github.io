@@ -1,11 +1,13 @@
 # Histoire (rapide) du web
 ## 1 - Premier modem
 1989 : Les Laboratoires Bell créent le premier modem permettant de transmettre des données binaires sur une simple ligne téléphonique.  
-Modem : **mo**dulateur / **dém**odulateur permet d'envoyer et recevoir des informations numériques sur un canal analogique.  
+Modem : **mo**dulateur / **dém**odulateur permet d'envoyer et recevoir des informations numériques sur un canal analogique.
+
 Le "Bell 101 Dataset" a une vitesse de 110 baud, soit environ 10 caractères par secondes.
 
 ## 2 - 1962 : idée d'un réseau global par la DARPA
-L'ARPA, qui deviendra DARPA en 1972, (*Defense Advanced Research Projects Agency, Agence pour les projets de recherche avancée de défense*) lance un programme de recherches sur un réseau global d'ordinateurs.  
+L'ARPA, qui deviendra DARPA en 1972, (*Defense Advanced Research Projects Agency, Agence pour les projets de recherche avancée de défense*) lance un programme de recherches sur un réseau global d'ordinateurs.
+
 L'idée est défendue par J.C.R. Licklider, un précurseur dont les idées conduiront à l'ordinateur personnel et à l'Internet.
 
 ## 3 - 1967 - 1973 : ARPANET
@@ -34,10 +36,14 @@ Annonce publique du World Wide Web.
 
 Le web a été inventé au CERN en 1989 - 1990 par Tim Berners-Lee et Robert Caillau.
 
-C'est un système de documents contenant les liens (**hyperliens**) permettant de passer d'un document à un autre. Les documents sont reliés entre eux.  
-Les documents, nommés **documents hypertextes** parce qu'ils contiennent des **hyperliens**, sont écrits dans le **langage HTML** (*HyperText Markup Language*).  
-La communication entre les machines passe par le **réseau Internet** et utilise le **protocole de communication HTTP** (*HyperText Transfer Protocol*).  
-Le **protocol HTTP** indique aux logiciels comment demander des documents et comment les envoyer.  
+C'est un système de documents contenant les liens (**hyperliens**) permettant de passer d'un document à un autre. Les documents sont reliés entre eux.
+
+Les documents, nommés **documents hypertextes** parce qu'ils contiennent des **hyperliens**, sont écrits dans le **langage HTML** (*HyperText Markup Language*).
+
+La communication entre les machines passe par le **réseau Internet** et utilise le **protocole de communication HTTP** (*HyperText Transfer Protocol*).
+
+Le **protocol HTTP** indique aux logiciels comment demander des documents et comment les envoyer.
+
 Le **langage HTML** indique aux logiciels comment est structuré un document.
 
 Le web lie trois inventions :
