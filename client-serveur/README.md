@@ -125,6 +125,8 @@ Explication d'une **adresse web**. Elle est composée :
 
 + notion de **sous-domaine**.
 
+Une adresse web est appellé **URL** (*Uniform Resource Locator*, *repère uniforme de ressource*). L'**URL** permet de localiser une ressource selon une écriture uniforme.
+
 ## 17 - Requête
 
 Donc :
