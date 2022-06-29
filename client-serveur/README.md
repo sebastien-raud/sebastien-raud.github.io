@@ -2,6 +2,8 @@
 
 Description de la relation client-serveur au travers d'une analogie avec la vie courante.
 
+Pour passer d'une page à l'autre, utiliser les flèches du clavier.
+
 # Diapos
 ## 1 - Intro
 RAS
