@@ -1,4 +1,7 @@
 # Introduction à PHP
+
+Pour passer d'une page à l'autre, utiliser les flèches du clavier.
+
 ## 1 - Le créateur
 Langage créé par **Rasmus Lerdorf**, développeur groenlandais et canadien.
 
