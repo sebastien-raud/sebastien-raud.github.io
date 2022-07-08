@@ -51,9 +51,10 @@ Le web lie trois inventions :
 - le **protocole HTTP**
 - les adresses web (**URL**)
 
-Image premier serveur web : https://fr.wikipedia.org/wiki/World_Wide_Web#/media/Fichier:First_Web_Server.jpg
-Image premier navigateur web : https://fr.wikipedia.org/wiki/Navigateur_web#/media/Fichier:WorldWideWeb.1.png
-Navigateur Mosaic : https://fr.wikipedia.org/wiki/NCSA_Mosaic#/media/Fichier:NCSA_Mosaic_Browser_Screenshot.png
+Images supplémentaires :
+- Image premier serveur web : https://fr.wikipedia.org/wiki/World_Wide_Web#/media/Fichier:First_Web_Server.jpg
+- Image premier navigateur web : https://fr.wikipedia.org/wiki/Navigateur_web#/media/Fichier:WorldWideWeb.1.png
+- Navigateur Mosaic : https://fr.wikipedia.org/wiki/NCSA_Mosaic#/media/Fichier:NCSA_Mosaic_Browser_Screenshot.png
 
 ## 8 - Évolution
 
