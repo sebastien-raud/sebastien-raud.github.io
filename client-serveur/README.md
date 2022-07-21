@@ -43,8 +43,10 @@ Et après avoir envoyé une demande / requête ?
 
 ## 6 - Serveur
 
-- Dans la vie : on va considérer que le client envoie sa demande à une personne qui vit dans un immeuble.
+- Dans la vie : on va considérer que le client envoie sa demande à une personne qui vit dans un immeuble.  
+  Donc la personne en question attend la demande.
 - Dans l'informatique : le **client** envoie sa **requête** à un **serveur**.  
+  Le **serveur** attend une **requête**.  
   Un **serveur** est un ordinateur, souvent puissant (microprosseur puissant, beaucoup de mémoire vive... pour traiter beacoup de requêtes).  
   Mais on peut faire également des **serveurs** sur de petites machines, pour un usage limité.
 
