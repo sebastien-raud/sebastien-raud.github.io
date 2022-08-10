@@ -1,0 +1,170 @@
+<h1>Gestion de projet</h1>
+<h2>Lancement du projet : définition du projet</h2>
+<div class="step-1 hidden-2">
+    <h3>Analyse des risques</h3>
+    <p>Risque de faire tomber le SI si trop de commandes arrivent en continue :</p>
+    <ul class="margin">
+        <li>probabilité : probable (3)</li>
+        <li>gravité : très grave (4)</li>
+        <li>criticité : 12 (3 x 4)</li>
+    </ul>
+    <p>Solution : envoyer les commandes par lots à 13h et 17h (baisse d'activité) plutôt qu'en temps réel.</p>
+    <!--<table class="risques">
+        <tbody>
+            <tr>
+                <th rowspan="2" colspan="2"></th>
+                <th colspan="4" scope="col">Gravité</th>
+            </tr>
+            <tr>
+                <th scope="col">1<br>Faible</th>
+                <th>2<br>Moyenne</th>
+                <th>3<br>Grave</th>
+                <th>4<br>Très grave
+                </th>
+            </tr>
+            <tr>
+                <th rowspan="4" scope="row" class="probabilite">Probabilité</th>
+                <th scope="row">4 Très probable</th>
+                <td style="background:#FFFFFF"></td>
+                <td style="background:#FFFFFF"></td>
+                <td style="background:#FFFFFF"></td>
+                <td style="background:#FFFFFF"></td>
+            </tr>
+            <tr>
+                <th scope="row">3 Probable</th>
+                <td style="background:#FFFFFF"></td>
+                <td style="background:#FFFFFF"></td>
+                <td style="background:#FFFFFF"></td>
+                <td style="background:#FFC0C0"></td>
+            </tr>
+            <tr>
+                <th scope="row">2 Improbable</th>
+                <td style="background:#FFFFFF"></td>
+                <td style="background:#FFFFFF"></td>
+                <td style="background:#FFFFFF"></td>
+                <td style="background:#FFFFFF"></td>
+            </tr>
+            <tr>
+                <th scope="row">1 Très improbable</th>
+                <td style="background:#FFFFFF"></td>
+                <td style="background:#FFFFFF"></td>
+                <td style="background:#FFFFFF"></td>
+                <td style="background:#FFFFFF"></td>
+            </tr>
+        </tbody>
+    </table>-->
+</div>
+<div class="step-2 hidden-4">
+    <h3>PBS du projet</h3>
+    <div style="text-align: center;">
+        <img src="./images/diagrammes-pbs1.png" class="step-2 hidden-3">
+        <img src="./images/diagrammes-pbs2.png" class="step-3">
+    </div>
+    <p>On peu faire un PBS général (complexe) ou le découper en sous PBS.</p>
+</div>
+<div class="step-4 hidden-5">
+    <h3>WBS du projet</h3>
+    <div style="text-align: center;">
+        <img src="./images/diagrammes-wbs.png">
+    </div>
+</div>
+<div class="step-5 hidden-6">
+    <h3>Matrice RACI</h3>
+    <p><small>R : responsible (réalisateur), A : accoutable (approbateur), C : consulted (consulté), I : informed (informé)</small></p>
+
+    <table class="raci">
+        <tr>
+            <th class="none"></th>
+            <th>P. de Gros</th>
+            <th>V. Entes</th>
+            <th>A. Moati</th>
+            <th>C. Petio</th>
+            <th>D. Front</th>
+            <th>...</th>
+        </tr>
+        <tr>
+            <th>Définition du projet</th>
+            <td>C</td>
+            <td>A</td>
+            <td>R</td>
+            <td>C</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>Plan détaillé</th>
+            <td>I</td>
+            <td>A</td>
+            <td>R</td>
+            <td>C</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>...</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>Réalisation design</th>
+            <td></td>
+            <td></td>
+            <td>I</td>
+            <td>A</td>
+            <td>R</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>...</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+<div class="step-6 hidden-7">
+    <h3>Diagramme de Gantt du projet</h3>
+    <div style="text-align: center;">
+        <img src="./images/diagrammes-gantt.png">
+    </div>
+</div>
+<div class="step-7">
+    <h3>Et le cahier des charges ?</h3>
+    <div class="hidden-8 visible">
+    <p>Il <strong>doit</strong> contenir :</p>
+    <ul class="margin">
+        <li>la présentation du projet</li>
+        <li>la description des fonctionnalités attendues</li>
+        <li>les limites du développement</li>
+        <li>les contraintes :
+            <ul class="condensed">
+                <li>budget</li>
+                <li>délais</li>
+                <li>accessibilité</li>
+                <li>existant</li>
+            </ul>
+        </ul>
+    </div>
+    <div class="step-8 hidden-9">
+        <p>Il <strong>peut</strong> contenir :</p>
+        <ul class="margin">
+            <li>la charte graphique à respecter</li>
+            <li>les règles de fonctionnement</li>
+            <li>d'autres informations nécessaires au projet</li>
+        </ul>
+    </div>
+    <div class="step-9">
+        <p>Modèles de cahiers des charges :</p>
+        <ul class="margin">
+            <li><a href="http://www.mmcreation.com/_doc/mmcreation-cahier-des-charges.pdf">http://www.mmcreation.com/_doc/mmcreation-cahier-des-charges.pdf</a></li>
+            <li><a href="https://www.petitefabriqueduweb.com/site/upload/fichiers/Cahier_des_charges_creation_site_internet.pdf">https://www.petitefabriqueduweb.com/site/upload/fichiers/Cahier_des_charges_creation_site_internet.pdf</a></li>
+        </ul>
+    </div>
+</div>
