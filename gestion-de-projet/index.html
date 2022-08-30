@@ -31,6 +31,7 @@
 		</div>
 	</div>
 
+	<script src="./js/swiped-events.min.js"></script>
 	<script type="text/javascript">
 		let	slides = {}, // liste des slides chargées
 			slideIndex = 0,
@@ -52,6 +53,7 @@
 				slideStep = [];
 
 			document.addEventListener("keydown", keydownUpdateSlide, false);
+			document.addEventListener('swiped', swipeUpdateSlide);
 
 			if (hash.length) {
 				hash = hash.slice(1);
@@ -72,22 +74,50 @@
 		}
 
 		function keydownUpdateSlide(e) {
-			switch (e.keyCode) {
+			let directions = {
+					36: 'start',	// touche debut
+					35: 'end',		// touche fin
+					32: 'next',		// espace
+					39: 'next',		// flèche ->
+					37: 'prev',		// flèche <-
+					38: 'stepPrev',	// flèche haut
+					40: 'stepNext'	// flèche bas
+			};
+
+			if (directions[e.keyCode]) {
+				updateSlideFromDirection(directions[e.keyCode]);
+			}
+		}
+
+		function swipeUpdateSlide(e) {
+			let directions = {
+					'right': 'next',
+					'left': 'prev',
+					'up': 'stepPrev',
+					'down': 'stepNext'
+			};
+
+			if (directions[e.detail.dir]) {
+				updateSlideFromDirection(directions[e.detail.dir]);
+			}
+		}
+
+		function updateSlideFromDirection(dir) {
+			switch (dir) {
 				// touche debut
-				case 36:
+				case 'start':
 					slideIndex = 0;
 					updateSlide();
 					break;
 				
 				// touche fin
-				case 35:
+				case 'end':
 					slideIndex = slidesNumber - 1;
 					updateSlide();
 					break;
 
-				// espace
-				case 32:
-				// flèche ->
+				// slide suivante
+				case 'next':
 				case 39:
 					slideIndex++;
 					if (slideIndex >= slidesNumber) {
@@ -97,8 +127,8 @@
 					updateSlide();
 					break;
 				
-				// flèche <-
-				case 37:
+				// slide précédente
+				case 'prev':
 					slideIndex--;
 					if (slideIndex < 0) {
 						slideIndex = 0;
@@ -108,20 +138,20 @@
 					setTimeout(updateStepLast, 500);
 					break;
 
-				// flèche haut
-				case 38:
+				// sous-slide précédente
+				case 'stepPrev':
 					updateStepPrev();
 					break;
 
-				// flèche bas
-				case 40:
+				// sous-slide suivante
+				case 'stepNext':
 					updateStepNext();
 					break;
 
 				default:
 					return;
 			}
-		}
+		}		
 
 		function updateSlide() {
 			let slideFile = (slideIndex + 1 < 10 ? '0' : '') + (slideIndex + 1) + '.html';
