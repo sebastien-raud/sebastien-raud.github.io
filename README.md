@@ -7,4 +7,5 @@
 - [html-php-get](https://sebastien-raud.github.io/html-php-get/) : comment fonctionne le passage d'un paramètre d'URL en méthode GET depuis l'appel dans le navigateur jusqu'à l'arrivée dans ``$_GET`` de PHP.
 - [modulo](https://sebastien-raud.github.io/modulo/) : plutôt qu'une grande définition, le modulo par la pratique.
 - [php-intro](https://sebastien-raud.github.io/php-intro/) : une introduction à PHP, son histoire, ce qu'il permet de faire.
-- [api][https://sebastien-raud.github.io/api/) : utilité, historique des API + API REST et XML / JSON
+- [api](https://sebastien-raud.github.io/api/) : utilité, historique des API + API REST et XML / JSON.
+- [api-spa](https://sebastien-raud.github.io/api-spa/) : fonctionnement d'une API avec application web monopage (SPA).
