@@ -1,0 +1,24 @@
+<h1>Du MCD au MLD : les relations</h1>
+<div>
+    <p>Le principe général pour mettre en place une relation est de faire correspondre un champ d'une table à la clé primaire de la table avec laquelle elle a une relation.</p>
+    <p>C'est la notion de <strong>clé étrangère</strong>.</p>
+</div>
+<div class="step-1">
+    <p>Regardons la relation <span class="entite">CONTACT</span>-<span class="entite">CATÉGORIE</span> :</p>
+    <p><img src="./images/mcd_carnet_adresses_relation_contact_categrie.png"></p>
+    <ul>
+        <li>un <span class="entite">CONTACT</span> <span class="entite-relation">est classé dans</span> <span class="entite-cardinalite">0 ou 1</span> <span class="entite">CATÉGORIE</span></li>
+        <li>une <span class="entite">CATÉGORIE</span> <span class="entite-relation">classe</span> <span class="entite-cardinalite">0 ou plusieurs</span> <span class="entite">CONTACT</span></li>
+    </ul>
+    <p class="step-2">Où placer la clé étrangère dans le MLD ?</p>
+    <ul class="step-3">
+        <li>
+            <p>si on la place dans la table <code>contact</code>, alors une entité <span class="entite">CONTACT</span> pourra avoir une référence (un lien / une relation) vers une entité <span class="entite">CATÉGORIE</span></p>
+            <p><img src="./images/schemas-tables-relation-contact-categorie.png"></p>
+        </li>
+        <li class="step-4">
+            <p>si on la place dans la table <code>category</code>, alors une entité <span class="entite">CATÉGORIE</span> pourra voir une référence (lien / relation) vers une entité <span class="entite">CONTACT</span></p>
+            <p><img src="./images/schemas-tables-relation-categorie-contact.png"></p>
+        </li>
+    </ul>
+</div>

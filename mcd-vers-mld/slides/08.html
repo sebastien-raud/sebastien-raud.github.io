@@ -1,0 +1,36 @@
+<h1>Du MCD au MLD : les relations</h1>
+<div>
+    <p>̈Pour la relation <span class="entite">CONTACT</span>-<span class="entite">CATÉGORIE</span> on va donc :</p>
+    <ul>
+        <li>créer un champ <code>category_id</code> dans la table <code>contact</code></li>
+        <li>créer une clé étrangère du champ <code>contact.category_id</code> vers le champ <code>category.id</code></li>
+    </ul>
+</div>
+<div class="step-1">
+    <p>Quel type de champ pour <code>contact.category_id</code> ?</p>
+    <p class="step-2">Comme c'est une clé étrangère vers <code>category.id</code>, <strong>il doit avoir le même type</strong> : INT</p>
+</div>
+<div class="step-3">
+    <p>Quelles spécificités pour <code>contact.category_id</code> ?</p>
+    <p class="step-4">Comme le MCD nous indique une relation <span class="entite-cardinalite">0,1</span> de <span class="entite">CONTACT</span> vers <span class="entite">CATÉGORIE</span></p>
+    <p class="step-4"><img src="./images/mcd_carnet_adresses_relation_contact_categrie.png"></p>
+    <p class="step-5">on peut ne pas avoir de <span class="entite">CATÉGORIE</span> dans un <span class="entite">CONTACT</span>, donc le champ peut être NULL (à cause du <span class="entite-cardinalite">0</span> dans la cardinalité)</p>
+    <table class="step-5 table">
+        <thead>
+            <tr>
+                <th>Champ</th>
+                <th>Type</th>
+                <th>spécificités</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="step-2">
+                <td><code>category_id</code></td>
+                <td>INT</td>
+                <td>NULL, FOREIGN KEY (<code>category.id</code>)</td>
+                <td>Identifiant de la catégorie à laquelle est rataché le contact</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,72 @@
+.rappel {
+    background-color: lightgray;
+    border-radius: .5em;
+    padding: .5em;
+}
+.rappel h2 {
+    color: var(--main-text) !important;
+}
+
+dt {
+    font-style: italic;
+}
+dd {
+    margin-bottom: 0.5em;
+}
+
+.entite {
+    font-weight: bold;
+}
+.entite-id {
+    text-decoration: underline;
+}
+.entite-relation {
+    font-style: italic;
+}
+.entite-cardinalite {
+    color: brown;
+}
+
+table th {
+    background-color: var(--darker-main-color);
+    color: var(--title-text);
+}
+table.table tr, 
+table.table th,
+table.table td {
+    border: solid 1px var(--main-text);
+    padding: .5em;
+}
+td {
+    padding: .5em;
+}
+td + td {
+    border-left: solid 1px var(--main-text);
+}
+
+pre, code, kbd, samp {
+    font-size: .75em;
+}
+
+.descriptions {
+    margin-bottom: 1em;
+    border-left: solid 3px var(--main-text);
+    padding-left: .5em;
+}
+
+/****/
+#slide div {
+    margin-top: 1em;
+}
+
+li[class*="hidden-"].visible, li[class*="step-"].visible {
+    display: list-item;
+}
+
+tr[class*="hidden-"].visible, tr[class*="step-"].visible {
+    display: table-row;
+}
+
+#slide ul + p {
+    margin-top: 1em;
+}

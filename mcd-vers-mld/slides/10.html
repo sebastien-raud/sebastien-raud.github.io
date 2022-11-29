@@ -1,0 +1,136 @@
+<h1>Du MCD au MLD : DDD complet</h1>
+<div>
+    <h2>Table <code>contact</code></h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Champ</th>
+                <th>Type</th>
+                <th>spécificités</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>id</code></td>
+                <td>INT</td>
+                <td>PRIMARY KEY, NOT NULL, AUTO_INCREMENT, UNSIGNED</td>
+                <td>Identifiant unique d'un enregistrement</td>
+            </tr>
+            <tr>
+                <td><code>firstname</code></td>
+                <td>VARCHAR(64)</td>
+                <td>NULL</td>
+                <td>Prénom du contact</td>
+            </tr>
+            <tr>
+                <td><code>lastname</code></td>
+                <td>VARCHAR(64)</td>
+                <td>NOT NULL</td>
+                <td>Nom de famille du contact</td>
+            </tr>
+            <tr>
+                <td><code>created_at</code></td>
+                <td>TIMESTAMP</td>
+                <td>NOT NULL DEFAULT CURRENT_TIMESTAMP</td>
+                <td>Date de création de l'enregistrement (du contact)</td>
+            </tr>
+            <tr>
+                <td><code>updated_at</code></td>
+                <td>TIMESTAMP</td>
+                <td>NULL</td>
+                <td>Date de dernière modification de l'enregistrement (du contact)</td>
+            </tr>
+            <tr>
+                <td><code>category_id</code></td>
+                <td>INT</td>
+                <td>NULL, FOREIGN KEY (<code>category.id</code>)</td>
+                <td>Identifiant de la catégorie à laquelle est rataché le contact</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Table <code>category</code></h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Champ</th>
+                <th>Type</th>
+                <th>spécificités</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>id</code></td>
+                <td>INT</td>
+                <td>PRIMARY KEY, NOT NULL, AUTO_INCREMENT, UNSIGNED</td>
+                <td>Identifiant unique d'un enregistrement</td>
+            </tr>
+            <tr>
+                <td><code>title</code></td>
+                <td>VARCHAR(32)</td>
+                <td>NOT NULL, UNIQUE</td>
+                <td>Titre de la catégorie</td>
+            </tr>
+            <tr>
+                <td><code>created_at</code></td>
+                <td>TIMESTAMP</td>
+                <td>NOT NULL DEFAULT CURRENT_TIMESTAMP</td>
+                <td>Date de création de l'enregistrement (de la catégorie)</td>
+            </tr>
+            <tr>
+                <td><code>updated_at</code></td>
+                <td>TIMESTAMP</td>
+                <td>NULL</td>
+                <td>Date de dernière modification de l'enregistrement (de la catégorie)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Table <code>phone</code></h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Champ</th>
+                <th>Type</th>
+                <th>spécificités</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>id</code></td>
+                <td>INT</td>
+                <td>PRIMARY KEY, NOT NULL, AUTO_INCREMENT, UNSIGNED</td>
+                <td>Identifiant unique d'un enregistrement</td>
+            </tr>
+            <tr>
+                <td><code>number</code></td>
+                <td>VARCHAR(24)</td>
+                <td>NOT NULL, UNIQUE</td>
+                <td>Numéro de téléphone</td>
+            </tr>
+            <tr>
+                <td><code>created_at</code></td>
+                <td>TIMESTAMP</td>
+                <td>NOT NULL DEFAULT CURRENT_TIMESTAMP</td>
+                <td>Date de création de l'enregistrement (du numéro de téléphone)</td>
+            </tr>
+            <tr>
+                <td><code>updated_at</code></td>
+                <td>TIMESTAMP</td>
+                <td>NULL</td>
+                <td>Date de dernière modification de l'enregistrement (du numéro de téléphone)</td>
+            </tr>
+            <tr>
+                <td><code>contact_id</code></td>
+                <td>INT</td>
+                <td>NOT NULL, FOREIGN KEY (<code>contact.id</code>)</td>
+                <td>Identifiant du contact auquel est rataché le téléphone</td>
+            </tr>
+        </tbody>
+    </table>
+</div>    

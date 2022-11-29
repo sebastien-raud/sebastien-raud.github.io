@@ -1,0 +1,45 @@
+<h1>Du MCD au MLD : lecture du MCD</h1>
+<div class="step-1 hidden-8">
+    <p>La lecture du MCD se fait de la façon suivante :</p>
+    <div class="step-2 hidden-5">
+        <p>Entre <strong>CONTACT</strong> et <strong>CATÉGORIE</strong> :</p>
+        <img src="./images/mcd_carnet_adresses_lecture_01.png" class="step-2 hidden-3">
+        <img src="./images/mcd_carnet_adresses_lecture_02.png" class="step-3 hidden-4">
+        <img src="./images/mcd_carnet_adresses_lecture_03.png" class="step-4 hidden-5">
+        <p class="step-2 hidden-3">un <span class="entite">CONTACT</span> <span class="entite-relation">est classé dans</span>...</p>
+        <p class="step-3 hidden-4">un <span class="entite">CONTACT</span> <span class="entite-relation">est classé dans</span> <span class="entite-cardinalite">zéro ou une</span>...</p>
+        <p class="step-4 hidden-5">un <span class="entite">CONTACT</span> <span class="entite-relation">est classé dans</span> <span class="entite-cardinalite">zéro ou une</span> <span class="entite">CATÉGORIE</span>.</p>
+    </div>
+
+    <div class="step-5 hidden-8">
+        <p>Entre <strong>CATÉGORIE</strong> et <strong>CONTACT</strong> :</p>
+        <img src="./images/mcd_carnet_adresses_lecture_04.png" class="step-5 hidden-6">
+        <img src="./images/mcd_carnet_adresses_lecture_05.png" class="step-6 hidden-7">
+        <img src="./images/mcd_carnet_adresses_lecture_06.png" class="step-7 hidden-8">
+        <p class="step-5 hidden-6">une <span class="entite">CATÉGORIE</span> <span class="entite-relation">classe</span>...</p>
+        <p class="step-6 hidden-7">une <span class="entite">CATÉGORIE</span> <span class="entite-relation">classe</span> <span class="entite-cardinalite"></span><span class="entite-relation">zéro ou plusieurs</span>...</p>
+        <p class="step-7 hidden-8">une <span class="entite">CATÉGORIE</span> <span class="entite-relation">classe</span> <span class="entite-cardinalite"></span><span class="entite-relation">zéro ou plusieurs</span> <span class="entite">CONTACT</span>.</p>
+    </div><span class="entite-cardinalite"></span>
+</div>
+
+<div class="step-8 hidden-14">
+    <div class="step-8 hidden-11">
+        <p>Entre <strong>CONTACT</strong> et <strong>TÉLÉPHONE</strong> :</p>
+        <img src="./images/mcd_carnet_adresses_lecture_07.png" class="step-8 hidden-9">
+        <img src="./images/mcd_carnet_adresses_lecture_08.png" class="step-9 hidden-10">
+        <img src="./images/mcd_carnet_adresses_lecture_09.png" class="step-10 hidden-11">
+        <p class="step-8 hidden-9">un <span class="entite">CONTACT</span> <span class="entite-relation">possède</span>...</p>
+        <p class="step-9 hidden-10">un <span class="entite">CONTACT</span> <span class="entite-relation">possède</span> <span class="entite-cardinalite">zéro ou plusieurs</span>...</p>
+        <p class="step-10 hidden-11">un <span class="entite">CONTACT</span> <span class="entite-relation">possède</span> <span class="entite-cardinalite">zéro ou plusieurs</span> <span class="entite">TÉLÉPHONE</span>.</p>
+    </div>
+
+    <div class="step-11 hidden-14">
+        <p>Entre <strong>TÉLÉPHONE</strong> et <strong>CONTACT</strong> :</p>
+        <img src="./images/mcd_carnet_adresses_lecture_10.png" class="step-11 hidden-12">
+        <img src="./images/mcd_carnet_adresses_lecture_11.png" class="step-12 hidden-13">
+        <img src="./images/mcd_carnet_adresses_lecture_12.png" class="step-13 hidden-14">
+        <p class="step-11 hidden-12">un <span class="entite">TÉLÉPHONE</span> <span class="entite-relation">est possédé par</span>...</p>
+        <p class="step-12 hidden-13">un <span class="entite">TÉLÉPHONE</span> <span class="entite-relation">est possédé par</span> <span class="entite-cardinalite">un et un seul</span>...</p>
+        <p class="step-13 hidden-14">un <span class="entite">TÉLÉPHONE</span> <span class="entite-relation">est possédé par</span> <span class="entite-cardinalite">un et un seul</span> <span class="entite">CONTACT</span>.</p>
+    </div>
+</div>

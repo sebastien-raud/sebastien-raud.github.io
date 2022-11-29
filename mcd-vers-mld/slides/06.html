@@ -1,0 +1,205 @@
+<h1>Du MCD au MLD : types et spécificités</h1>
+<div>
+    <p>Le MLD est une préparation à la mise en œuvre technique, on va indiquer les types de données des champs et leurs spécificités.</p>
+    <p>Ces informations sont indiquées dans le dictionnaire des données.</p>
+    <p>Dans le projet exemple on va nommer les tables et champs en anglais.</p>
+</div>
+<div class="step-1 hidden-7">
+    <h2>Table <code>contact</code></h2>
+    
+    <div class="descriptions">
+        <p class="step-2 hidden-3">
+            Le champ <code>id</code> est un champ technique.<br>
+            Il contiendra l'identifiant unique d'un enregistrement : c'est une clé primaire (PRIMARY KEY).<br>
+            Son type est généralement un entier (INT) non signé (toujours positif = UNSIGNED), il doit avoir une valeur (NOT NULL), 
+            on laisse le <abbr title="Système de gestion de base de donnée">SGBD</abbr> gérer ce champ (incrémenter la valeur = AUTO_INCREMENT).<br>
+            Le champ <code>id</code> est a peu près toujours déclaré de la même façon !
+        </p>
+        <p class="step-3 hidden-4">
+            Le champ <code>created_at</code> est un champ technique.<br>
+            Il contiendra la date de création (insertion) de l'enregistrement.<br>
+            C'est une bonne pratique d'avoir ce champ.<br>
+            Son type est généralement un TIMESTAMP (date en secondes à partir du 01/01/1970 00:00:00).<br>
+            Une valeur est obligatoire pour ce champ (NOT NULL).<br>
+            On laisse la base de données enregistrée la date courante par défaut (DEFAULT CURRENT_TIMESTAMP).<br>
+            Le champ <code>created_at</code> est a peu près toujours déclaré de la même façon !
+        </p>
+        <p class="step-4 hidden-5">
+            Le champ <code>updated_at</code> est un champ technique.<br>
+            Il contiendra la date de mise à jour de l'enregistrement.<br>
+            C'est une bonne pratique d'avoir ce champ.<br>
+            Son type est généralement un TIMESTAMP (date en secondes à partir du 01/01/1970 00:00:00).<br>
+            Pas de valeur obligatoire pour ce champ (NULL). Ce sera au niveau logiciel de gérer sa valeur.<br>
+            Le champ <code>updated_at</code> est a peu près toujours déclaré de la même façon !
+        </p>
+        <p class="step-5 hidden-6">
+            Le champ <code>firstname</code> est lié au besoin du projet.<br>
+            Il correspond à la propriété <code>prénom</code> de l'entité <span class="entite">CONTACT</span> du MCD.<br>
+            La longueur d'un prénom est variable (tous les prénoms n'ont pas le même nombre de lettres) : donc type VARCHAR.<br>
+            Pour déterminer sa longueur, on peut demander au client s'il a un longueur définie, chercher la longueur du plus long prénom du monde...<br>
+            On indique ici que le prénom n'est pas obligatoire (NOT NULL) : <strong>c'est une règle métier qui doit être validée par le client</strong>.
+        </p>
+        <p class="step-6 hidden-7">
+            Le champ <code>lastname</code> est lié au besoin du projet.<br>
+            Il correspond à la propriété <code>nom</code> de l'entité <span class="entite">CONTACT</span> du MCD.<br>
+            La longueur d'un nom de famille est variable : type VARCHAR.<br>
+            On détermine la longueur du champ avec le client, en se renseignant...<br>
+            Ici le champ est obligatoire (NOT NULL) : <strong>c'est une règle métier qui doit être validée par le client</strong>.
+        </p>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Champ</th>
+                <th>Type</th>
+                <th>spécificités</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="step-2">
+                <td><code>id</code></td>
+                <td>INT</td>
+                <td>PRIMARY KEY, NOT NULL, AUTO_INCREMENT, UNSIGNED</td>
+                <td>Identifiant unique d'un enregistrement</td>
+            </tr>
+            <tr class="step-5">
+                <td><code>firstname</code></td>
+                <td>VARCHAR(64)</td>
+                <td>NULL</td>
+                <td>Prénom du contact</td>
+            </tr>
+            <tr class="step-6">
+                <td><code>lastname</code></td>
+                <td>VARCHAR(64)</td>
+                <td>NOT NULL</td>
+                <td>Nom de famille du contact</td>
+            </tr>
+            <tr class="step-3">
+                <td><code>created_at</code></td>
+                <td>TIMESTAMP</td>
+                <td>NOT NULL DEFAULT CURRENT_TIMESTAMP</td>
+                <td>Date de création de l'enregistrement (du contact)</td>
+            </tr>
+            <tr class="step-4">
+                <td><code>updated_at</code></td>
+                <td>TIMESTAMP</td>
+                <td>NULL</td>
+                <td>Date de dernière modification de l'enregistrement (du contact)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="step-7 hidden-10">
+    <h2>Table <code>category</code></h2>
+
+    <div class="descriptions">
+        <p class="step-8 hidden-9">
+            Pour les champs techniques, revoir les règles indiquées pour la table <code>contact</code>.
+        </p>
+        <p class="step-9 hidden-10">
+            Le champ <code>title</code> est lié au besoin du projet.<br>
+            Il correspond à la propriété <code>titre</code> de l'entité <span class="entite">CATÉGORIE</span> du MCD.<br>
+            On indique que le champ est obligatoire (NOT NULL) et qu'il ne peut y avoir qu'une seule catégorie de même titre (UNIQUE) :
+            <strong>ce sont des règles métier qui doivent être validées par le client</strong>.
+        </p>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Champ</th>
+                <th>Type</th>
+                <th>spécificités</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="step-8">
+                <td><code>id</code></td>
+                <td>INT</td>
+                <td>PRIMARY KEY, NOT NULL, AUTO_INCREMENT, UNSIGNED</td>
+                <td>Identifiant unique d'un enregistrement</td>
+            </tr>
+            <tr class="step-9">
+                <td><code>title</code></td>
+                <td>VARCHAR(32)</td>
+                <td>NOT NULL, UNIQUE</td>
+                <td>Titre de la catégorie</td>
+            </tr>
+            <tr class="step-8">
+                <td><code>created_at</code></td>
+                <td>TIMESTAMP</td>
+                <td>NOT NULL DEFAULT CURRENT_TIMESTAMP</td>
+                <td>Date de création de l'enregistrement (de la catégorie)</td>
+            </tr>
+            <tr class="step-8">
+                <td><code>updated_at</code></td>
+                <td>TIMESTAMP</td>
+                <td>NULL</td>
+                <td>Date de dernière modification de l'enregistrement (de la catégorie)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="step-10">
+    <h2>Table <code>phone</code></h2>
+
+    <div class="descriptions">
+        <p class="step-10 hidden-11">
+            Pour les champs techniques, revoir les règles indiquées pour la table <code>contact</code>.
+        </p>
+        <p class="step-11 hidden-12">
+            Le champ <code>number</code> est lié au besoin du projet.<br>
+            Il correspond à la propriété <code>numéro</code> de l'entité <span class="entite">TÉLÉPHONE</span> du MCD.<br>
+            Quel type de données choisir pour un numéro de téléphone ? un VARCHAR !<br>
+            Si on enregistre le numéro <strong>0123456</strong> sous forme d'un entier, le <abbr title="Système de gestion de base de donnée">SGBD</abbr> enregistrera <strong>123456</strong> 
+            car le <strong>0</strong> n'est pas significatif pour un nombre (01 == 1).<br>
+            Un numéro de téléphone est donc bien une chaîne de caractères. On peut également avoir des préfixes (ex : +33), et d'éventuels autres caractères (".", "-", " ").<br>
+            Pour connaître la longueur maximum, on peut se référer à la documentation (<a href="https://www.itu.int/dms_pub/itu-t/opb/sp/T-SP-E.164C-2011-PDF-F.pdf">Procédures de numérotation, à partir de la page 3</a>).<br>
+            Pour avoir de la marge, on prend une longueur de 24 octets.<br>
+            On indique enfin que le champ est obligatoire (NOT NULL) et UNIQUE (qui correspond à la règle "un numéro de téléphone n'est lié qu'à un seul contact").<br>
+            Note : dans le code du logiciel on peut prévoir de faire du nettoyage, par exemple supprimer les espaces multiples ("01&nbsp;&nbsp;&nbsp;02" => "01 02").
+        </p>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Champ</th>
+                <th>Type</th>
+                <th>spécificités</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="step-10">
+                <td><code>id</code></td>
+                <td>INT</td>
+                <td>PRIMARY KEY, NOT NULL, AUTO_INCREMENT, UNSIGNED</td>
+                <td>Identifiant unique d'un enregistrement</td>
+            </tr>
+            <tr class="step-11">
+                <td><code>number</code></td>
+                <td>VARCHAR(24)</td>
+                <td>NOT NULL, UNIQUE</td>
+                <td>Numéro de téléphone</td>
+            </tr>
+            <tr class="step-10">
+                <td><code>created_at</code></td>
+                <td>TIMESTAMP</td>
+                <td>NOT NULL DEFAULT CURRENT_TIMESTAMP</td>
+                <td>Date de création de l'enregistrement (du numéro de téléphone)</td>
+            </tr>
+            <tr class="step-10">
+                <td><code>updated_at</code></td>
+                <td>TIMESTAMP</td>
+                <td>NULL</td>
+                <td>Date de dernière modification de l'enregistrement (du numéro de téléphone)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

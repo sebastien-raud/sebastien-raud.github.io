@@ -1,0 +1,44 @@
+<h1>Du MCD au MLD : les relations</h1>
+<div>
+    <p>̈Et pour la relation <span class="entite">CONTACT</span>-<span class="entite">TÉLÉPHONE</span> ?</p>
+    <table class="step-1">
+        <tbody>
+            <tr>
+                <td><img src="./images/mcd_carnet_adresses_relation_contact_telephone.png"></td>
+                <td>
+                    <p>Le MCD indique que :</p>
+                    <ul>
+                        <li>un <span class="entite">CONTACT</span> peut avoir <span class="entite-cardinalite">0 ou plusieurs</span> <span class="entite">TÉLÉPHONE</span></li>
+                        <li>un <span class="entite">TÉLÉPHONE</span> est lié <span class="entite-cardinalite">au moins 1 et maximum 1</span> <span class="entite">CONTACT</span></li>
+                    </ul>
+                    <p>Donc la clé étrangère doit être dans la table <code>phone</code> et référencer le champ <code>contact.id</code>.</p>
+                    <p><img src="./images/schemas-tables-relation-contact-telephone.png"></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="step-2">
+    <p>Quelles spécificités pour <code>phone.contact_id</code> ?</p>
+    <p class="step-2">Comme c'est une clé étrangère vers <code>contact.id</code>, <strong>il doit avoir le même type</strong> : INT</p>
+    <p class="step-3">Par ailleurs le MCD indique qu'il y a toujours un <span class="entite">CONTACT</span> pour un <span class="entite">TÉLÉPHONE</span>, 
+        donc le champ est obligatoire, donc NOT NULL</p>
+    <table class="step-3 table">
+        <thead>
+            <tr>
+                <th>Champ</th>
+                <th>Type</th>
+                <th>spécificités</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="step-2">
+                <td><code>contact_id</code></td>
+                <td>INT</td>
+                <td>NOT NULL, FOREIGN KEY (<code>contact.id</code>)</td>
+                <td>Identifiant du contact auquel est rataché le téléphone</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
