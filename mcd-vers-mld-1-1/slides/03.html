@@ -1,0 +1,87 @@
+<h1>Du MCD au MLD (2)</h1>
+<h1>Relation 1-1 : <abbr title="dictionnaire des données">DDD</abbr></h1>
+<div>
+    <p>On peut définir le dictionnaire des données suivant :</p>
+
+    <h2>Table <code>prefecture</code></h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Champ</th>
+                <th>Type</th>
+                <th>spécificités</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>id</code></td>
+                <td>INT</td>
+                <td>PRIMARY KEY, NOT NULL, AUTO_INCREMENT, UNSIGNED</td>
+                <td>Identifiant unique d'un enregistrement</td>
+            </tr>
+            <tr>
+                <td><code>ville</code></td>
+                <td>VARCHAR(64)</td>
+                <td>NOT NULL</td>
+                <td>Ville dans laquelle est installée la préfecture</td>
+            </tr>
+            <tr>
+                <td><code>prefet</code></td>
+                <td>VARCHAR(128)</td>
+                <td>NOT NULL</td>
+                <td>Nom et prénom du préfet</td>
+            </tr>
+            <tr>
+                <td><code>created_at</code></td>
+                <td>TIMESTAMP</td>
+                <td>NOT NULL, DEFAULT CURRENT_TIMESTAMP</td>
+                <td>Date de création de l'enregistrement</td>
+            </tr>
+            <tr>
+                <td><code>updated_at</code></td>
+                <td>TIMESTAMP</td>
+                <td>NULL</td>
+                <td>Date de dernière modification de l'enregistrement</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Table <code>departement</code></h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Champ</th>
+                <th>Type</th>
+                <th>spécificités</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>id</code></td>
+                <td>INT</td>
+                <td>PRIMARY KEY, NOT NULL, AUTO_INCREMENT, UNSIGNED</td>
+                <td>Identifiant unique d'un enregistrement</td>
+            </tr>
+            <tr>
+                <td><code>nom</code></td>
+                <td>VARCHAR(16)</td>
+                <td>NOT NULL</td>
+                <td>Nom du département</td>
+            </tr>
+            <tr>
+                <td><code>created_at</code></td>
+                <td>TIMESTAMP</td>
+                <td>NOT NULL, DEFAULT CURRENT_TIMESTAMP</td>
+                <td>Date de création de l'enregistrement</td>
+            </tr>
+            <tr>
+                <td><code>updated_at</code></td>
+                <td>TIMESTAMP</td>
+                <td>NULL</td>
+                <td>Date de dernière modification de l'enregistrement</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

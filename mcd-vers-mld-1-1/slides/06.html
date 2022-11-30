@@ -1,0 +1,102 @@
+<h1>Du MCD au MLD (2)</h1>
+<h1>Relation 1-1 : spécificités</h1>
+
+<div>
+    <p>Le champ qui contient la clé étrangère doit être déclaré UNIQUE :</p>
+    <ul>
+        <li>si on a un champ <code>prefecture.depatement_id</code>, on ne veut que une valeur de <code>departement_id</code> dans tous les enregistrements, qui correspond au seul département d'une seule préfecture</li>
+        <li>si on a un champ <code>departement.prefecture_id</code>, on ne veut que une valeur de <code>prefecture_id</code> dans tous les enregistrements, qui correspond à la seule préfecture d'un seul département</li>
+    </ul>
+
+    <div class="step-1">
+    <p>On peut définir le dictionnaire des données suivant :</p>
+
+    <h2>Table <code>prefecture</code></h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Champ</th>
+                    <th>Type</th>
+                    <th>spécificités</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>id</code></td>
+                    <td>INT</td>
+                    <td>PRIMARY KEY, NOT NULL, AUTO_INCREMENT, UNSIGNED</td>
+                    <td>Identifiant unique d'un enregistrement</td>
+                </tr>
+                <tr>
+                    <td><code>ville</code></td>
+                    <td>VARCHAR(64)</td>
+                    <td>NOT NULL</td>
+                    <td>Ville dans laquelle est installée la préfecture</td>
+                </tr>
+                <tr>
+                    <td><code>prefet</code></td>
+                    <td>VARCHAR(128)</td>
+                    <td>NOT NULL</td>
+                    <td>Nom et prénom du préfet</td>
+                </tr>
+                <tr>
+                    <td><code>created_at</code></td>
+                    <td>TIMESTAMP</td>
+                    <td>NOT NULL, DEFAULT CURRENT_TIMESTAMP</td>
+                    <td>Date de création de l'enregistrement</td>
+                </tr>
+                <tr>
+                    <td><code>updated_at</code></td>
+                    <td>TIMESTAMP</td>
+                    <td>NULL</td>
+                    <td>Date de dernière modification de l'enregistrement</td>
+                </tr>
+                <tr>
+                    <td><code>departement_id</code></td>
+                    <td>INT</td>
+                    <td>NOT NULL, UNIQUE, UNSIGNED, FOREIGN KEY(<code>departement.id)</code></td>
+                    <td>Identifiant du département</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Table <code>departement</code></h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Champ</th>
+                    <th>Type</th>
+                    <th>spécificités</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>id</code></td>
+                    <td>INT</td>
+                    <td>PRIMARY KEY, NOT NULL, AUTO_INCREMENT, UNSIGNED</td>
+                    <td>Identifiant unique d'un enregistrement</td>
+                </tr>
+                <tr>
+                    <td><code>nom</code></td>
+                    <td>VARCHAR(16)</td>
+                    <td>NOT NULL</td>
+                    <td>Nom du département</td>
+                </tr>
+                <tr>
+                    <td><code>created_at</code></td>
+                    <td>TIMESTAMP</td>
+                    <td>NOT NULL, DEFAULT CURRENT_TIMESTAMP</td>
+                    <td>Date de création de l'enregistrement</td>
+                </tr>
+                <tr>
+                    <td><code>updated_at</code></td>
+                    <td>TIMESTAMP</td>
+                    <td>NULL</td>
+                    <td>Date de dernière modification de l'enregistrement</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
