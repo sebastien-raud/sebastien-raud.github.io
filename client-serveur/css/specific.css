@@ -1,0 +1,43 @@
+html {
+    background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #000 !important;
+}
+
+.vertical {
+    background-color: #fff;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 15px;
+    writing-mode: vertical-rl;
+    padding-right: .5em;
+}
+#slide h1.vertical {
+    font-size: 1.5em;
+}
+#slide {
+    width: 100%;
+}
+#slide > * {
+    margin-left: 0;
+}
+.center-all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+}
+.center-all h1 {
+    width: auto;
+    height: auto;
+    align-self: center;
+}
+
+img {
+    height: 99vh;
+}
