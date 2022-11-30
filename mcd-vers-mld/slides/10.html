@@ -32,7 +32,7 @@
             <tr>
                 <td><code>created_at</code></td>
                 <td>TIMESTAMP</td>
-                <td>NOT NULL DEFAULT CURRENT_TIMESTAMP</td>
+                <td>NOT NULL, DEFAULT CURRENT_TIMESTAMP</td>
                 <td>Date de création de l'enregistrement (du contact)</td>
             </tr>
             <tr>
@@ -44,7 +44,7 @@
             <tr>
                 <td><code>category_id</code></td>
                 <td>INT</td>
-                <td>NULL, FOREIGN KEY (<code>category.id</code>)</td>
+                <td>NULL, UNSIGNED, FOREIGN KEY (<code>category.id</code>)</td>
                 <td>Identifiant de la catégorie à laquelle est rataché le contact</td>
             </tr>
         </tbody>
@@ -77,7 +77,7 @@
             <tr>
                 <td><code>created_at</code></td>
                 <td>TIMESTAMP</td>
-                <td>NOT NULL DEFAULT CURRENT_TIMESTAMP</td>
+                <td>NOT NULL, DEFAULT CURRENT_TIMESTAMP</td>
                 <td>Date de création de l'enregistrement (de la catégorie)</td>
             </tr>
             <tr>
@@ -116,7 +116,7 @@
             <tr>
                 <td><code>created_at</code></td>
                 <td>TIMESTAMP</td>
-                <td>NOT NULL DEFAULT CURRENT_TIMESTAMP</td>
+                <td>NOT NULL, DEFAULT CURRENT_TIMESTAMP</td>
                 <td>Date de création de l'enregistrement (du numéro de téléphone)</td>
             </tr>
             <tr>
@@ -128,7 +128,7 @@
             <tr>
                 <td><code>contact_id</code></td>
                 <td>INT</td>
-                <td>NOT NULL, FOREIGN KEY (<code>contact.id</code>)</td>
+                <td>NOT NULL, UNSIGNED, FOREIGN KEY (<code>contact.id</code>)</td>
                 <td>Identifiant du contact auquel est rataché le téléphone</td>
             </tr>
         </tbody>
