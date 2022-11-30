@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    justify-content: center;
+    max-height: 95vh;
+    margin: 1em;
+}
+
+#slide {
+    display: inline-block;
+    width: auto;
+}
+
+img {
+    max-height: 75vh;
+}
