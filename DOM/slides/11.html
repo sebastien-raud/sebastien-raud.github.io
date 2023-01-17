@@ -1,0 +1,71 @@
+<h1>DOM</h1>
+<h2>Manipulation : sélection de plusieurs éléments par un sélecteur CSS (2/2)</h2>
+<div style="margin: 0">
+
+    <div class="grid">
+        <div class="row">
+            <div class="col">
+                <h3>Document HTML</h3>
+                <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;DOM&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1 class="title"&gt;Le DOM&lt;/h1&gt;
+    &lt;h2 class="title"&gt;
+         Document Object Model&lt;/h2&gt;
+    &lt;p&gt;Modèle objet de document&lt;/p&gt;
+    &lt;p&gt;Le DOM permet de...&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="col">
+                <h3>DOM</h3>
+                <ul class="tree">
+                    <li>
+                        <details open>
+                            <summary class="dom-document">document</summary>
+                            <ul>
+                                <li>
+                                    <details open>
+                                        <summary class="dom-html">html</summary>
+                                        <ul>
+                                            <li>
+                                                <details open>
+                                                    <summary class="dom-element">head</summary>
+                                                    <ul>
+                                                        <li><span class="dom-element">title</span></li>
+                                                    </ul>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details open>
+                                                    <summary class="dom-element">body</summary>
+                                                    <ul>
+                                                        <li><span class="dom-element dom-element-select">h1</span>
+                                                            <span class="dom-attribute">.title</span></li>
+                                                        <li><span class="dom-element dom-element-select">h2</span>
+                                                            <span class="dom-attribute">.title</span></li>
+                                                        <li><span class="dom-element dom-element-select">p</span></li>
+                                                        <li><span class="dom-element dom-element-select">p</span></li>
+                                                    </ul>
+                                                </details>
+                                            </li>
+                                        </ul>
+                                    </details>
+                                </li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="step-1">
+        <p>sélection de plusieurs éléments par un sélecteur CSS :</p>
+        <p><pre><code class="language-javascript" id="dom-example">document.querySelectorAll('.title, p')</code></pre></p>
+        <p>Retourne une collection / un tableau d'éléments <code id="result-example"></code></p>
+    </div>
+
+</div>

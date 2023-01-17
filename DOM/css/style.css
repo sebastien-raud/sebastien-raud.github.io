@@ -1,0 +1,172 @@
+/*************************************************************/
+/* Polices O'clock                                           */
+/*************************************************************/
+@font-face {
+    font-family: "oclock";
+    src: url("../fonts/oclock-regular.ttf");
+}
+@font-face {
+    font-family: "oclock-bold";
+    src: url("../fonts/oclock-bold.ttf");
+}
+/*************************************************************/
+/* Couleurs                                                  */
+/*************************************************************/
+:root {
+    --back-color: #0ac3a7;
+    --darker-main-color: #09a087;
+    --lighter-main-color: #12ccb0;
+    --title-text: #fffdd8; 
+    --main-text: #345;
+    --link-text: #2a0a84;
+    --dark-back:  rgb(37, 37, 37);
+    --chest-darker: rgb(85, 59, 42);
+    --chest-main: rgb(126, 91, 68);
+    --chest-lighter: rgb(150, 108, 81);
+}
+/*************************************************************/
+/* Config slider                                             */
+/*************************************************************/
+#arrows {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    height: 60px;
+    width: 60px;
+}
+.arrow-col {
+    clear: both;
+    text-align: center;
+    height: 20px;
+}
+#left {
+    float: left;
+}
+#right {
+    float: right;
+}
+#left, #up, #right, #down {
+    visibility: hidden;
+}
+#page-number {
+    font-size: small;
+}
+
+[class*="step-"] {
+    display: none;
+}
+[class*="hidden-"] {
+    display: none;
+}
+[class*="hidden-"].visible,
+[class*="step-"].visible {
+    display: block;
+}
+span[class*="hidden-"].visible,
+span[class*="step-"].visible,
+img[class*="hidden-"].visible,
+img[class*="step-"].visible {
+    display: inline;
+}
+/*************************************************************/
+/* Styles                                                    */
+/*************************************************************/
+
+html {
+    background-color: var(--back-color);
+    color: var(--main-text);
+    font-family: 'oclock', sans-serif;
+}
+
+#slide {
+    color: #345;
+    font-family: 'oclock', sans-serif;
+    font-size: 150%;
+}
+
+#slide h1,
+#slide h2, 
+#slide h3, 
+#slide h4, 
+#slide h5, 
+#slide h6 {
+    color: var(--title-text);
+    font-family: 'oclock-bold', sans-serif;
+}
+
+#slide h1 {
+    text-transform: uppercase;
+    font-size: 2.5em;
+}
+
+#slide > * {
+    margin-left: 1em;
+}
+#slide ul, #slide ol {
+    margin-left: 1.8em;
+}
+
+#slide div + div,
+#slide p + ul {
+    margin-top: 1em;
+}
+
+#slide .grid div + div {
+    margin-top: 0;
+}
+
+#slide em {
+    font-style: italic;
+}
+
+#slide a,
+#slide a:hover,
+#slide a:visited {
+    color: var(--link-text);
+    text-decoration: none;
+}
+#slide a:hover {
+    text-decoration: underline;
+}
+
+#slide abbr {
+    text-decoration: dashed;
+}
+#slide small {
+    font-size: 75%;
+}
+
+#slide img {
+    max-width: 100%;
+}
+
+#slide p.no-margin {
+    margin-left: 0;
+}
+#slide ul.no-bullet {
+    list-style-type: none;
+}
+#slide ul.margin {
+    margin-left: 4em;
+}
+#slide ul.condensed li {
+    margin-bottom: .25em;
+}
+
+
+
+
+.right {
+    float: right;
+    margin-left: .5em;
+}
+.left {
+    float: left;
+    margin-right: .5em;
+}
+.center {
+    text-align: center;
+}
+.flex {
+    display: flex;
+}

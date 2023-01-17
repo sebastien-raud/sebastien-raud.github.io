@@ -1,0 +1,36 @@
+<h1>DOM</h1>
+<h2>Manipulation : modifier un élément</h2>
+<div style="margin: 0">
+
+    <div class="grid">
+        <div class="row">
+            <div class="col">
+                <h3>Partie d'un document HTML</h3>
+                <pre><code class="language-html">&lt;h1 
+ id="le-dom"
+ class="title"&gt;Le DOM&lt;/h1&gt;</code></pre>
+            </div>
+            <div class="col">
+                <h3>Élément du DOM et pro</h3>
+                <ul class="tree">
+                    <li><span class="dom-element dom-element-select">h1</span>
+                        <ul class="dom-attributes">
+                            <li><span class="dom-attribute-name">id</span> : <span class="dom-attribute" id="dom-attribute-id">le-dom</span></li>
+                            <li><span class="dom-attribute-name">className</span> : <span class="dom-attribute">title</span></li>
+                            <li><span class="dom-attribute-name">textContent</span> : <span class="dom-attribute" id="dom-attribute-text">Le DOM</span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="step-1">
+        <p>On peut accéder / modifier les attributs d'un élément par les propriétés  :</p>
+        <ul class="code-test">
+            <li><pre><code class="language-javascript">const elementH1 = document.getElementById('le-dom');</code></pre></li>
+            <li><pre><code class="language-javascript">elementH1.id = "</code></pre><input id="change-id" value="le-dom"><pre><code class="language-javascript">";</code></pre></li>
+            <li><pre><code class="language-javascript">elementH1.textContent = "</code></pre><input id="change-text-content" value="Le DOM"><pre><code class="language-javascript">";</code></pre></li>
+        </ul>
+    </div>
+
+</div>
