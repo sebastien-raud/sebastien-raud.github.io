@@ -20,6 +20,7 @@
 
 	<script src="./js/swiped-events.min.js" defer></script>
 	<script src="./js/slider.js" defer></script>
+	<script src="./js/plugin.js" defer></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js" defer></script>
 </head>
 
@@ -31,107 +32,12 @@
 		document.addEventListener('DOMContentLoaded', function () {
 			slider.onShowSlide = function () {
 				hljs.highlightAll();
-
-				exampleGetElementsByTagName();
-				exampleGetElementsByClassName();
-				exampleGetElementsById();
-				exampleQuerySelector();
-				exampleQuerySelectorAll();
-				exampleQuerySelectorAll2();
-				exampleUpdateElement();
+				plugin.init();				
 			};
-			slider.init(20);
+			slider.init(17);
 		});
 
-		function exampleGetElementsByTagName() {
-			// getElementsByTagName
-			if (slider.slideIndex != 5) return ;
-
-			exampleShow([10, 11, 12, 13], ' : [<span class="get-elements">p</span>, <span class="get-elements">p</span>]');
-		}
-
-		function exampleGetElementsByClassName() {
-			// getElementsByTagName
-			if (slider.slideIndex != 6) return ;
-
-			exampleShow([6, 7, 8, 9], ' : [<span class="get-elements">h1</span>, <span class="get-elements">h2</span>]');
-		}
-
-		function exampleGetElementsById() {
-			// getElementsByTagName
-			if (slider.slideIndex != 7) return ;
-
-			exampleShow([6, 7], ' : <span class="get-elements">h1</span>');
-		}
-
-		function exampleQuerySelector() {
-			// getElementsByTagName
-			if (slider.slideIndex != 8) return ;
-
-			exampleShow([6, 7], ' : <span class="get-elements">h1</span>');
-		}
-
-		function exampleQuerySelectorAll() {
-			// getElementsByTagName
-			if (slider.slideIndex != 9) return ;
-
-			exampleShow([6, 7, 8, 9], ' : [<span class="get-elements">h1</span>, <span class="get-elements">h2</span>]');
-		}
-
-		function exampleQuerySelectorAll2() {
-			// getElementsByTagName
-			if (slider.slideIndex != 10) return ;
-
-			exampleShow([6, 7, 8, 9, 10, 11, 12, 13], 
-					    ' : [<span class="get-elements">h1</span>, <span class="get-elements">h2</span>, <span class="get-elements">p</span>, <span class="get-elements">p</span>]');
-		}
-
-		function exampleShow(elementsIndex, resultHtml) {
-			document.getElementById('dom-example').addEventListener('click', function () {
-				let tags = document.getElementsByClassName('hljs-tag');
-
-				for (const index of elementsIndex) {
-					tags[index].classList.toggle('get-elements');
-				}
-
-				for (const elt of document.getElementsByClassName('dom-element-select')) {
-					elt.classList.toggle('get-elements');
-				}
-
-				let result = document.getElementById('result-example');
-
-				if (result.textContent.trim() == '') {
-					result.innerHTML = resultHtml;
-				} else {
-					result.textContent = '';
-				}
-
-			});
-		}
-
-		function exampleUpdateElement() {
-			if (slider.slideIndex != 11) return ;
-
-			const elId = document.querySelector('.hljs-tag .hljs-string');
-			const attId = document.getElementById('dom-attribute-id');
-			document.getElementById('change-id').addEventListener('keydown', function(event) {
-				event.stopImmediatePropagation();
-			});
-			document.getElementById('change-id').addEventListener('keyup', function(event) {
-				elId.textContent = '"' + event.currentTarget.value + '"';
-				attId.textContent = event.currentTarget.value;
-			});
-
-			const elText = document.querySelector('.hljs-tag').nextSibling;
-			const attText = document.getElementById('dom-attribute-text');
-			document.getElementById('change-text-content').addEventListener('keydown', function(event) {
-				event.stopImmediatePropagation();
-			});
-			document.getElementById('change-text-content').addEventListener('keyup', function(event) {
-				elText.nodeValue = event.currentTarget.value;
-				attText.textContent = event.currentTarget.value;
-			});
-		}
+		
 	</script>
 </body>
 

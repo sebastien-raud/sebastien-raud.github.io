@@ -1,0 +1,56 @@
+<h1>DOM</h1>
+<h2>Manipulation : synthèse</h2>
+<div style="margin: 0">
+    <p>Le <strong>DOM</strong> est la représentation du document HTML utilisable par Javascript.</p>
+
+    <div class="step-1 hidden-2">
+        <h3>Sélection</h3>
+        <ul>
+            <li><code>{<span class="hljs-variable">document</span> | <span class="hljs-variable">element</span>}.<span class="hljs-title">getElementById</span>(<span class="hljs-string">'identifiant'</span>)</code> 
+                : retourne <strong>un élément</strong> à partir de son identifiant</li>
+            <li><code>{<span class="hljs-variable">document</span> | <span class="hljs-variable">element</span>}.<span class="hljs-title">getElementsByClassName</span>(<span class="hljs-string">'nom_classe'</span>)</code> 
+                : retourne <strong>un tableau d'éléments</strong> à partir d'un nom de classe</li>
+            <li><code>{<span class="hljs-variable">document</span> | <span class="hljs-variable">element</span>}.<span class="hljs-title">getElementsByTagName</span>(<span class="hljs-string">'nom_balise'</span>)</code> 
+                : retourne <strong>un tableau d'éléments</strong> à partir d'un nom de balise</li>
+            <li><code>{<span class="hljs-variable">document</span> | <span class="hljs-variable">element</span>}.<span class="hljs-title">querySelector</span>(<span class="hljs-string">'selecteur_css'</span>)</code> 
+                : retourne <strong>un élément</strong> à partir d'un sélecteur CSS</li>
+            <li><code>{<span class="hljs-variable">document</span> | <span class="hljs-variable">element</span>}.<span class="hljs-title">querySelectorAll</span>(<span class="hljs-string">'selecteur_css'</span>)</code> 
+                : retourne <strong>un tableau d'éléments</strong> à partir d'un sélecteur CSS</li>
+        </ul>
+    </div>
+
+    <div class="step-2 hidden-3">
+        <h3>Création, ajout, suppression</h3>
+        <ul>
+            <li><code><span class="hljs-variable">document</span>.<span class="hljs-title">createElement</span>(<span class="hljs-string">'nom_balise'</span>)</code> 
+                : création d'un nouvel élément</li>
+            <li><code><span class="hljs-variable">element</span>.<span class="hljs-title">append</span>(elementToAppend)</code> 
+                : ajoute un élément comme dernier enfant d'un autre élément</li>
+            <li><code><span class="hljs-variable">element</span>.<span class="hljs-title">prepend</span>(elementToPreprend)</code> 
+                : ajoute un élément comme premier enfant d'un autre élément</li>
+            <li><code><span class="hljs-variable">element</span>.<span class="hljs-title">remove</span>()</code> 
+                : supprime un élément</li>
+        </ul>
+    </div>
+
+    <div class="step-3">
+        <h3>Modifier un élément</h3>
+        <p>On utilise les attributs de l'élément Javascript, par exemple :</p>
+        <ul>
+            <li><code><span class="hljs-variable">element</span>.<span class="hljs-title">id</span></code> 
+                : retourne ou modifie l'identifiant de l'élément</li>
+            <li><code><span class="hljs-variable">element</span>.<span class="hljs-title">className</span></code> 
+                : retourne ou modifie l'attibut "<code>class</code>" de l'élément</li>
+            <li><code><span class="hljs-variable">element</span>.<span class="hljs-title">classList</span></code> 
+                : permet de modifier les classes de l'élément</li>
+            <li><code><span class="hljs-variable">element</span>.<span class="hljs-title">textContent</span></code> 
+                : retourne ou modifie le contenu textuel de l'élément</li>
+            <li><code><span class="hljs-variable">element</span>.<span class="hljs-title">innerHTML</span></code> 
+                : retourne ou modifie le contenu HTML de l'élément</li>
+            <li><code><span class="hljs-variable">element</span>.<span class="hljs-title">style</span></code> 
+                : retourne ou modifie l'attribut "<code>style</code>" de l'élément</li>
+            <li><code><span class="hljs-variable">element</span>.<span class="hljs-title">src</span></code> 
+                : retourne ou modifie l'attribut "<code>src</code>" pour un élément image <code>img</code></li>
+        </ul>
+    </div>
+</div>

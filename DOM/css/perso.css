@@ -116,6 +116,7 @@ code {
     content: "−";
 }*/
 
+
 .dom-document,
 .dom-html,
 .dom-element {
@@ -126,17 +127,21 @@ code {
     font-family: monospace, sans-serif;
     font-size: .8em;
 }
+
 .dom-document {
     background-color: #F3D9EE;
 }
+
 .dom-html {
     background-color: #E6D6FE;
     /*text-transform: capitalize;*/
 }
+
 .dom-element {
     background-color: #B1CCFE;
     /*text-transform: capitalize;*/
 }
+
 .dom-attribute-name,
 .dom-attribute {
     display: inline-block;
@@ -145,6 +150,7 @@ code {
     font-style: italic;
     color: #457de4;
 }
+
 .dom-attribute-name {
     color: #043ba1;
 }
@@ -156,28 +162,61 @@ code {
     color: #800;
 }
 
+.dom-element.get-elements {
+    border-color: #800;
+}
+
 #dom-example {
     cursor: pointer;
 }
 
 ul.code-test {
     padding: .5em;
+    /*margin-left: 0 !important;*/
+    margin-bottom: 15px;
     background-color: #f3f3f3;
     list-style-type: none !important;
 }
+
+ul.code-test--cursor {
+    cursor: pointer;
+}
+
 ul.code-test li {
     margin: 0 !important;
     padding: 0 0 .1em 0 !important;
 }
-ul.code-test pre, 
+
+ul.code-test pre,
 ul.code-test pre code.hljs {
     display: inline-block;
     padding: 0;
 }
-ul.code-test input {
+
+ul.code-test input,
+ul.code-test select {
+    font-family: monospace, sans-serif;
     font-size: .8em;
     margin-bottom: .5em;
     border-top: none;
     border-left: none;
     border-right: none;
+    background-color: #f3f3f3;
+}
+
+ul.code-test input:focus,
+ul.code-test select:focus {
+    outline: none !important;
+    background-color: #fff;
+}
+
+.code-action {
+    font-style: italic;
+}
+.code-action::before {
+    content: "↦";
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 1em;
+    vertical-align: text-top;
 }
