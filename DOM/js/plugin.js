@@ -14,42 +14,36 @@ const plugin = {
     },
 
     exampleGetElementsByTagName: () => {
-        // getElementsByTagName
         if (slider.slideIndex != 5) return ;
 
         plugin.exampleShow([10, 11, 12, 13], ' : [<span class="get-elements">p</span>, <span class="get-elements">p</span>]');
     },
 
     exampleGetElementsByClassName: () => {
-        // getElementsByTagName
         if (slider.slideIndex != 6) return ;
 
         plugin.exampleShow([6, 7, 8, 9], ' : [<span class="get-elements">h1</span>, <span class="get-elements">h2</span>]');
     },
 
     exampleGetElementsById: () => {
-        // getElementsByTagName
         if (slider.slideIndex != 7) return ;
 
         plugin.exampleShow([6, 7], ' : <span class="get-elements">h1</span>');
     },
 
     exampleQuerySelector: () => {
-        // getElementsByTagName
         if (slider.slideIndex != 8) return ;
 
         plugin.exampleShow([6, 7], ' : <span class="get-elements">h1</span>');
     },
 
     exampleQuerySelectorAll: () => {
-        // getElementsByTagName
         if (slider.slideIndex != 9) return ;
 
         plugin.exampleShow([6, 7, 8, 9], ' : [<span class="get-elements">h1</span>, <span class="get-elements">h2</span>]');
     },
 
     exampleQuerySelectorAll2: () => {
-        // getElementsByTagName
         if (slider.slideIndex != 10) return ;
 
         plugin.exampleShow([6, 7, 8, 9, 10, 11, 12, 13], 
