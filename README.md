@@ -14,6 +14,7 @@
 ## DOM
 
 - [Le DOM](https://sebastien-raud.github.io/DOM/) : découverte du DOM (le DOM, sélection, création, ajout, suppression et manipulation d'éléments).
+- [Le DOM : événements](https://sebastien-raud.github.io/DOM-events/) : les événements (*WIP*).
 
 ## Gestion de projet
 
