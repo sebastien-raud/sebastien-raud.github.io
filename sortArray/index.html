@@ -32,22 +32,40 @@
             <table>
                 <tbody>
                     <tr>
-                        <td><span class="code-keyword">for</span> (<span class="code-keyword">let</span> i = <span class="code-value">0</span>; i <span class="code-value">&lt;</span> testedArray<span class="code-value">.length - 1</span>; i<span class="code-value">++</span>) {</td>
+                        <td><span class="code-comment">// Tant que le tableau n'est pas totalement trié, on continue de trier.</span></td>
                     </tr>
                     <tr>
-                        <td>&nbsp;&nbsp;<span class="code-comment">// On compare l'entrée courante avec l'entrée suivante.</span></td>
+                        <td><span class="code-keyword">while</span> (<span class="code-function">isAscending</span>(testedArray) === <span class="code-value">false</span>) {</td>
                     </tr>
                     <tr>
-                        <td>&nbsp;&nbsp;<span class="code-keyword">if</span> (testedArray[i] <span class="code-value">&gt;</span> testedArray[i + 1]) {</td>
+                        <td>&nbsp;&nbsp;<span class="code-comment">// On boucle sur le nombre d'entrées du  tableau reçu en paramètre, moins un.</span></td>
                     </tr>
                     <tr>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// Si l'entrée courante est supérieure à l'entrée suivante,</span></td>
+                        <td>&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">let</span> i = <span class="code-value">0</span>; i <span class="code-value">&lt;</span> testedArray<span class="code-value">.length - 1</span>; i<span class="code-value">++</span>) {</td>
                     </tr>
                     <tr>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// le tableau n'est pas bien ordonné, on retourne false.</span></td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// On compare l'entrée courante avec l'entrée suivante.</span></td>
                     </tr>
                     <tr>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> <span class="code-value">false</span>;</td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (testedArray[i] <span class="code-value">&gt;</span> testedArray[i + 1]) {</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// Si l'entrée courante est supérieure à l'entrée suivante,</span></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// on inverse les deux entrées.</span></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">let</span> temp = testedArray[i];</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testedArray[i] = testedArray[i <span class="code-value">+ 1</span>];</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testedArray[i <span class="code-value">+ 1</span>] = temp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;}</td>
                     </tr>
                     <tr>
                         <td>&nbsp;&nbsp;}</td>
@@ -56,10 +74,10 @@
                         <td>}</td>
                     </tr>
                     <tr>
-                        <td><span class="code-comment">// Si on arrive ici, c'est que le tableau est bien ordonné, on retourne true.</span></td>
+                        <td><span class="code-comment">// Si on arrive ici, c'est que le tableau est bien trié, on retourne le tableau.</span></td>
                     </tr>
                     <tr>
-                        <td><span class="code-keyword">return</span> <span class="code-value">true</span>;</td>
+                        <td><span class="code-keyword">return</span> testedArray;</td>
                     </tr>
                 </tbody>
             </table>

@@ -119,7 +119,7 @@ input::-webkit-inner-spin-button {
     border-bottom: solid 2px #1a4c79;
 }
 
-#data-table tr:nth-child(2) td {
+#data-table tr td {
     border-top: solid 2px #1a4c79;
 }
 
@@ -181,6 +181,9 @@ input::-webkit-inner-spin-button {
 }
 .code-comment {
     color: #6e7781;
+}
+.code-function {
+    color: #8250df;
 }
 
 #code .highlight {

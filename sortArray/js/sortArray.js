@@ -60,7 +60,7 @@ const sortArray = {
             index++;
         }
 
-        table += '<tr id="permule-tr">' + trTop.join('') + '</tr>';
+        table += '<tr id="permute-tr">' + trTop.join('') + '</tr>';
         table += '<tr id="data-tr">' + trMiddle.join('') + '</tr>';
         table += '<tr id="index-tr">' + trBottom.join('') + '</tr>';
         table += '</table>';
@@ -107,9 +107,15 @@ const sortArray = {
         let isAcending = sortArray.isAcending();
 
         sortArray.algoMessage('Tableau trié ? : ' + (isAcending ? 'OUI' : 'NON'));
+        sortArray.codeClasses([1, 2]);
+        
+        if (sortArray.showCode) {
+            await sortArray.wait(1000);
+        }
 
         if (isAcending) {
             sortArray.algoMessage('Fin : retourne le tableau');
+            sortArray.codeClasses([15, 16]);
             return ;
         }
 
@@ -118,7 +124,7 @@ const sortArray = {
         setTimeout(function() {
             sortArray.algoMessage('&nbsp;DÉBUT boucle');
             sortArray.executeLoop(index);
-        }, 2500);
+        }, 1500);
     },
 
     executeLoop: async (index) => {
@@ -126,28 +132,91 @@ const sortArray = {
 
         if (index >= sortArray.data.length - 1) {
             sortArray.algoMessage('&nbsp;FIN boucle', true);
+            sortArray.codeClasses([12]);
             sortArray.dataClearClasses();
-            sortArray.execute(index + 1);
+            sortArray.execute(0);
             return ;
         }
 
+        sortArray.dataClasses(index);
         sortArray.algoMessage('&nbsp;Test tableau[' + index + '] (' + sortArray.data[index] + ') > tableau[' + (index + 1) + '] (' + sortArray.data[index + 1] + ') ?');
+        sortArray.codeClasses([3, 4]);
+
+        if (sortArray.showCode) {
+            await sortArray.wait(1500);
+        }
+
+        sortArray.codeClasses([5, 6]);
+
+        if (sortArray.showCode) {
+            await sortArray.wait(1500);
+        }
 
         if (sortArray.data[index] > sortArray.data[index + 1]) {
-            sortArray.algoMessage('&nbsp;&nbsp;OUI : inversion valeurs');
-            sortArray.algoMessage('&nbsp;&nbsp; - ' + sortArray.data[index + 1] + ' dans index ' + index);
-            sortArray.algoMessage('&nbsp;&nbsp; - ' + sortArray.data[index] + ' dans index ' + (index + 1), true);
+            await sortArray.permute(index);
 
-            let tmp = sortArray.data[index];
-            sortArray.data[index] = sortArray.data[index + 1];
-            sortArray.data[index + 1] = tmp;
         } else {
             sortArray.algoMessage('&nbsp;&nbsp;NON : poursuite du traitement', true);
+            await sortArray.wait(1000);
         }
 
         setTimeout(function() {
             sortArray.executeLoop(index + 1);
-        }, 2500);
+        }, 1500);
+    },
+
+    permute: async (index) => {
+
+        let delay = sortArray.showCode ? 1500 : 500;
+
+        // code :
+        // Si l'entrée courante est supérieure à l'entrée suivante,
+        // on inverse les deux entrées.
+        sortArray.algoMessage('&nbsp;&nbsp;OUI : inversion valeurs');
+        sortArray.codeClasses([7, 8]);
+
+        await sortArray.wait(delay);
+
+        let tmp = sortArray.data[index];
+        
+        sortArray.dataDisplay.querySelector('#permute-tr td:nth-child(' + (index + 2) + ')').textContent = tmp;
+        sortArray.dataDisplay.querySelector('#data-tr td:nth-child(' + (index + 2) + ')').textContent = '';
+
+        //await sortArray.wait(delay);
+
+        sortArray.data[index] = sortArray.data[index + 1];
+
+        // code :
+        // Si l'entrée courante est supérieure à l'entrée suivante,
+        // on inverse les deux entrées.
+        // let temp = testedArray[i];
+        sortArray.codeClasses([7, 8, 9]);
+        
+        await sortArray.wait(delay);
+
+        /*sortArray.dataDisplay.querySelector('#permute-tr td:nth-child(' + (index + 2) + ')').textContent = '';
+        sortArray.dataDisplay.querySelector('#permute-tr td:nth-child(' + (index + 3) + ')').textContent = tmp;
+
+        await sortArray.wait(delay);*/
+
+        sortArray.dataDisplay.querySelector('#data-tr td:nth-child(' + (index + 2) + ')').textContent = sortArray.data[index + 1];
+        sortArray.dataDisplay.querySelector('#data-tr td:nth-child(' + (index + 3) + ')').textContent = '';
+
+        sortArray.algoMessage('&nbsp;&nbsp; - ' + sortArray.data[index + 1] + ' dans index ' + index);
+        sortArray.codeClasses([7, 8, 10]);
+
+        await sortArray.wait(delay);
+
+        sortArray.dataDisplay.querySelector('#permute-tr td:nth-child(' + (index + 2) + ')').textContent = '';
+        sortArray.dataDisplay.querySelector('#data-tr td:nth-child(' + (index + 3) + ')').textContent = tmp;
+
+        sortArray.algoMessage('&nbsp;&nbsp; - ' + tmp + ' dans index ' + (index + 1), true);
+
+        sortArray.data[index + 1] = tmp;
+
+        sortArray.codeClasses([7, 8, 11]);
+
+        await sortArray.wait(delay);
     },
 
     algoMessage: (msg, breakLine = false) => {
@@ -175,6 +244,8 @@ const sortArray = {
     },
 
     dataClasses: (index) => {
+        sortArray.dataClearClasses();
+
         sortArray.dataDisplay.querySelector('#data-tr td:nth-child(' + (index + 2) + ')').classList.add('compare-first');
         sortArray.dataDisplay.querySelector('#data-tr td:nth-child(' + (index + 3) + ')').classList.add('compare-second');
 
@@ -204,12 +275,18 @@ const sortArray = {
     codeClasses: (index) => {
         sortArray.codeClassesClear();
 
+        let scroll = false;
+
         for (let i of index) {
             sortArray.codeTable.querySelector('tr:nth-child(' + i + ')').classList.add('highlight');
+
+            scroll = (i >= 8);
         }
 
-        if (index.includes(10)) {
-            sortArray.code.scrollTop = 100;
+        if (scroll) {
+            sortArray.code.scrollTop = 200;
+        } else {
+            sortArray.code.scrollTop = 0;
         }
 
     },

@@ -157,7 +157,7 @@ const isAcending = {
 
     dataClasses: (index) => {
         isAcending.dataClearClasses();
-        
+
         isAcending.dataDisplay.querySelector('#data-tr td:nth-child(' + (index + 2) + ')').classList.add('compare-first');
         isAcending.dataDisplay.querySelector('#data-tr td:nth-child(' + (index + 3) + ')').classList.add('compare-second');
 
@@ -192,7 +192,7 @@ const isAcending = {
         }
 
         if (index.includes(10)) {
-            isAcending.code.scrollTop = 100;
+            isAcending.code.scrollTop = 150;
         }
 
     },
