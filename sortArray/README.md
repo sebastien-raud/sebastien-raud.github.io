@@ -1,2 +1,3 @@
-# Modulo
-Démonstration de ce qu'est le *modulo* avec des œufs à ranger dans des boîtes...
+# sortArray
+
+Démonstration du tri à bulle correction S03E02.

@@ -84,7 +84,7 @@ const sortArray = {
         sortArray.code.classList.remove('show');
     },
 
-    isAcending: () => {
+    isAscending: () => {
         for (let i = 0; i < sortArray.data.length - 1; i++) {
             if (sortArray.data[i] > sortArray.data[i + 1]) {
                 return false;
@@ -104,16 +104,16 @@ const sortArray = {
 
     execute: async (index) => {
         
-        let isAcending = sortArray.isAcending();
+        let isAscending = sortArray.isAscending();
 
-        sortArray.algoMessage('Tableau trié ? : ' + (isAcending ? 'OUI' : 'NON'));
+        sortArray.algoMessage('Tableau trié ? : ' + (isAscending ? 'OUI' : 'NON'));
         sortArray.codeClasses([1, 2]);
         
         if (sortArray.showCode) {
             await sortArray.wait(1000);
         }
 
-        if (isAcending) {
+        if (isAscending) {
             sortArray.algoMessage('Fin : retourne le tableau');
             sortArray.codeClasses([15, 16]);
             return ;
