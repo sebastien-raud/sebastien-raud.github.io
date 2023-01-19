@@ -105,7 +105,6 @@ const isAcending = {
             return ;
         }
 
-        isAcending.dataClearClasses();
         isAcending.dataClasses(index);
 
         isAcending.algoMessage('Test tableau[' + index + '] (' + isAcending.data[index] + ') > tableau[' + (index + 1) + '] (' + isAcending.data[index + 1] + ') ?');
@@ -128,7 +127,6 @@ const isAcending = {
         }
 
         setTimeout(function() {
-            console.log('execute next');
             isAcending.execute(index + 1);
         }, 2500);
     },
@@ -158,6 +156,8 @@ const isAcending = {
     },
 
     dataClasses: (index) => {
+        isAcending.dataClearClasses();
+        
         isAcending.dataDisplay.querySelector('#data-tr td:nth-child(' + (index + 2) + ')').classList.add('compare-first');
         isAcending.dataDisplay.querySelector('#data-tr td:nth-child(' + (index + 3) + ')').classList.add('compare-second');
 
