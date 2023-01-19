@@ -115,7 +115,7 @@ const isAcending = {
             await isAcending.wait(1500);
         }
 
-        if (isAcending.data[index] >= isAcending.data[index + 1]) {
+        if (isAcending.data[index] > isAcending.data[index + 1]) {
             isAcending.algoMessage('&nbsp;&nbsp;OUI : retourne false (tableau non trié)');
             isAcending.codeClasses([4, 5, 6]);
             return ;
