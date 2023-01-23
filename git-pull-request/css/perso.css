@@ -1,0 +1,28 @@
+code {
+    background-color: #f3f3f3;
+    padding: .5rem;
+    display: block;
+}
+
+code.small {
+    font-size: 1rem;
+}
+
+code .arg {
+    color: #cf222e;
+}
+code .value {
+    color: #0550ae;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+#slide ul {
+    margin-left: 0;
+}
+
+#slide > * {
+    margin-left: 0;
+}
