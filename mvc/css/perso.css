@@ -1,0 +1,134 @@
+code {
+    background-color: #f3f3f3;
+    padding: .5rem;
+    display: block;
+}
+
+code.small {
+    font-size: 1rem;
+}
+
+code .arg {
+    color: #cf222e;
+}
+code .value {
+    color: #0550ae;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+#slide ul,
+#slide ul.margin {
+    margin-left: 0;
+}
+
+#slide > * {
+    margin-left: 0;
+}
+
+#slide ul.margin li {
+    margin: 1.5rem 0;
+}
+
+.warning {
+    font-weight: bold;
+    color: #cf222e;   
+}
+
+.vue {
+    border: solid 1px #000;
+    font-family: 'Courier New', Courier, monospace;
+    padding: .5rem;
+    background-color: #aaa9a9;
+    position: relative;
+    margin-top: 2.5rem;
+}
+.vue::before {
+    content: "Vue";
+    display: inline-block;
+    font-size: 1rem;
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    background-color: #a2c6f3;
+    font-style: italic;
+    padding: .25rem .5rem;
+}
+
+.vue div {
+    border: solid 1px #000;
+    background-color: #f3f3f3;
+    padding: .5rem;
+}
+
+.vue [class^="step-"] {
+    border: none;
+    margin-top: 0 !important;
+}
+.vue .template {
+    padding: 0;
+}
+.header,
+.template,
+.footer {
+    position: relative;
+}
+.header::before,
+.template::before,
+.footer::before {
+    content: "";
+    display: inline-block;
+    font-size: 1rem;
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    background-color: #a2c6f3;
+    font-style: italic;
+    padding: .25rem .5rem;
+}
+.header::before,
+.footer::before {
+    content: "partial";
+}
+.template::before {
+    content: "template";
+}
+
+.controleur {
+    text-align: left;
+    margin-top: 0;
+}
+pre {
+    text-align: left;
+    padding-top: 0;
+}
+code {
+    font-size: .9rem;
+}
+
+.row div {
+    margin-top: 0 !important;
+}
+
+table {
+    border-collapse: collapse;
+    border: solid 1px #000;
+    background-color: #f3f3f3;
+}
+table th {
+    border: solid 1px #000;
+}
+table th, table td {
+    padding: .5rem;
+}
+.model-code {
+    max-height: 70vh;
+    width: auto;
+}
+
+.model-code pre {
+    max-height: 100%;
+    overflow: auto;
+}

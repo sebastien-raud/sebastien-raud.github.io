@@ -1,0 +1,63 @@
+<h1>MVC : Modèle <i class="fa fa-database" aria-hidden="true"></i> </h1>
+<p><strong>Active Record</strong></p>
+<div class="row">
+    <div class="col">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">product</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>INT, PRIMARY KEY</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>VARCHAR(15)</td>
+                </tr>
+                <tr>
+                    <td>price</td>
+                    <td>UNSIGNED INT</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col model-code">
+        <pre><code class="language-php">class Product {
+    private $id;
+    private $name;
+    private $price;
+
+    public function getId() {
+        return $this-&gt;id;
+    }
+    public function setId($id) {
+        return $this-&gt;id = $id;
+    }
+    public function getName() {
+        return $this-&gt;name;
+    }
+    public function setName($name) {
+        return $this-&gt;name = $name;
+    }
+    public function getPrice() {
+        return $this-&gt;price;
+    }
+    public function setPrice($price) {
+        return $this-&gt;price = $price;
+    }
+
+    public function find($id) {
+        ...
+    }
+    public function save() {
+        ...
+    }
+    public function delete() {
+        ...
+    }
+}</code></pre>
+    </div>
+</div>
