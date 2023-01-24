@@ -1,0 +1,20 @@
+<h1>POO : statique</h1>
+<div>
+    <p>Le mot clé <code style="font-size: 1.2rem;">self</code> fait référence à la classe où est déclarée la méthode :</p>
+    <div style="margin-top: 1rem">
+        <pre><code>class Date {
+    public static $format = 'd/m/Y';
+
+    public static function today() {
+        return date(self::$format);
+    }
+    public static function tomorow() {
+        $datetime = new DateTime('tomorrow');
+        return $datetime-&gt;format(self::$format);
+    }
+}
+
+echo 'aujourd\'hui : ' . Date::today() . PHP_EOL;
+echo 'demain : ' . Date::tomorow() . PHP_EOL;</code></pre>
+    </div>
+</div>
