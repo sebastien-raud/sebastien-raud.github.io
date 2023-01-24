@@ -1,0 +1,41 @@
+<h1>POO : statique</h1>
+<div style="margin: 0 2rem">
+    <p>On peut définir des propriétés ou méthodes <strong>statiques</strong>.</p>
+    <p>Elles appartiennent alors à la classe, et non pas à l'instance de classe, et peuvent être utilisées sans avoir besoin d'instancier la classe :</p>
+</div>
+<div class="step-1 row overflow" style="margin-top: 1rem">
+    <div class="col">
+        <pre><code>class Date {
+    public function today() {
+        return date('d/m/Y');
+    }
+    public function tomorow() {
+        $datetime = new DateTime('tomorrow');
+        return $datetime-&gt;format('d/m/Y');
+    }
+}
+
+$date = new Date(); // ??? mais pourquoi
+echo 'aujourd\'hui : ' . $date-&gt;today() . PHP_EOL;
+echo 'demain : ' . $date-&gt;tomorow() . PHP_EOL;</code></pre>
+    </div>
+    <div class="col">
+        <pre><code>class Date {
+    public static function today() {
+        return date('d/m/Y');
+    }
+    public static function tomorow() {
+        $datetime = new DateTime('tomorrow');
+        return $datetime-&gt;format('d/m/Y');
+    }
+}
+
+echo 'aujourd\'hui : ' . Date::today() . PHP_EOL;
+echo 'demain : ' . Date::tomorow() . PHP_EOL;</code></pre>
+    </div>
+</div>
+<div class="step-2 info">
+    <p>Le mot-clé <code style="font-size: 1.2rem;">static</code> permet d'indiquer que la propriété ou la méthode est statique.</p>
+    <p>On utilise l'opérateur <code style="font-size: 1.2rem;">::</code> (<span title="« Deux points » en hébreu israélien parlé">Paamayim Nekudotayim</span>) pour accéder aux éléments statiques.</p>
+    <p style="color: #f04141"><code style="font-size: 1.2rem;">$this</code> n'est pas disponible dans une méthode statique.</p>
+</div>
