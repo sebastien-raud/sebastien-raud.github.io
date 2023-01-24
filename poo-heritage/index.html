@@ -29,7 +29,6 @@
 		document.addEventListener('DOMContentLoaded', function () {
 			slider.onShowSlide = function () {
 				hljs.highlightAll();
-				console.log(slider.slideIndex);
 				if ([1,2,3].includes(slider.slideIndex)) {
 					document.getElementById('switch-code').addEventListener('click', function(event) {
 						const bt = event.currentTarget;
