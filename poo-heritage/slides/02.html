@@ -1,0 +1,210 @@
+<h1>POO : héritage<button id="switch-code">Code</button></h1>
+<div id="model" class="row overflow">
+    <div class="col">
+        <table class="class">
+            <thead>
+                <tr><th>Personne</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>private $nom</td></tr>
+                <tr><td>private $prenom</td></tr>
+                <tr><td>private $dateNaissance</td></tr>
+                <tr class="methods"><td>public getNom()</td></tr>
+                <tr><td>public setNom($nom)</td></tr>
+                <tr><td>public getPrenom()</td></tr>
+                <tr><td>public setPrenom($prenom)</td></tr>
+                <tr><td>public getDateNaissance()</td></tr>
+                <tr><td>public setDateNaissance($dateNaissance)</td></tr>
+                <tr><td>public getAge()</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col">
+        <table class="class">
+            <thead>
+                <tr><th>Etudiant</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>private $nom</td></tr>
+                <tr><td>private $prenom</td></tr>
+                <tr><td>private $dateNaissance</td></tr>
+                <tr><td>private $notes</td></tr>
+                <tr class="methods"><td>public getNom()</td></tr>
+                <tr><td>public setNom($nom)</td></tr>
+                <tr><td>public getPrenom()</td></tr>
+                <tr><td>public setPrenom($prenom)</td></tr>
+                <tr><td>public getDateNaissance()</td></tr>
+                <tr><td>public setDateNaissance($dateNaissance)</td></tr>
+                <tr><td>public getNotes()</td></tr>
+                <tr><td>public setNotes($notes)</td></tr>
+                <tr><td>public getAge()</td></tr>
+                <tr><td>public getMoyenne()</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col">
+        <table class="class">
+            <thead>
+                <tr><th>Employe</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>private $nom</td></tr>
+                <tr><td>private $prenom</td></tr>
+                <tr><td>private $dateNaissance</td></tr>
+                <tr><td>private $tauxHoraire</td></tr>
+                <tr><td>private $nbHeuresTravail</td></tr>
+                <tr class="methods"><td>public getNom()</td></tr>
+                <tr><td>public setNom($nom)</td></tr>
+                <tr><td>public getPrenom()</td></tr>
+                <tr><td>public setPrenom($prenom)</td></tr>
+                <tr><td>public getDateNaissance()</td></tr>
+                <tr><td>public setDateNaissance($dateNaissance)</td></tr>
+                <tr><td>public getTauxHoraire()</td></tr>
+                <tr><td>public setTauxHoraire($tauxHoraire)</td></tr>
+                <tr><td>public getNbHeuresTravail()</td></tr>
+                <tr><td>public setNbHeuresTravail($nbHeuresTravail)</td></tr>
+                <tr><td>public getAge()</td></tr>
+                <tr><td>public getSalaire()</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id="code" class="hidden row overflow">
+    <div class="col">
+        <pre><code class="languaga-php">class Personne {
+    private $nom;
+    private $prenom;
+    private $dateNaissance;
+
+    public function getNom() {
+        return $this-&gt;nom;
+    }
+    public function setNom($nom) {
+        $this-&gt;nom = $nom;
+    }
+
+    public function getPrenom() {
+        return $this-&gt;prenom;
+    }
+    public function setPrenom($prenom) {
+        $this-&gt;prenom = $prenom;
+    }
+
+    public function getDateNaissance() {
+        return $this-&gt;dateNaissance;
+    }
+    public function setDateNaissance($dateNaissance) {
+        $this-&gt;dateNaissance = $dateNaissance;
+    }
+
+    public function getAge() {
+        ...
+    }
+}</code></pre>
+    </div>
+    <div class="col">
+        <pre><code class="languaga-php">class Etudiant {
+    private $nom;
+    private $prenom;
+    private $dateNaissance;
+    private $notes;
+
+    public function getNom() {
+        return $this-&gt;nom;
+    }
+    public function setNom($nom) {
+        $this-&gt;nom = $nom;
+    }
+
+    public function getPrenom() {
+        return $this-&gt;prenom;
+    }
+    public function setPrenom($prenom) {
+        $this-&gt;prenom = $prenom;
+    }
+
+    public function getDateNaissance() {
+        return $this-&gt;dateNaissance;
+    }
+    public function setDateNaissance($dateNaissance) {
+        $this-&gt;dateNaissance = $dateNaissance;
+    }
+
+    public function getNotes() {
+        return $this-&gt;notes;
+    }
+    public function setNotes($notes) {
+        return $this-&gt;notes = $notes;
+    }
+
+    public function getAge() {
+        ...
+    }
+    public function getMoyenne() {
+        ...
+    }
+}</code></pre>
+    </div>
+    <div class="col">
+        <pre><code class="languaga-php">class Employe {
+    private $nom;
+    private $prenom;
+    private $dateNaissance;
+    private $tauxHoraire;
+    private $nbHeuresTravail;
+
+    public function getNom() {
+        return $this-&gt;nom;
+    }
+    public function setNom($nom) {
+        $this-&gt;nom = $nom;
+    }
+
+    public function getPrenom() {
+        return $this-&gt;prenom;
+    }
+    public function setPrenom($prenom) {
+        $this-&gt;prenom = $prenom;
+    }
+
+    public function getDateNaissance() {
+        return $this-&gt;dateNaissance;
+    }
+    public function setDateNaissance($dateNaissance) {
+        $this-&gt;dateNaissance = $dateNaissance;
+    }
+
+    public function getDateNaissance() {
+        return $this-&gt;dateNaissance;
+    }
+    public function setDateNaissance($dateNaissance) {
+        $this-&gt;dateNaissance = $dateNaissance;
+    }
+
+    public function getTauxHoraire() {
+        return $this-&gt;tauxHoraire;
+    }
+    public function setTauxHoraire($tauxHoraire) {
+        $this-&gt;tauxHoraire = $tauxHoraire;
+    }
+
+    public function getNbHeuresTravail() {
+        return $this-&gt;nbHeuresTravail;
+    }
+    public function setNbHeuresTravail($nbHeuresTravail) {
+        $this-&gt;nbHeuresTravail = $nbHeuresTravail;
+    }
+
+    public function getAge() {
+        ...
+    }
+    public function getSalaire() {
+        ...
+    }
+}</code></pre>
+    </div>
+</div>
+<div class="step-1 info limites">
+    <p>Duplication de code pour des fonctionnalités identiques !</p>
+    <p>Une modification sur un attribut ou une méthode commun doit être reportée dans les autres classes.</p>
+</div>

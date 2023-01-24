@@ -1,0 +1,132 @@
+<h1>POO : héritage<button id="switch-code">Code</button></h1>
+<div id="model" class="row overflow">
+    <div class="col">
+        <p>Classe mère / Parent</p>
+        <table class="class">
+            <thead>
+                <tr><th>Personne</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>protected</strong> $nom</td></tr>
+                <tr><td><strong>protected</strong> $prenom</td></tr>
+                <tr><td><strong>protected</strong> $dateNaissance</td></tr>
+                <tr class="methods"><td>public getNom()</td></tr>
+                <tr><td>public setNom($nom)</td></tr>
+                <tr><td>public getPrenom()</td></tr>
+                <tr><td>public setPrenom($prenom)</td></tr>
+                <tr><td>public getDateNaissance()</td></tr>
+                <tr><td>public setDateNaissance($dateNaissance)</td></tr>
+                <tr><td>public getAge()</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col">
+        <p>Classe fille / Enfant</p>
+        <table class="class">
+            <thead>
+                <tr><th>Etudiant <span class="extends">hérite de</span> Personne</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>private $notes</td></tr>
+                <tr class="methods"><td>public getNotes()</td></tr>
+                <tr><td>public setNotes($notes)</td></tr>
+                <tr><td>public getMoyenne()</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col">
+        <p>Classe fille / Enfant</p>
+        <table class="class">
+            <thead>
+                <tr><th>Employe <span class="extends">hérite de</span> Personne</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>private $tauxHoraire</td></tr>
+                <tr><td>private $nbHeuresTravail</td></tr>
+                <tr class="methods"><td>public getTauxHoraire()</td></tr>
+                <tr><td>public setTauxHoraire($tauxHoraire)</td></tr>
+                <tr><td>public getNbHeuresTravail()</td></tr>
+                <tr><td>public setNbHeuresTravail($nbHeuresTravail)</td></tr>
+                <tr><td>public getSalaire()</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id="code" class="hidden row overflow">
+    <div class="col">
+        <pre><code class="languaga-php">class Personne {
+    protected $nom;
+    protected $prenom;
+    protected $dateNaissance;
+
+    public function getNom() {
+        return $this-&gt;nom;
+    }
+    public function setNom($nom) {
+        $this-&gt;nom = $nom;
+    }
+
+    public function getPrenom() {
+        return $this-&gt;prenom;
+    }
+    public function setPrenom($prenom) {
+        $this-&gt;prenom = $prenom;
+    }
+
+    public function getDateNaissance() {
+        return $this-&gt;dateNaissance;
+    }
+    public function setDateNaissance($dateNaissance) {
+        $this-&gt;dateNaissance = $dateNaissance;
+    }
+
+    public function getAge() {
+        ...
+    }
+}</code></pre>
+    </div>
+    <div class="col">
+        <pre><code class="languaga-php">class Etudiant extends Personne{
+    private $notes;
+
+    public function getNotes() {
+        return $this-&gt;notes;
+    }
+    public function setNotes($notes) {
+        return $this-&gt;notes = $notes;
+    }
+
+    public function getMoyenne() {
+        ...
+    }
+}</code></pre>
+    </div>
+    <div class="col">
+        <pre><code class="languaga-php">class Employe extends Personne {
+    private $tauxHoraire;
+    private $nbHeuresTravail;
+
+    public function getTauxHoraire() {
+        return $this-&gt;tauxHoraire;
+    }
+    public function setTauxHoraire($tauxHoraire) {
+        $this-&gt;tauxHoraire = $tauxHoraire;
+    }
+
+    public function getNbHeuresTravail() {
+        return $this-&gt;nbHeuresTravail;
+    }
+    public function setNbHeuresTravail($nbHeuresTravail) {
+        $this-&gt;nbHeuresTravail = $nbHeuresTravail;
+    }
+
+    public function getSalaire() {
+        ...
+    }
+}</code></pre>
+    </div>
+</div>
+<div class="step-1 info hidden-2">
+    <p>La visibilité <code style="font-size: 1.2rem;">protected</code> sur un attribut ou une méthode permet de le rendre accessible à l'intérieur
+       de la classe qui le définit mais également aux classes qui en héritent ou aux classes parentes.</p>
+</div>
