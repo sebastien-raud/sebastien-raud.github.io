@@ -1,1 +1,32 @@
 <h1>POO : abstract</h1>
+<div>
+    <pre><code class="languaga-php">abstact class Animal {
+    protected $nom;
+    protected $nombrePattes;
+
+    public function infos() {
+        echo $this-&gt;nom . ' a ' . $this-&gt;nombrePattes . ' pattes.';
+    }
+}</code></pre>
+</div>
+
+<div class="step-1 info hidden-2">
+    <pre><code class="languaga-php" style="text-align: center;">// ⚠ Impossible d'instancier un Animal
+$animal = new Animal(); // Erreur</code></pre>
+    <p>La classe <code style="font-size: .8em">Animal</code> est <strong>abstraite</strong>.</p>
+    <p>Elle ne peut pas être instanciée. Il faut donc créer des classes enfants pour l'utiliser.</p>
+</div>
+
+<div class="step-2">
+    <pre><code class="languaga-php">class Humain extends Animal {
+    public function __construct() {
+        $this->nombrePattes = 2;
+    }
+}
+
+class Chien extends Animal {
+    public function __construct() {
+        $this->nombrePattes = 4;
+    }
+}</code></pre>  
+</div>

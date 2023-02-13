@@ -1,20 +1,42 @@
-<h1>POO : statique</h1>
+<h1>POO : abstract</h1>
 <div>
-    <p>Le mot clé <code style="font-size: 1.2rem;">self</code> fait référence à la classe où est déclarée la méthode :</p>
+    <p>Une classe abstraite peut aussi définir les méthodes abstraites.</p>
+    <p>Une méthode abstraite ne peut pas avoir de code.</p>
+    <p>Les classes filles sont <strong>obligées</strong> de définir les méthodes abstraites.</p>
     <div style="margin-top: 1rem">
-        <pre><code>class Date {
-    public static $format = 'd/m/Y';
+        <pre><code class="languaga-php">abstact class Animal {
+    protected $nom;
+    protected $nombrePattes;
 
-    public static function today() {
-        return date(self::$format);
-    }
-    public static function tomorow() {
-        $datetime = new DateTime('tomorrow');
-        return $datetime-&gt;format(self::$format);
-    }
-}
+    // méthode abstraite : elle doit être déclarée dans les classes héritées
+    abstract public function communiquer();
 
-echo 'aujourd\'hui : ' . Date::today() . PHP_EOL;
-echo 'demain : ' . Date::tomorow() . PHP_EOL;</code></pre>
+    public function infos() {
+        echo $this-&gt;nom . ' a ' . $this-&gt;nombrePattes . ' pattes.';
+    }
+}</code></pre>
     </div>
+</div>
+
+<div class="step-1 row overflow">
+    <div class="col">
+    <pre><code class="languaga-php">class Humain extends Animal {
+    public function __construct() {
+        $this->nombrePattes = 2;
+    }
+
+    public function communiquer() {
+        return 'parler';
+    }
+}</code></pre>
+</div><div class="col">
+    <pre><code class="languaga-php">class Chien extends Animal {
+    public function __construct() {
+        $this->nombrePattes = 4;
+    }
+
+    public function communiquer() {
+        return 'aboyer';
+    }
+}</code></pre></div>
 </div>
