@@ -1,6 +1,6 @@
 # Histoire (rapide) du web
 ## 1 - Premier modem
-1989 : Les Laboratoires Bell créent le premier modem permettant de transmettre des données binaires sur une simple ligne téléphonique.  
+1958 : Les Laboratoires Bell créent le premier modem permettant de transmettre des données binaires sur une simple ligne téléphonique.  
 Modem : **mo**dulateur / **dém**odulateur permet d'envoyer et recevoir des informations numériques sur un canal analogique.
 
 Le "Bell 101 Dataset" a une vitesse de 110 baud, soit environ 10 caractères par secondes.
