@@ -24,7 +24,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js" defer></script>
 </head>
 
-<body>
+<body class="center-slide">
 
 	<div id="slide"></div>
 
@@ -32,9 +32,9 @@
 		document.addEventListener('DOMContentLoaded', function () {
 			slider.onShowSlide = function () {
 				hljs.highlightAll();
-				//plugin.init();				
+				plugin.init();				
 			};
-			slider.init(1);
+			slider.init(9);
 		});
 
 		

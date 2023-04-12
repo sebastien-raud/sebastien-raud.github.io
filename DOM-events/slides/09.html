@@ -1,0 +1,16 @@
+<h1>DOM - événements</h1>
+<h2>Synthèse</h2>
+<div style="margin: 0">
+    <p>Le <strong>DOM</strong> permet de gérer des événements en Javascript, c'est à dire de gérer des actions.</p>
+    <p>La méthode pour gérer des événements est toujours la même :</p>
+    <ul style="list-style-type: disc;">
+        <li class="step-1">sélection (ou création et ajout) d'un élément</li>
+        <li class="step-2">on attache un <strong>écouteur d'événement</strong> :
+            <code><span class="hljs-variable">element</span>.<span class="hljs-title">addEventListener</span>()</code></li>
+        <li class="step-3">on déclare le <a href="https://developer.mozilla.org/fr/docs/Web/Events#listing_des_%C3%A9v%C3%A9nements">type d'événement</a> que l'on souhaite écouter :
+            <code><span class="hljs-variable">element</span>.<span class="hljs-title">addEventListener</span>(<span class="hljs-string">'click'</span>)</code></li>
+        <li class="step-4">on indique une fonction à exécuter lorsque l'événement se produit :
+            <code><span class="hljs-variable">element</span>.<span class="hljs-title">addEventListener</span>(<span class="hljs-string">'click'</span>, handleClick)</code></li>
+        <li class="step-5">on crée la fonction, qui peut avoir un paramètre facultatif <strong>event</strong> contenant des informations sur l'événement.</li>
+    </ul>
+</div>

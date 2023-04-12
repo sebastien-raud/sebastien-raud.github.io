@@ -1,0 +1,67 @@
+<h1>DOM - événements</h1>
+<h2>Sélectionner un élément</h2>
+
+<div style="margin: 0">
+
+    <div class="grid">
+        <div class="row">
+            <div class="col">
+                <h3>Document HTML</h3>
+                <pre><code class="language-html" id="code-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;title&gt;DOM&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;button&gt;Click me&lt;/button&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="col">
+                <h3>DOM</h3>
+                <ul class="tree">
+                    <li>
+                        <details open>
+                            <summary class="dom-document">document</summary>
+                            <ul>
+                                <li>
+                                    <details open>
+                                        <summary class="dom-html">html</summary>
+                                        <ul>
+                                            <li>
+                                                <details open>
+                                                    <summary class="dom-element">head</summary>
+                                                    <ul>
+                                                        <li><span class="dom-element">title</span></li>
+                                                    </ul>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details open id="append-element">
+                                                    <summary class="dom-element">body</summary>
+                                                    <ul>
+                                                        <li>
+                                                            <details open>
+                                                                <summary class="dom-element dom-element-select">button</summary>
+                                                            </details>
+                                                        </li>
+                                                    </ul>
+                                                </details>
+                                            </li>
+                                        </ul>
+                                    </details>
+                                </li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="step-1">
+        <ul class="code-test" id="dom-example">
+            <li><pre><code class="language-javascript">const elementButton = document.querySelector('button');</code></pre></li>
+        </ul>
+    </div>
+
+</div>
