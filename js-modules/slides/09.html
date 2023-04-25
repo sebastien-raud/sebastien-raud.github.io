@@ -1,0 +1,25 @@
+<h1>JS : modules</h1>
+<div>
+
+        <div>
+            <pre><code class="language-javascript">// déclaration d'un module
+// un module, en vrai, c'est un objet
+const simpleCounter = {
+    // une variable d'un module, c'est une propriété
+    counter: 0,
+
+    // une fonction d'un module, c'est une méthode
+    init: function() {
+        document.getElementById('button').addEventListener('click', simpleCounter.handleCounter);
+    },
+
+    handleCounter: function() {
+        simpleCounter.counter++;
+        document.getElementById('counter').textContent = simpleCounter.counter;
+    }
+};
+// Exécution du module
+simpleCounter.init();
+</code></pre></div>
+
+</div>

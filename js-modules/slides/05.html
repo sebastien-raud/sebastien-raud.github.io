@@ -1,0 +1,27 @@
+<h1>JS : modules</h1>
+<div>
+
+        <div>
+            <pre><code class="language-javascript">let counter = 0;
+document.getElementById('button').addEventListener('click', handleCounter);
+function handleCounter() {
+    counter++;
+    document.getElementById('counter').textContent = counter;
+}</code></pre>
+        </div>
+        <div style="max-height: 350px;overflow: auto"><pre><code class="language-javascript">// déclaration d'un module
+// un module, c'est d'abord une constante, avec un nom
+const simpleCounter = {
+    
+    counter: 0,
+    handleCounter: function() {
+        // pour appeler une variable du module, on préfixe 
+        // le nom de la variable par le nom du module
+        simpleCounter.counter++;
+    }
+
+};</code></pre>
+        </div>
+
+
+</div>

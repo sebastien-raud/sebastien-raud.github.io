@@ -1,0 +1,25 @@
+<h1>JS : modules</h1>
+<p>On va donc regrouper les variables et les fonctions d'une fonctionnalité dans un ensemble commun !</p>
+<p>Ce regroupement est fait dans un module.</p>
+<div class="step-1">
+
+        <div>
+            <pre><code class="language-javascript">let counter = 0;
+document.getElementById('button').addEventListener('click', handleCounter);
+function handleCounter() {
+    counter++;
+    document.getElementById('counter').textContent = counter;
+}</code></pre>
+        </div>
+        <div><pre><code class="language-javascript">// déclaration d'un module
+// un module, c'est d'abord une constante, avec un nom
+const simpleCounter = {
+    
+    // ici doit venir le code du module
+    // avec ses variables et ses fonctions
+
+};</code></pre>
+        </div>
+
+
+</div>

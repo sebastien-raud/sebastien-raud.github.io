@@ -1,0 +1,42 @@
+<h1>JS : modules</h1>
+<div class="step-1 hidden-9">
+    <h2>Des modules... mais pourquoi ?</h2>
+    <p class="step-2">Pour organiser encore plus son code !</p>
+    <p class="step-2">On organise déjà <span style="font-style: italic;">un peu</span> avec les fichiers.</p>
+    <p class="step-3">Mais on peut organiser plus !</p>
+    <h2 class="step-4">Mais pourquoi organiser plus ?</h2>
+    <p class="step-5">Pour avoir du code plus lisible.</p>
+    <p class="step-6">Pour avoir du code bien "découpé".</p>
+    <p class="step-7">Pour réduire les risques d'introduction de bugs.</p>
+    <p class="step-8">Pour faciliter la maintenance et l'évolutivité du code.</p>
+</div>
+<div class="step-9 hidden-13">
+    <h2>On organise déjà nos projets</h2>
+    <p class="step-10">On sépare le HTML, le CSS et le JS.</p>
+    <p class="step-11">En PHP on sépare les données des templates pour la génération du code HTML.</p>
+    <p class="step-12">En JS on place les fonctionnalités dans des fichiers dédiés.</p>
+</div>
+<div class="step-13">
+    <h2>Mais est-ce suffisant ?</h2>
+    <div class="step-14">
+
+        <!--<div class="row">
+            <div class="col">-->
+            <div>
+                <h3>Fichier simple-counter.js</h3>
+                <pre><code class="language-javascript">let counter = 0;
+document.getElementById('button').addEventListener('click', handleCounter);
+function handleCounter() {
+    counter++;
+    document.getElementById('counter').textContent = counter;
+}</code></pre>
+            </div>
+            <div class="step-15">
+                <p>Tout est dans le contexte / scope global.</p>
+                <p>Est-ce qu'un fichier <strong>other.js</strong> ne risque pas de modifier ma variable <code>counter</code> ?</p>
+                <p>Est-ce que je ne risque pas d'autres effets indésirables ?</p>
+            </div>
+        <!--</div>-->
+
+    </div>
+</div>
