@@ -1,0 +1,9 @@
+<h1>Stockage des données</h1>
+<h2>Le localStorage</h2>
+<p>Attention : localStorage pour stocker des types de données complexes (objet, tableau, booléen, ...) 
+    il faut transformer la valeur en chaîne de caractères !</p>
+<p class="step-1">Pour décoder une information sauvegardée, une façon de faire : <code>JSON.parse()</code>.</p>
+<div class="step-2">
+    <pre><code language="language-js">const dataString = localStorage.getItem('data');
+const data = JSON.parse(dataString);</code></pre>
+</div>

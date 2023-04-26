@@ -1,0 +1,20 @@
+<h1>Stockage des données</h1>
+<h2>Les cookies</h2>
+<div>
+    <p>Lecture d'un cookie</p>
+    <pre><code language="language-js">// pour lire un cookie il faut "un peu" de logique
+const key = "theme";
+const cookiesAsArray = document.cookie.split('; ');
+// on parcourt le tableau
+for (const cookie of cookiesAsArray) {
+    // si la chaîne commence par le début du cookie qui nous intéresse
+    if (cookie.startsWith(key + "=")) {
+        // on découpe le contenu du cookie
+        const cookieInfo = cookie.split('=');
+        // pour récupérer que la valeur
+        const value = cookieInfo[1];
+        // la valeur est trouvée
+        console.log(value);
+    }
+}</code></pre>
+</div>

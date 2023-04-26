@@ -1,0 +1,16 @@
+<h1>Stockage des données</h1>
+<h2>Le localStorage</h2>
+<div class="step-1">
+    <p>Écriture</p>
+    <pre><code language="language-js">// l'objet localStorage est global, il est toujours disponible :
+// - via la méthode setItem on sauvegarde une information, 
+//   même si je quitte la page et que je reviens, l'information est persistante
+// - on passe 2 arguments, la clé pour retrouver la valeur plus tard, et la valeur
+localStorage.setItem('age', 31);</code></pre>
+</div>
+<div class="step-2">
+    <p>Lecture</p>
+    <pre><code language="language-js">// via la méthode getItem, on récupère la valeur, il faut passer la clé en argument
+const userAge = localStorage.getItem('age');
+console.log(userAge); // '31'</code></pre>
+</div>

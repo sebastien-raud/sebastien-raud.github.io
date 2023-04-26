@@ -1,0 +1,18 @@
+<h1>Stockage des données</h1>
+<h2>Le sessionStorage</h2>
+<div>
+    <p>Caractéristiques :</p>
+    <ul>
+        <li>fonctionne comme localStorage</li>
+        <li>durée de vie limitée à la "session"</li>
+    </ul>
+</div>
+<div class="step-1">
+    <p>Écriture</p>
+    <pre><code language="language-js">sessionStorage.setItem('age', 31);</code></pre>
+</div>
+<div class="step-2">
+    <p>Lecture</p>
+    <pre><code language="language-js">const userAge = sessionStorage.getItem('age');
+console.log(userAge); // '31'</code></pre>
+</div>

@@ -1,0 +1,16 @@
+<h1>Stockage des données</h1>
+<h2>Les cookies</h2>
+<div class="step-1">
+    <p>Écriture d'un cookie</p>
+    <pre><code language="language-js">// document.cookie = 'cle=valeur';
+// ajoute un cookie avec la clé lang et la valeur français
+document.cookie = 'lang=français';
+// ajoute un cookie avec la clé theme et la valeur dark
+document.cookie = 'theme=dark';</code></pre>
+</div>
+<div class="step-2">
+    <p>Lecture d'un cookie</p>
+    <pre><code language="language-js">// là, ça se complique
+console.log(document.cookie); // lang=français; theme=dark
+// il faut décomposer le cookie pour retrouver la valeur de la clé...</code></pre>
+</div>

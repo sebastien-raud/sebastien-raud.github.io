@@ -1,0 +1,23 @@
+<h1>Stockage des données</h1>
+<h2>Les cookies</h2>
+<div>
+    <pre><code language="language-js">// un module pour gérer les cookies
+const cookieManager = {
+    // Écriture d'un cookie
+    setItem: function(key, value) {
+        document.cookie = `${key}=${value}`;
+    },
+    // Lecture d'un cookie
+    getItem: function(key) {
+        const cookiesAsArray = document.cookie.split('; ');
+        for (const cookie of cookiesAsArray) {
+            if (cookie.startsWith(`${key}=`)) {
+                const cookieInfo = cookie.split('=');
+                const value = cookieInfo[1];
+                return value;
+            }
+        }
+        return null;
+    }
+};</code></pre>
+</div>
