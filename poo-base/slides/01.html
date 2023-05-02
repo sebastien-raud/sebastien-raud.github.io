@@ -1,0 +1,31 @@
+<h1>POO</h1>
+<h2>Programmation orentée objet</h2>
+<div class="step-1">
+    <p>Jusque là, en programmation, nous avons utilisé :</p>
+    <ul class="code">
+        <li class="step-2 hidden-4"><pre><code class="language-php">// des variables de types simples
+$prenom = 'Renaud'; // string
+$nom = 'Séchan'; // string
+$age = 70; // int, attention, c'est bientôt son anniversaire
+$estChanteur = true; // boolean</code></pre></li>
+        <li class="step-3"><pre><code class="language-php">// des variables complexes
+$renaud = [
+    'prenom' => 'Renaud',
+    'nom' => 'Séchan',
+    'age' => 70,
+    'estChanteur' => true
+];</code></pre></li>
+        <li class="step-4"><pre><code class="language-php">// des fonctions
+function biographie($personne) {
+    $bio = $personne['prenom'] . ' ' . $personne['nom'] . ' est âgé de ' . $personne['age'] . ' ans';
+    // des conditionnelles, des boucles...
+    if ($personne['estChanteur']) {
+        // des opérateurs (ici la concaténation)
+        $bio .= ' et c\'est un chanteur';
+    }
+    return $bio;
+}
+
+echo biographie($renaud);</code></pre></li>
+    </ul>
+</div>
