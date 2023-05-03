@@ -1,0 +1,27 @@
+<h1>POO</h1>
+
+<div class="row" style="margin: 0 1em">
+    <div class="col-6">
+        <pre><code class="language-php" style="font-size: .65em;">$renaud = [
+    'prenom' => 'Renaud',
+    'nom' => 'Séchan',
+    'age' => 70,
+    'estChanteur' => true
+];
+
+function biographie($personne) {
+    $bio = $personne['prenom'] . ' ' . $personne['nom'] . 
+           ' est âgé de ' . $personne['age'] . ' ans';
+
+    if ($personne['estChanteur']) {
+        $bio .= ' et c\'est un chanteur';
+    }
+    return $bio;
+}
+
+echo biographie($renaud);</code></pre>
+    </div>
+    <div class="col-6" style="display: flex;align-items: center;justify-content: center;">
+        <p>Nous allons pouvoir formaliser ce lien entre les données et les actions avec la <strong>programmation orentiée objet</strong> !</p>
+    </div>
+</div>

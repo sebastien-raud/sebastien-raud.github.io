@@ -1,0 +1,31 @@
+<h1>POO</h1>
+
+<div class="row" style="margin: 0 1em">
+    <div class="col-6">
+        <pre><code class="language-php" style="font-size: .65em;">$renaud = [
+    'prenom' => 'Renaud',
+    'nom' => 'Séchan',
+    'age' => 70,
+    'estChanteur' => true
+];
+
+function biographie($personne) {
+    $bio = $personne['prenom'] . ' ' . $personne['nom'] . 
+           ' est âgé de ' . $personne['age'] . ' ans';
+
+    if ($personne['estChanteur']) {
+        $bio .= ' et c\'est un chanteur';
+    }
+    return $bio;
+}
+
+echo biographie($renaud);</code></pre>
+    </div>
+    <div class="col-6">
+        <p style="margin-bottom: .5em">Dans le code précédent, on "voit" bien que le tableau <code>$renaud</code> et la fonction <code>biographie()</code> ont un lien.</p>
+        <p style="margin-bottom: .5em" class="step-1">Ce lien n'est pas formel : on le "voit", on le "sent", on le "lit"... mais rien, dans le code, n'indique <strong>réellement</strong> ce lien.</p>
+        <p style="margin-bottom: .5em" class="step-2">On pourrait passer n'importe quel tableau associatif qui contient les bonnes clés à la fonction <code>biographie()</code>.</p>
+        <p style="margin-bottom: .5em" class="step-3">C'est d'ailleurs un des objectifs d'une fonction : <strong>être réutilisable</strong>.</p>
+        <p style="margin-bottom: .5em" class="step-4">Mais le "lien" entre les différents tableaux éventuels — les données — et l'action réalisée par la fonction reste non formalisé.</p>
+    </div>
+</div>
