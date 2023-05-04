@@ -1,0 +1,46 @@
+<h1>POO</h1>
+<h2>Classe et objets</h2>
+<div class="row" style="margin: 0 1em">
+    <div class="col-6">
+        <pre><code class="language-php" style="font-size: .65em;">$renaud = [
+    'prenom' => 'Renaud',
+    'nom' => 'Séchan',
+    'age' => 70,
+    'estChanteur' => true
+];
+
+function biographie($personne) {
+    $bio = $personne['prenom'] . ' ' . $personne['nom'] . 
+           ' est âgé de ' . $personne['age'] . ' ans';
+
+    if ($personne['estChanteur']) {
+        $bio .= ' et c\'est un chanteur';
+    }
+    return $bio;
+}
+
+echo biographie($renaud);</code></pre>
+    </div>
+    <div class="col-6" style="display: flex;align-items: center;justify-content: center;">
+        <pre><code class="language-php" style="font-size: .65em;">// Définition d'une classe qui représente une personne
+class Personne {
+
+    // définition des attributs / propriétés
+    public $prenom;
+    public $nom;
+    public $age;
+    public $estChanteur;
+
+}
+
+// le mot-clé "new" permet de créer un objet
+// à partir d'une classe, d'un modèle
+$renaud = new Personne(); // $renaud est un objet Personne
+$renaud->prenom = 'Renaud'; // accès à la propriété "prenom"
+$renaud->nom = 'Séchan'; // l'opérateur -> permet d'accéder
+$renaud->age = 70; // aux propriétés de l'objet
+$renaud->estChanteur = true; // pour le personnaliser</code></pre>
+    </div>
+</div>
+
+<a id="support-fabio" href="https://fabioclock.github.io/support-classes/" title="Note : activer propriétés, code classe + objets"></a>

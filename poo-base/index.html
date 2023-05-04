@@ -23,7 +23,12 @@
 		code {
 			font-size: .65em;
 			text-align: left;
+		}
+		code.hljs {
 			padding: .5em;
+		}
+		#slide ul {
+			list-style-position: inside;
 		}
 		#slide ul.code li {
 			margin: 0;
@@ -33,6 +38,26 @@
 		}
 		#slide li.visible {
 			display: list-item;
+		}
+		#slide div[class*="col-"] + div[class*="col-"] {
+			margin-top: 0;
+		}
+
+		#support-fabio {
+			position: absolute;
+			top: 1em;
+			right: 1em;
+		}
+		#support-fabio {
+			content: "";
+		}
+		#support-fabio:before {
+			content: "";
+			display: inline-block;
+			background-color: beige;
+			background-image: url('./images/ico-show.png');
+			height: 32px;
+			width: 32px;
 		}
 	</style>
   </head>
@@ -45,7 +70,7 @@
 			slider.onShowSlide = function () {
 				hljs.highlightAll();
 			};
-			slider.init(10); 
+			slider.init(20); 
 	});
 	</script>
   </body>

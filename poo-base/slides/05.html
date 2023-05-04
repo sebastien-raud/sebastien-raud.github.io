@@ -1,0 +1,32 @@
+<h1>POO</h1>
+<h2>Bon... on développe en POO ?</h2>
+<div class="step-1" style="margin: 0">
+    <div class="row" style="margin: 0">
+        <div class="col-6">
+            <pre><code class="language-php" style="font-size: .65em;">$renaud = [
+        'prenom' => 'Renaud',
+        'nom' => 'Séchan',
+        'age' => 70,
+        'estChanteur' => true
+    ];
+
+    function biographie($personne) {
+        $bio = $personne['prenom'] . ' ' . $personne['nom'] . 
+            ' est âgé de ' . $personne['age'] . ' ans';
+
+        if ($personne['estChanteur']) {
+            $bio .= ' et c\'est un chanteur';
+        }
+        return $bio;
+    }
+
+    echo biographie($renaud);</code></pre>
+        </div>
+        <div class="col-6" style="display: flex;align-items: center;justify-content: center;">
+            <div>
+                <p style="margin-bottom: .5em">Construisons pas à pas un code équivalent à notre personne et sa fonction de biographie.</p>
+                <p class="step-2">Pour cela, nous allons utiliser des objets.</p>
+            </div>
+        </div>
+    </div>
+</div>
