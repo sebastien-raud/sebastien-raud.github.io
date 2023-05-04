@@ -1,0 +1,38 @@
+<h1>POO : visibilité</h1>
+
+<div class="row" style="margin: 0 1em">
+    <div class="col-6">
+        <p style="margin-bottom: .5em">La POO répond à ce problème avec la notion de <strong>visibilité</strong>.</p>
+        <p style="margin-bottom: .5em" class="step-1">La <strong>visibilité</strong> d'une propriété permet de définir si on peut <strong>lire et écrire</strong> dans cette propriété depuis un code externe à la classe.</p>
+        <p style="margin-bottom: .5em" class="step-2">Une propriété peut être <strong>public</strong> :  tout le monde peut faire ce qu'il veut des propriétés (lire et écrire) depuis n'importe où.</p>
+        <p style="margin-bottom: .5em" class="step-3">Une propriété peut être <strong>private</strong> : seul le code à l'intérieur de la classe peut lire et écrire dans la propriété.</p>
+        <p style="margin-bottom: .5em" class="step-4">Alors on passe nos propriétés en <strong>private</strong> 🥳.</p>
+    </div>
+    <div class="col-6">
+        <pre><code class="language-php">class Personne {
+
+    // définition des propriétés
+    public $prenom;
+    public $nom;
+    public $age;
+    public $estChanteur;
+
+    // définition d'un constructeur avec un paramètre obligatoire et un optionnel
+    public function __construct($paramPrenom, $paramNom = null) {
+        $this->prenom = $paramPrenom;
+        $this->nom = $paramNom;
+    }
+
+    // définition d'une méthode
+    public function biographie() {
+        $bio = $this->prenom . ' ' . $this->nom . 
+                ' est âgé de ' . $this->age . ' ans';
+
+        if ($this->estChanteur) {
+            $bio .= ' et c\'est un chanteur';
+        }
+        return $bio;
+    }
+}</code></pre>
+    </div>
+</div>

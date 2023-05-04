@@ -1,0 +1,41 @@
+<h1>POO : suite</h1>
+
+<div class="row" style="margin: 0 1em">
+    <div class="col-6">
+        <pre><code class="language-php">class Personne {
+
+    // définition des propriétés
+    private $prenom;
+    private $nom;
+    private $age;
+    private $estChanteur;
+
+    // définition d'un constructeur avec un paramètre obligatoire et un optionnel
+    public function __construct($paramPrenom, $paramNom = null) {
+        $this->prenom = $paramPrenom;
+        $this->nom = $paramNom;
+    }
+
+    // définition d'une méthode
+    public function biographie() {
+        $bio = $this->prenom . ' ' . $this->nom . 
+                ' est âgé de ' . $this->age . ' ans';
+
+        if ($this->estChanteur) {
+            $bio .= ' et c\'est un chanteur';
+        }
+        return $bio;
+    }
+}</code></pre>
+    </div>
+    <div class="col-6">
+        <p>Donc maintenant avec le code suivant :</p>
+        <div class="step-1">
+            <pre><code class="language-php">$renaud = new Personne('Renaud');
+$renaud->age = 'Séchan';</code></pre>
+        </div>
+        <p class="step-2">Là, PHP n'est pas content : </p>
+        <p class="step-3" style="margin-bottom: 1em"><code>PHP Fatal error:  Uncaught Error: Cannot access private property Personne::$age</code> 😵</p>
+        <p class="step-4">Il nous faut donc quelque chose, une méthode, pour pouvoir modifier la valeur de <code>age</code>.</p>
+    </div>
+</div>

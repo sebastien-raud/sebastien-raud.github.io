@@ -1,0 +1,41 @@
+<h1>POO</h1>
+<h2>Classe</h2>
+<div class="row" style="margin: 0 1em">
+    <div class="col-6">
+        <pre><code class="language-php" style="font-size: .65em;">$renaud = [
+    'prenom' => 'Renaud',
+    'nom' => 'Séchan',
+    'age' => 70,
+    'estChanteur' => true
+];
+
+function biographie($personne) {
+    $bio = $personne['prenom'] . ' ' . $personne['nom'] . 
+           ' est âgé de ' . $personne['age'] . ' ans';
+
+    if ($personne['estChanteur']) {
+        $bio .= ' et c\'est un chanteur';
+    }
+    return $bio;
+}
+
+echo biographie($renaud);</code></pre>
+    </div>
+    <div class="col-6" style="display: flex;align-items: center;justify-content: center;">
+        <pre><code class="language-php" style="font-size: .65em;">// Définition d'une classe qui représente une personne
+// C'est notre plan de fabrication, notre
+// modèle, notre moule pour dire à PHP
+// comment fabriquer des objets Personne.
+
+// Une classe commence par le mot-clé "class"
+// suivi du nom de la classe, ici "Personne"
+class Personne {
+
+    // entre les accolades on écrira
+    // le code informatique de la classe
+
+}</code></pre>
+    </div>
+</div>
+
+<a id="support-fabio" href="https://fabioclock.github.io/support-classes/" title="Note : ne rien activer, code classe simplement"></a>

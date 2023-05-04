@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>POO #2</title>
+	
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/basic.css">
+	<!-- <link rel="stylesheet" href="css/theme.css"> -->
+	<link rel="stylesheet" href="css/grid.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- <link rel="stylesheet" href="css/fork-awesome.css"> -->
+
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+
+	<script src="./js/swiped-events.min.js" defer></script>
+	<script src="./js/slider.js" defer></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js" defer></script>
+
+	<style>
+		code {
+			font-size: .65em;
+			text-align: left;
+		}
+		code.hljs {
+			padding: .5em;
+		}
+		#slide ul {
+			list-style-position: inside;
+		}
+		#slide ul.code li {
+			margin: 0;
+		}
+		#slide ul.code li pre {
+			padding: 0;
+		}
+		#slide li.visible {
+			display: list-item;
+		}
+		#slide div[class*="col-"] + div[class*="col-"] {
+			margin-top: 0;
+		}
+
+		#support-fabio {
+			position: absolute;
+			top: 1em;
+			right: 1em;
+		}
+		#support-fabio {
+			content: "";
+		}
+		#support-fabio:before {
+			content: "";
+			display: inline-block;
+			background-color: beige;
+			background-image: url('./images/ico-show.png');
+			height: 32px;
+			width: 32px;
+		}
+	</style>
+  </head>
+  <body class="center-slide center-text">
+
+	<div id="slide"></div>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function() { 
+			slider.onShowSlide = function () {
+				hljs.highlightAll();
+			};
+			slider.init(21); 
+	});
+	</script>
+  </body>
+</html>
