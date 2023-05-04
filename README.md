@@ -8,9 +8,16 @@
 ## Concepts
 
 - [Relation client-serveur](https://sebastien-raud.github.io/client-serveur/) : analogie entre la vie courante et la relation client - serveur.
+
+### Modélisation
 - [Du MCD au MLD](https://sebastien-raud.github.io/mcd-vers-mld/) : définitions, faire un MCD, un dictionnaire des données et le MLD.
 - [Du MCD au MLD, relation 1-1](https://sebastien-raud.github.io/mcd-vers-mld-1-1/) : relation one-to-one.
+
+### MVC
 - [MVC](https://sebastien-raud.github.io/mvc) : le MVC (Vue : template, partials, Contrôleur, Modèle avec Active Record, schéma MVC, routage, dispatch + schéma complet).
+
+### POO
+- [POO bases](https://sebastien-raud.github.io/poo-bases) : introduction à la POO en PHP (objets, classes, propriétés, méthodes, constructeur).
 - [POO héritage](https://sebastien-raud.github.io/poo-heritage) : introduction à l'héritage en PHP (concept, `extends`, `protected`).
 - [POO statique](https://sebastien-raud.github.io/poo-statique) : propriétés et méthodes statiques, `self` et `static`.
 
