@@ -19,6 +19,7 @@
 ### POO
 - [POO bases](https://sebastien-raud.github.io/poo-bases) : introduction à la POO en PHP (objets, classes, propriétés, méthodes, constructeur).
 - [POO héritage](https://sebastien-raud.github.io/poo-heritage) : introduction à l'héritage en PHP (concept, `extends`, `protected`).
+- [POO abstract](https://sebastien-raud.github.io/poo-abstract) : abstraction en POO.
 - [POO statique](https://sebastien-raud.github.io/poo-statique) : propriétés et méthodes statiques, `self` et `static`.
 
 ## DOM
