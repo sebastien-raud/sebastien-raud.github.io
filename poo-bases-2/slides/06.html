@@ -16,14 +16,16 @@
         $this->nom = $paramNom;
     }
 
-    // définition d'un méthode pour 
+    // définition d'une méthode pour 
+    // lire la valeur de age
+    public function getAge() {
+        return $this->age;
+    }
+
+    // définition d'une méthode pour 
     // pouvoir modifier age
     public function setAge($paramAge) {
-        // on peut tester par exemple si $paramAge 
-        // est un entier ou un floattant
-        if (is_int($paramAge) || is_float($paramAge)) {
-            $this->age = $paramAge;
-        }
+        $this->age = $paramAge;
     }
 
     // définition d'une méthode
@@ -39,18 +41,14 @@
 }</code></pre>
     </div>
     <div class="col-6">
-        <p style="margin-bottom: 1em">Ce type de méthode se nomme <strong>mutateur</strong> ou <strong>setter</strong>.</p>
-        <p class="step-1" style="margin-bottom: 1em">Par nommenclature ces méthodes sont nommées de la forme <code>setNomPropriete</code>.</p>
-        <p class="step-2">Donc maintenant on peut modifier <code>age</code> avec le code suivant :</p>
+        <p style="margin-bottom: 1em">Les <strong>accesseurs</strong> ou <strong>getter</strong> permettent de lire une valeur protégée.</p>
+        <p class="step-1" style="margin-bottom: 1em">Par nomenclature / convetion ces méthodes sont nommées de la forme <code>getNomPropriete</code>.</p>
+        <p class="step-2">Donc maintenant on peut lire <code>age</code> avec le code suivant :</p>
         <div class="step-2">
             <pre><code class="language-php">$renaud = new Personne('Renaud');
-$renaud->setAge(70);</code></pre>
+$renaud->setAge(70);
+echo $renaud->getAge();</code></pre>
         </div>
-        <p class="step-3">Dans notre exemple, ça ne règle pas le problème de la donnée. Je peux toujours écrire :</p>
-        <div class="step-3">
-            <pre><code class="language-php">$renaud = new Personne('Renaud');
-$renaud->setAge('Séchan');</code></pre>
-        </div>
-        <p class="step-4" style="margin-bottom: 1em">Mais, dans la méthode, on peut y travailler...</p>
+        <p class="step-3">Grâce à la visiblité des propriétés, aux mutateurs et accesseurs, nous avons protégé la propriété <code>age</code> qui sera toujours du type entier 🥳</p>
     </div>
 </div>

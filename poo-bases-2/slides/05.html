@@ -2,7 +2,7 @@
 
 <div class="row" style="margin: 0 1em">
     <div class="col-6">
-        <pre style="max-height: 65vh;overflow-x: auto;"><code class="language-php">class Personne {
+        <pre style="max-height: 65vh;overflow-x: auto;" class="hidden-4 visible"><code class="language-php">class Personne {
 
     // définition des propriétés
     private $prenom;
@@ -16,7 +16,7 @@
         $this->nom = $paramNom;
     }
 
-    // définition d'un méthode pour 
+    // définition d'une méthode pour 
     // pouvoir modifier age
     public function setAge($paramAge) {
         $this->age = $paramAge;
@@ -33,10 +33,45 @@
         return $bio;
     }
 }</code></pre>
+<pre style="max-height: 65vh;overflow-x: auto;" class="step-4"><code class="language-php">class Personne {
+
+    // définition des propriétés
+    private $prenom;
+    private $nom;
+    private $age;
+    private $estChanteur;
+
+    // définition d'un constructeur avec un paramètre obligatoire et un optionnel
+    public function __construct($paramPrenom, $paramNom = null) {
+        $this->prenom = $paramPrenom;
+        $this->nom = $paramNom;
+    }
+
+    // définition d'une méthode pour 
+    // pouvoir modifier age
+    public function setAge($paramAge) {
+        // on peut tester par exemple si $paramAge 
+        // est un entier et n'accepter que les entiers
+        if (is_int($paramAge)) {
+            $this->age = $paramAge;
+        }
+    }
+
+    // définition d'une méthode
+    public function biographie() {
+        $bio = $this->prenom . ' ' . $this->nom . 
+                ' est âgé de ' . $this->age . ' ans';
+
+        if ($this->estChanteur) {
+            $bio .= ' et c\'est un chanteur';
+        }
+        return $bio;
+    }
+}</code></pre>
     </div>
     <div class="col-6">
         <p style="margin-bottom: 1em">Ce type de méthode se nomme <strong>mutateur</strong> ou <strong>setter</strong>.</p>
-        <p class="step-1" style="margin-bottom: 1em">Par nommenclature ces méthodes sont nommées de la forme <code>setNomPropriete</code>.</p>
+        <p class="step-1" style="margin-bottom: 1em">Par nomenclature / convetion ces méthodes sont nommées de la forme <code>setNomPropriete</code>.</p>
         <p class="step-2">Donc maintenant on peut modifier <code>age</code> avec le code suivant :</p>
         <div class="step-2">
             <pre><code class="language-php">$renaud = new Personne('Renaud');
@@ -48,5 +83,7 @@ $renaud->setAge(70);</code></pre>
 $renaud->setAge('Séchan');</code></pre>
         </div>
         <p class="step-4" style="margin-bottom: 1em">Mais, dans la méthode, on peut y travailler...</p>
+        <p class="step-5" style="margin-bottom: 1em">On n'accepte maintenant que les entiers 
+            pour la valeur de <code>age</code>. Mais comment lire la valeur depuis l'extérieur de la classe ?</p>
     </div>
 </div>

@@ -1,14 +1,32 @@
 <h1>POO</h1>
-<h2>Classe ?</h2>
-<div style="margin: 0">
-    <ul style="margin: 0">
-        <li class="step-1">Une classe est un plan de fabrication / un modèle / un moule.</li>
-        <li class="step-2">Une classe sert à définir :
-            <ul>
-                <li class="step-3"><strong>les caractéristiques</strong> d'un objet : ce sont les propriétés / attributs</li>
-                <li class="step-4"><strong>les actions</strong> d'un objet : ce sont les méthodes</li>
-            </ul>
-        </li>
-        <li class="step-5">Une classe sert à fabriquer un ou plusieurs objets.</li>
-    </ul>
+<h2>Synthèse</h2>
+<div style="margin: 0 2em" class="hidden-2 visible">
+    <h3>Visibilité</h3>
+    <div class="hidden-1 visible">
+        <p>La <strong>visibilité</strong> d'une propriété permet de définir si on peut <strong>lire et écrire</strong> dans cette propriété depuis un code externe à la classe.</p>
+        <ul>
+            <li><strong>public</strong> (<em>= open bar</em>) : tout le monde peut faire ce qu'il veut des propriétés (lire et écrire) depuis n'importe où</li>
+            <li><strong>private</strong> (<em>sécurisé</em>) : seul le code à l'intérieur de la classe peut lire et écrire dans la propriété</li>
+        </ul>
+
+        <p style="margin-top: 1em">Utilité :</p>
+        <ul>
+            <li><strong>Verrouiller l'accès à une propriété</strong> pour empêcher qu'un code externe à la classe accède à la 
+                valeur de la propriété ou la modifie, cela <strong>facilite la maintenance du code</strong> et peut <strong>éviter des bugs</strong> dans notre code.</li>
+        </ul>
+    </div>
+    <div class="step-1">
+        <p>On a le <strong>même principe</strong> de visibilité <strong>sur les méthodes</strong> définies dans la classe :</p>
+        <ul>
+            <li>une méthode <code>public</code> peut être appelée depuis l'intérieur de la classe et depuis un code externe à la classe</li>
+            <li>une méthode <code>private</code> peut être appelée uniquement depuis l'intérieur de la classe (mais PAS depuis un code externe à la classe sinon <code>FATAL ERROR</code>)</li>
+        </ul>
+    </div>
+</div>
+<div style="margin: 0 2em" class="step-2">
+    <h3>Getter / Accesseur</h3>
+    <p>Méthode (généralement) <code>public</code> d'une classe retournant la valeur d'une propriété déclarée en visibilité <code>private</code>.</p>
+
+    <h3>Setter / Mutateur</h3>
+    <p>Méthode (généralement) <code>public</code> d'une classe modifiant la valeur d'une propriété déclarée en visibilité <code>private</code>.</p>
 </div>
