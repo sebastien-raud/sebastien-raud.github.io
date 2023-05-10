@@ -25,7 +25,11 @@
     // définition d'une méthode pour 
     // pouvoir modifier age
     public function setAge($paramAge) {
-        $this->age = $paramAge;
+        // on peut tester par exemple si $paramAge 
+        // est un entier et n'accepter que les entiers
+        if (is_int($paramAge)) {
+            $this->age = $paramAge;
+        }
     }
 
     // définition d'une méthode
