@@ -5,6 +5,7 @@ const slider = {
 	stepIndex: 0,     // étape courante dans la slide courante
 	stepsNumber: 0,   // nombre d'étapes dans la slide courante
 	slideDiv: null,   // div qui contient les slides
+    onShowSlide: null,
 
     arrows: {         // flèches pour navigation
         left: null,
@@ -21,7 +22,7 @@ const slider = {
 
         slider.initArrows();
         slider.bind();
-        slider.initSlideNumber();        
+        slider.initSlideNumber();
     },
 
     initArrows: function() {
@@ -74,6 +75,7 @@ const slider = {
     },
 
     bind: function() {
+        window.addEventListener('hashchange', slider.changeHash);
         document.addEventListener('keydown', slider.keydownUpdateSlide, false);
         document.addEventListener('swiped', slider.swipeUpdateSlide);
         slider.arrows.up.addEventListener('click', slider.clickUpdateSlide);
@@ -101,6 +103,23 @@ const slider = {
             setTimeout(function() {
                 slider.gotoStep(Number(slideStep[1]));
             }, 500);
+        }
+    },
+
+    changeHash: function(e) {
+        const hash = window.location.hash.substring(1).split('.');
+        const slideIndex = parseInt(hash[0]) - 1;
+        const slideStep = hash.length == 2 ? parseInt(hash[1]) : 0;
+
+        if (slideIndex != slider.slideIndex) {
+            if (slideIndex >= 0 && slideIndex < slider.slidesNumber) {
+                slider.slideIndex = slideIndex;
+                slider.updateSlide();
+            }
+        }
+
+        if (slideStep != slider.stepIndex) {
+            slider.gotoStep(slideStep);
         }
     },
 
@@ -205,20 +224,23 @@ const slider = {
         let slideFile = (slider.slideIndex + 1 < 10 ? '0' : '') + (slider.slideIndex + 1) + '.html';
 
         if (undefined != slider.slides[slideFile]) {
-            slider.slideDiv.innerHTML = slider.slides[slideFile];
-            slider.checkSteps();
-            slider.arrows();
+            slider.showSlide(slider.slides[slideFile]);
         } else {
             fetch('./slides/' + slideFile)
             .then(response => response.text())
             .then(data => {
                 slider.slides[slideFile] = data;
-                slider.slideDiv.innerHTML = data;
-                slider.checkSteps();
-                slider.arrows();
+                slider.showSlide(data);
             });
         }
         slider.loadNext();
+    },
+
+    showSlide: function(slideHtml) {
+        slider.slideDiv.innerHTML = slideHtml;
+        if (slider.onShowSlide) slider.onShowSlide();
+        slider.checkSteps();
+        slider.arrows();
     },
 
     loadNext: function() {
@@ -255,6 +277,12 @@ const slider = {
             slider.stepIndex = 0;
         }
 
+        stepHidden = document.getElementsByClassName('hidden-' + (slider.stepIndex));
+        
+        if (stepHidden.length) {
+            Array.from(stepHidden).forEach(el => el.classList.remove('visible'));
+        }
+
         slider.arrows();
     },
 
@@ -284,9 +312,20 @@ const slider = {
         slider.arrows();
     },
 
+    updateStepFirst: function() {
+        while (slider.stepIndex > 0) {
+            slider.updateStepPrev();
+        }
+        slider.arrows();
+    },
+
     gotoStep: function(index) {
         if (index > slider.stepsNumber) {
             return;
+        }
+
+        if (index == 0) {
+            return slider.updateStepFirst();
         }
         
         slider.stepIndex = 0;

@@ -73,3 +73,29 @@
 	}
 
 }
+
+/* SRD ajout gestion flèches */
+#arrows {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    height: 60px;
+    width: 60px;
+}
+.arrow-col {
+    clear: both;
+    text-align: center;
+    height: 20px;
+}
+#left {
+    float: left;
+}
+#right {
+    float: right;
+}
+#left, #up, #right, #down {
+    visibility: hidden;
+}
+#page-number {
+    font-size: small;
+}
