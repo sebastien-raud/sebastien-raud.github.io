@@ -4,7 +4,7 @@
     <p>Une méthode abstraite ne peut pas avoir de code.</p>
     <p>Les classes filles sont <strong>obligées</strong> de définir les méthodes abstraites.</p>
     <div style="margin-top: 1rem">
-        <pre><code class="languaga-php">abstact class Animal {
+        <pre><code class="languaga-php">abstract class Animal {
     protected $nom;
     protected $nombrePattes;
 
@@ -22,7 +22,7 @@
     <div class="col">
     <pre><code class="languaga-php">class Humain extends Animal {
     public function __construct() {
-        $this->nombrePattes = 2;
+        $this-&gt;nombrePattes = 2;
     }
 
     public function communiquer() {
@@ -32,7 +32,7 @@
 </div><div class="col">
     <pre><code class="languaga-php">class Chien extends Animal {
     public function __construct() {
-        $this->nombrePattes = 4;
+        $this-&gt;nombrePattes = 4;
     }
 
     public function communiquer() {

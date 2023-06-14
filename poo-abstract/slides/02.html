@@ -1,6 +1,6 @@
 <h1>POO : abstract</h1>
 <div>
-    <pre><code class="languaga-php">abstact class Animal {
+    <pre><code class="languaga-php">abstract class Animal {
     protected $nom;
     protected $nombrePattes;
 
@@ -20,13 +20,13 @@ $animal = new Animal(); // Erreur</code></pre>
 <div class="step-2">
     <pre><code class="languaga-php">class Humain extends Animal {
     public function __construct() {
-        $this->nombrePattes = 2;
+        $this-&gt;nombrePattes = 2;
     }
 }
 
 class Chien extends Animal {
     public function __construct() {
-        $this->nombrePattes = 4;
+        $this-&gt;nombrePattes = 4;
     }
 }</code></pre>  
 </div>
