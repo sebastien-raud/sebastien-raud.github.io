@@ -11,7 +11,7 @@
 
 ### Modélisation
 
-- [Du MCD au MLD](https://sebastien-raud.github.io/mcd-vers-mld/) : définitions, faire un MCD, un dictionnaire des données et le MLD.
+- [Du MCD au MLD](https://sebastien-raud.github.io/mcd-vers-mld/) : définitions, faire un MCD, un dictionnaire de données et le MLD.
 - [Du MCD au MLD, relation 1-1](https://sebastien-raud.github.io/mcd-vers-mld-1-1/) : relation one-to-one.
 
 ### MVC

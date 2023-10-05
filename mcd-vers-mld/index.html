@@ -5,22 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Du MCD au MLD</title>
-	
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/basic.css">
-	<link rel="stylesheet" href="css/style.css">
-	<!-- <link rel="stylesheet" href="css/fork-awesome.css"> -->
+
+	<link rel="stylesheet" href="../01-slides-prod/css/reset.css">
+	<link rel="stylesheet" href="../01-slides-prod/css/basic.css">
+	<link rel="stylesheet" href="../01-slides-prod/css/style.css">
+
 	<link rel="stylesheet" href="css/specific.css">
 
-	<script src="./js/swiped-events.min.js" defer></script>
-	<script src="./js/slider.js" defer></script>
+	<script src="../01-slides-prod/js/swiped-events.min.js" defer></script>
+	<script src="../01-slides-prod/js/slider.js" defer></script>
   </head>
-  <body>
+  <body class="center-slide">
 
 	<div id="slide"></div>
 
 	<script>
-		document.addEventListener('DOMContentLoaded', function() { slider.init(11); });
+		document.addEventListener('DOMContentLoaded', function() { 
+			slider.onShowSlide = function () {
+				console.log(slider.slideIndex);
+				if (slider.slideIndex != 9) {
+					document.body.style.height = '100%';
+					document.body.style.padding = 'auto';
+				} else {
+					document.body.style.height = 'auto';
+					document.body.style.padding = '1em 0 1em 0';
+				}
+			};
+			slider.init(11); 
+		});
 	</script>
   </body>
 </html>

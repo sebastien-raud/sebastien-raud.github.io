@@ -247,7 +247,7 @@ RELEVÉ
 
 ### Du MCD au MLD : définition des types
 
-Maintenant que l'on connaît nos tables et champs, on peut définir les types que l'on aura en base de données et les spécificités : c'est le **dictionnaire des données**.
+Maintenant que l'on connaît nos tables et champs, on peut définir les types que l'on aura en base de données et les spécificités : c'est le **dictionnaire de données**.
 
 Il y a des champs dont les types et spécificités sont tout le temps les mêmes (sauf si on en décide autrement ;o)
 

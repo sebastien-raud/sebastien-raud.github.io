@@ -1,5 +1,5 @@
 <h1>Du MCD au MLD : exemple</h1>
-<div class="hidden-7 visible">
+<div class="hidden-9 visible">
     <p>Prenons un exemple d'application :</p>
     <ul>
         <li>un logiciel qui permet d'enregistrer des contacts</li>
@@ -22,22 +22,38 @@
     <div class="step-1 hidden-2">
         <p>On peut déduire les entités et leurs propriétés :</p>
         <ul>
-            <li><span class="entite">CONTACT</span> (<span class="entite-id">code contact</span>, prénom, nom)</li>
-            <li><span class="entite">TÉLÉPHONE</span> (<span class="entite-id">code téléphone</span>, numéro)</li>
-            <li><span class="entite">CATÉGORIE</span> (<span class="entite-id">code catégorie</span>, titre)</li>
+            <li><span class="entite">CONTACT</span> (prénom, nom)</li>
+            <li><span class="entite">TÉLÉPHONE</span> (numéro)</li>
+            <li><span class="entite">CATÉGORIE</span> (titre)</li>
         </ul>
         <p>Note : <span class="entite">TÉLÉPHONE</span> représente un numéro de téléphone.</p>
     </div>
-    <div class="step-2">
-        <p>On peut déduire du cahier des charges les relations :</p>
+    <div class="step-2 hidden-3">
+        <p>Pour chaque entité on peut déterminer la ou les propriétés qui permettent d'identifier de façon unique un enregistrement :</p>
         <ul>
-            <li class="step-3">un <span class="entite">CONTACT</span> <span class="entite-relation">possède</span> <span class="entite-cardinalite">au minimum 0</span> et <span class="entite-cardinalite">au maximum une infinité</span> de numéros de <span class="entite">TÉLÉPHONE</span></li>
-            <li class="step-4">un numéro de <span class="entite">TÉLÉPHONE</span> <span class="entite-relation">est possédé par</span> <span class="entite-cardinalite">au minimum 1</span> et <span class="entite-cardinalite">au maximum 1</span> <span class="entite">CONTACT</span></li>
-            <li class="step-5">un <span class="entite">CONTACT</span> <span class="entite-relation">est classé dans</span> <span class="entite-cardinalite">au minimum 0</span> et <span class="entite-cardinalite">au maximum 1</span> <span class="entite">CATÉGORIE</span></li>
-            <li class="step-6">une <span class="entite">CATÉGORIE</span> <span class="entite-relation">permet de classer</span> <span class="entite-cardinalite">au minimum 0</span> et <span class="entite-cardinalite">au maximum une infinité</span> de <span class="entite">CONTACT</span></li>
+            <li><span class="entite">CONTACT</span> : le prénom et le nom peuvent être portés par plusieurs personnes, on ajoute un <span class="entite-id">code contact</span></li>
+            <li><span class="entite">TÉLÉPHONE</span> : un numéro de téléphone est unique, ça peut être l'identifiant de l'entité</li>
+            <li><span class="entite">CATÉGORIE</span> : le titre de la catégorie peut être unique, ça peut être l'identifiant de l'entité</li>
         </ul>
     </div>
-    <div class="step-7">
+    <div class="step-3 hidden-4">
+        <p>On obtient donc les entités complètes :</p>
+        <ul>
+            <li><span class="entite">CONTACT</span> (<span class="entite-id">code contact</span>, prénom, nom)</li>
+            <li><span class="entite">TÉLÉPHONE</span> (<span class="entite-id">numéro</span>)</li>
+            <li><span class="entite">CATÉGORIE</span> (<span class="entite-id">titre</span>)</li>
+        </ul>
+    </div>
+    <div class="step-4">
+        <p>On peut déduire du cahier des charges les relations :</p>
+        <ul>
+            <li class="step-5">un <span class="entite">CONTACT</span> <span class="entite-relation">possède</span> <span class="entite-cardinalite">au minimum 0</span> et <span class="entite-cardinalite">au maximum une infinité</span> de numéros de <span class="entite">TÉLÉPHONE</span></li>
+            <li class="step-6">un numéro de <span class="entite">TÉLÉPHONE</span> <span class="entite-relation">est possédé par</span> <span class="entite-cardinalite">au minimum 1</span> et <span class="entite-cardinalite">au maximum 1</span> <span class="entite">CONTACT</span></li>
+            <li class="step-7">un <span class="entite">CONTACT</span> <span class="entite-relation">est classé dans</span> <span class="entite-cardinalite">au minimum 0</span> et <span class="entite-cardinalite">au maximum 1</span> <span class="entite">CATÉGORIE</span></li>
+            <li class="step-8">une <span class="entite">CATÉGORIE</span> <span class="entite-relation">permet de classer</span> <span class="entite-cardinalite">au minimum 0</span> et <span class="entite-cardinalite">au maximum une infinité</span> de <span class="entite">CONTACT</span></li>
+        </ul>
+    </div>
+    <div class="step-9">
         <p>On a donc le schéma du MCD :</p>
         <img src="./images/mcd_carnet_adresses.png" alt="MCD">
     </div>

@@ -127,7 +127,7 @@ const slider = {
         const directions = {
                 36: 'start',	// touche debut
                 35: 'end',		// touche fin
-                32: 'next',		// espace
+                32: 'nextStepOrSlide',		// espace
                 39: 'next',		// flèche ->
                 37: 'prev',		// flèche <-
                 38: 'stepPrev',	// flèche haut
@@ -182,6 +182,15 @@ const slider = {
                 slider.slideIndex = slider.slidesNumber - 1;
                 slider.updateSlide();
                 break;
+
+            // sous-slide suivante ou slide suivante
+            // si étape suivante : on y va,
+            // sinon slide suivante
+            case 'nextStepOrSlide':
+                if (slider.stepIndex + 1 <= slider.stepsNumber) {
+                    slider.updateStepNext();
+                    break;
+                }
 
             // slide suivante
             case 'next':
