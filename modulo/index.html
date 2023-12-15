@@ -303,8 +303,20 @@
                 if (this.domObjects.data_value_1.value.trim() == '') {
                     msgError.push('La première valeur doit être saisie et être un entier !');
                 }
+                if (parseInt(this.domObjects.data_value_1.value.trim()) === 0) {
+                    msgError.push('0 % quelque chose donne 0.');
+                }
+                if (parseInt(this.domObjects.data_value_1.value.trim()) < 0) {
+                    msgError.push('Les valeurs doivent être des entiers positifs !');
+                }
                 if (this.domObjects.data_value_2.value.trim() == '') {
                     msgError.push('La seconde valeur doit être saisie et être un entier !');
+                }
+                if (parseInt(this.domObjects.data_value_2.value.trim()) === 0) {
+                    msgError.push('On ne peut pas faire de division par 0.');
+                }
+                if (parseInt(this.domObjects.data_value_2.value.trim()) < 0) {
+                    msgError.push('Les valeurs doivent être des entiers positifs !');
                 }
                 if (msgError.length) {
                     alert(msgError.join('\n'));
