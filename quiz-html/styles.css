@@ -21,7 +21,7 @@ main {
     display: flex;
     flex-direction: column;
     min-height: 80vh;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 #name {
     font-variant: small-caps;
@@ -87,7 +87,7 @@ label,
     align-items: center;
     height: 20vh;
     min-height: 200px;
-    min-width: 400px;
+    min-width: 100%;
     max-width: 75%;
     cursor: pointer;
     background-color: #fff;
@@ -180,6 +180,13 @@ button:hover {
     50% { transform: translateX(-5px) }
     75% { transform: translateX(5px) }
     100% { transform: translateX(0) }
+}
+
+@media screen and (min-width: 450px) {
+    label,
+    .link {
+        min-width: 400px;
+    }
 }
 
 @media screen and (min-width: 900px) {
