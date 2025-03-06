@@ -1,0 +1,202 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 14px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fcfcfc;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+main {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+    justify-content: space-between;
+}
+#name {
+    font-variant: small-caps;
+    border-bottom: solid 1px #000;
+}
+#end-sentence {
+    height: 18rem;
+    width: 55%;
+    
+    color: #fff;
+    font-size: 1.75rem;
+    text-align: center;
+
+    background-color: #777dfddd;
+    border-radius: 2rem;
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.15);
+    text-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.15);
+
+    position: absolute;
+    top: calc(50vh - 9rem);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: .5rem;
+
+    transition: display 1s;
+}
+#cursor {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+}
+#cursor span {
+    display: inline-block;
+    width: calc(10% - 25px);
+    height: .5rem;
+    background-color: #777dfd55;
+    border-radius: 2rem;
+}
+.answer-right {
+    background-color: #83be69 !important;
+}
+.answer-wrong {
+    background-color: #ffb83f  !important;
+}
+h1 {
+    text-align: center;
+}
+#alist {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 2.5rem;
+    margin: 1.5rem 0;
+    justify-items: center;
+}
+label,
+.link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    min-height: 200px;
+    min-width: 400px;
+    max-width: 75%;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 2rem;
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.15);
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 1s, background-color .5s, color .5s;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+label:hover,
+.link:hover {
+    transform: scale(1.05);
+}
+body:not(.wait) label:has(input:checked) {
+    background-color: #777dfd;
+    color: #fff;
+}
+label.answer-right,
+label.answer-wrong {
+    color: #fff;
+}
+label.answer-right {
+    animation: tilt-shaking 2s;
+}
+label.answer-wrong {
+    animation: horizontal-shaking 2s;
+}
+label a {
+    text-decoration: none;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+label a:hover::after {
+    content: 'Doc';
+    position: absolute;
+    font-size: .75rem;
+    font-style: italic;
+    color: #000;
+    top: 30px;
+    left: 0px;
+    width: 15rem;
+
+}
+.info {
+    font-size: .85rem;
+    font-weight: normal;
+    margin: 1rem;
+}
+input[type="radio"] {
+    display: none;
+}
+#buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+button {
+    border: none;
+    background-color: #777dfdcc;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    transition: transform 1s, background-color .5s;
+}
+button:hover {
+    background-color: #777dfd;
+    transform: scale(1.05);
+}
+.hidden {
+    display: none !important;
+}
+
+@keyframes tilt-shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes horizontal-shaking {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
+}
+
+@media screen and (min-width: 900px) {
+    html {
+        font-size: 16px;
+    }
+    main {
+        width: 90%;
+    }
+    #alist {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    main {
+        width: 950px;
+    }
+}

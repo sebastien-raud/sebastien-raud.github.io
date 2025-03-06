@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./js/js-confetti.browser.js" defer></script>
+</head>
+<body>
+
+    <main>
+
+        <a href="./index.html">Accueil</a>
+        <p id="name"></p>
+        <h1 id="q"></h1>
+
+        <section id="alist">
+            <label for="a0">
+                <a href="#" target="_blank" title="Documentation MDN">📄</a>
+                <span class="label"></span>
+                <span class="info hidden"></span>
+                <input type="radio" id="a0" name="a" value="">
+            </label>
+            <label for="a1">
+                <a href="#" target="_blank" title="Documentation MDN">📄</a>
+                <span class="label"></span>
+                <span class="info hidden"></span>
+                <input type="radio" id="a1" name="a" value="">
+            </label>
+            <label for="a2">
+                <a href="#" target="_blank" title="Documentation MDN">📄</a>
+                <span class="label"></span>
+                <span class="info hidden"></span>
+                <input type="radio" id="a2" name="a" value="">
+            </label>
+            <label for="a3">
+                <a href="#" target="_blank" title="Documentation MDN">📄</a>
+                <span class="label"></span>
+                <span class="info hidden"></span>
+                <input type="radio" id="a3" name="a" value="">
+            </label>
+        </section>
+
+        <div id="buttons">
+            <button id="validate">Valider</button>
+            <button id="next" class="hidden">Question suivante</button>
+            <button id="play-again" class="hidden">Rejouer</button>
+        </div>
+
+        <div id="cursor"></div>
+
+    </main>
+
+    <div id="end-sentence" class="hidden"></div>
+
+    <script type="module">
+        import { quiz } from './js/quiz.js';
+        
+        import { getTags } from './js/data-tags.js';
+        import { getAttributes } from './js/data-attributes.js';
+
+        import dataBasics from './js/data-quiz/00-data-basics.js';
+        import dataSemantic from './js/data-quiz/01-data-semantic.js';
+        import dataTable from './js/data-quiz/02-data-table.js';
+        import dataForm from './js/data-quiz/03-data-form.js';
+        import dataMega from './js/data-quiz/04-data-mega.js';
+        import dataAttributes from './js/data-quiz/05-data-attributes.js';
+
+        const quizList = {
+            basics:     { data: dataBasics, fnClean: getTags },
+            semantic:   { data: dataSemantic, fnClean: getTags },
+            table:      { data: dataTable, fnClean: getTags },
+            form:       { data: dataForm, fnClean: getTags },
+            mega:       { data: dataMega, fnClean: getTags },
+            attributes: { data: dataAttributes, fnClean: getAttributes },
+        };
+        /* @todo : doc attributs */
+        const urlParams = new URLSearchParams(window.location.search);
+        const q = urlParams.get('q');
+
+        if (q && quizList[q.toLowerCase()]) {
+            const data = quizList[q.toLowerCase()].data;
+            quiz.init(data.title, data.q, data.allowed, data.n, quizList[q.toLowerCase()].fnClean);
+        }
+    </script>
+
+    
+</body>
+</html>

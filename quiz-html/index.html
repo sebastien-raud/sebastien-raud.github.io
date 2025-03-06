@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz HTML</title>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        main {
+            justify-content: center;
+        }
+        h1 {
+            padding-bottom: 1rem;
+            border-bottom: solid 3px #000;
+        }
+        a.link {
+            text-decoration: none;
+            color: #fff;
+            height: 5rem;
+            min-height: 5rem;
+            max-height: 5rem;
+
+            background-repeat: no-repeat;
+            background-size: 4rem;
+            background-position: 1rem center;
+        }
+        /* icones https://www.svgrepo.com/collection/calcite-sharp-line-icons */
+        .basics, .semantic {
+            background-color: #83be69 !important;
+        }
+        .table, .form {
+            background-color: #ffb83f  !important;
+        }
+        .mega, .attributes {
+            background-color: #ff6656  !important;
+        }
+        .basics {
+            background-image: url('./img/basics.svg');
+        }
+        .semantic {
+            background-image: url('./img/semantic.svg');
+        }
+        .table {
+            background-image: url('./img/table.svg');
+        }
+        .form {
+            background-image: url('./img/form.svg');
+        }
+        .mega {
+            background-image: url('./img/mega.svg');
+        }
+        .attributes {
+            background-image: url('./img/attributes.svg');
+        }
+    </style>
+</head>
+<body>
+    
+    <main>
+        <h1>Les quiz HTML</h1>
+
+        <section id="alist">
+            <a href="./quiz.html?q=basics" class="link basics">
+                Les bases
+            </a>
+            <a href="./quiz.html?q=semantic" class="link semantic">
+                HTML sémantique
+            </a>
+            <a href="./quiz.html?q=table" class="link table">
+                Les tableaux
+            </a>
+            <a href="./quiz.html?q=form" class="link form">
+                Les formulaires
+            </a>
+            <a href="./quiz.html?q=mega" class="link mega">
+                Méga quiz
+            </a>
+            <a href="./quiz.html?q=attributes" class="link attributes">
+                Les attributs HTML
+            </a>
+        </section>
+    </main>
+
+</body>
+</html>

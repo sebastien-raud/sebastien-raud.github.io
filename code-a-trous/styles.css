@@ -1,0 +1,146 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 14px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fcfcfc;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    max-height: 100vh;
+}
+header {
+    width: 95%;
+    margin-bottom: 3rem;
+}
+h1,
+header h1 + p {
+    text-align: center;
+}
+
+#name {
+    font-variant: small-caps;
+    border-bottom: solid 1px #000;
+    margin-bottom: 1.5rem;
+}
+main {
+    width: 95%;
+    max-height: 70vh;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+#elements {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+#elements,
+#code {
+    font-family: 'Courier New', Courier, monospace;
+}
+#code-container {
+    background-color: #f2f1f1;
+    padding: 0 3rem 1rem;
+    overflow: auto;
+}
+h2 {
+    margin: 1rem 0;
+}
+[draggable="true"] {
+    cursor: grab;
+}
+#code {
+    font-size: 1.2rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+#code li {
+    padding: .5rem 1rem;
+}
+#code li:nth-child(odd) {
+    background-color: #d9d8d8;   
+}
+.code-place {
+    display: inline-block;
+    vertical-align: bottom;
+    min-height: 2rem;
+    min-width: 6rem;
+    background-color: #fff;
+    border-radius: 2rem;
+}
+#elements .code-item {
+    margin: 1rem;
+}
+#elements .code-item:hover {
+    transform: scale(1.2);
+}
+.code-item {
+    background-color: #777dfdcc;
+    color: #fff;
+    font-weight: bold;
+    padding: .5rem 1rem;
+    border-radius: 2rem;
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.15);
+}
+.code-item.answer-right {
+    box-shadow: none;
+}
+.code-spaces {
+    display: inline;
+}
+.answer-right {
+    background-color: #83be69;
+}
+.answer-wrong {
+    background-color: #ffb83f;
+}
+.answer-right.hover-over {
+    background-color: #83be6955;
+}
+.answer-wrong.hover-over {
+    background-color: #ffb83f55;
+}
+
+pre {
+    display: inline;
+}
+
+
+@keyframes tilt-shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes horizontal-shaking {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
+}
+
+@media screen and (min-width: 700px) {
+    main {
+        grid-template-columns: 1fr 2fr;
+        width: 90%;
+    }
+}
+@media screen and (min-width: 1100px) {
+    main {
+        width: 85%;
+    }
+}
