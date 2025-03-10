@@ -40,6 +40,7 @@ export const quiz = {
     },
 
     loadQuestions: () => {
+        quiz.questions = [];
         // liste des réponses
         const answers = [];
 
@@ -145,7 +146,7 @@ const quizDom = {
     endSentence: null,
 
     init: (name, numberQuestions) => {
-        quizDom.name = document.getElementById('name');
+        quizDom.name = document.querySelector('#name span');
         quizDom.name.textContent = `Quiz « ${name} »`;
         quizDom.numberQuestions = numberQuestions;
 
