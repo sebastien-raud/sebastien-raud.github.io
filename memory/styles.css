@@ -3,8 +3,13 @@
     --normal-color:  #000;
     --primary-color-bg: #B10DC9;
     --primary-color-bg-light: #B10DC9CC;
+    --primary-color-bg-light-cursor: #B10DC955;
     --primary-color-txt-color: #fff;
     --good-color-bg: #3D9970;
+    --middle-color-bg: #ffb83f;
+    --wrong-color-bg: #F34A53;
+    --link-color: #0074D9;
+    --link-color-hover: #B10DC9;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,12 +38,31 @@ body {
 }
 header {
     margin-bottom: 2rem;
+    width: 95%;
 }
 main {
     width: 95%;
     display: flex;
-    min-height: 80vh;
+    /*min-height: 80vh;*/
     justify-content: space-around;
+}
+footer {
+    margin-top: 2rem;
+    width: 95%;
+}
+
+#name {
+    font-variant: small-caps;
+    border-bottom: solid 1px var(--normal-color);
+    display: flex;
+    justify-content: space-between;
+}
+a {
+    color: var(--link-color);
+    transition: color .5s;
+}
+a:hover {
+    color: var(--link-color-hover);
 }
 
 section {
@@ -76,6 +100,10 @@ article.found .content {
     transition: transform .5s;
 }
 
+article.found {
+    animation: tilt-shaking 2s;
+}
+
 article.found .back {
     background-color: var(--good-color-bg);
 }
@@ -110,6 +138,44 @@ article.found .back {
 .desc .back {
     font-size: 1.25rem;
 }
+#buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+button {
+    border: none;
+    background-color: var(--primary-color-bg-light);
+    color: var(--primary-color-txt-color);
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    transition: transform 1s, color .5s, background-color .5s;
+}
+button:hover {
+    background-color: var(--primary-color-bg);
+    color: var(--primary-color-txt-color);
+    transform: scale(1.05);
+}
+.hidden {
+    display: none !important;
+}
+#cursor {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+}
+#cursor span {
+    display: inline-block;
+    width: calc(25% - 25px);
+    height: .5rem;
+    background-color: var(--primary-color-bg-light-cursor);
+    border-radius: 2rem;
+}
+.answer-right {
+    background-color: var(--good-color-bg) !important;
+}
 
 @media screen and (min-width: 700px) {
     html {
@@ -118,4 +184,120 @@ article.found .back {
     section {
         grid-template-columns: repeat(4, 1fr);
     }
+}
+
+/* index */
+h1 {
+    text-align: center;
+}
+#alist {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 2.5rem;
+    margin: 1.5rem 0;
+    justify-items: center;
+}
+
+body.index {
+    flex-direction: column;
+}
+.index main {
+    flex-direction: column;
+    justify-content: center;
+}
+.index h1 {
+    padding-bottom: 1rem;
+    color: var(--normal-color);
+    border-bottom: solid 3px var(--normal-color);
+}
+.index .link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    min-height: 200px;
+    min-width: 100%;
+    max-width: 75%;
+    cursor: pointer;
+    background-color: var(--primary-color-txt-color);
+    border-radius: 2rem;
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.15);
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 1s, background-color .5s, color .5s;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.index .link:hover {
+    transform: scale(1.05);
+}
+.index a.link {
+    text-decoration: none;
+    color: var(--primary-color-txt-color);
+    height: 5rem;
+    min-height: 5rem;
+    max-height: 5rem;
+
+    background-repeat: no-repeat;
+    background-size: 4rem;
+    background-position: 1rem center;
+}
+/* icones https://www.svgrepo.com/collection/calcite-sharp-line-icons */
+.index .basics, .index .semantic {
+    background-color: var(--good-color-bg) !important;
+}
+.index .table, .index .form {
+    background-color: var(--middle-color-bg) !important;
+}
+.index .mega, .index .attributes {
+    background-color: var(--wrong-color-bg)  !important;
+}
+@media screen and (min-width: 400px) {
+    .index .basics {
+        background-image: url('./img/basics.svg');
+    }
+    .index .semantic {
+        background-image: url('./img/semantic.svg');
+    }
+    .index .table {
+        background-image: url('./img/table.svg');
+    }
+    .index .form {
+        background-image: url('./img/form.svg');
+    }
+    .index .mega {
+        background-image: url('./img/mega.svg');
+    }
+    .index .attributes {
+        background-image: url('./img/attributes.svg');
+    }
+}
+
+@media screen and (min-width: 450px) {
+    .index .link {
+        min-width: 400px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .index #alist {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    header, main, footer {
+        width: 950px;
+    }
+}
+
+@keyframes tilt-shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
 }

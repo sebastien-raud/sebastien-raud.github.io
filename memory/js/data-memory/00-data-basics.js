@@ -22,5 +22,6 @@ export default {
         'em',
         'strong'
     ],
-    numberCards: 6
+    numberCards: 4,
+    title: 'bases de HTML',
 };

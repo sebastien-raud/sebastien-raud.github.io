@@ -233,7 +233,7 @@ button:hover {
 }
 
 /* index */
-.index ain {
+.index main {
     justify-content: center;
 }
 .index h1 {
@@ -258,7 +258,6 @@ button:hover {
 }
 .index .table, .index .form {
     background-color: var(--middle-color-bg) !important;
-    /*color: var(--normal-color) !important;*/
 }
 .index .mega, .index .attributes {
     background-color: var(--wrong-color-bg)  !important;

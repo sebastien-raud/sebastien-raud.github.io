@@ -1,16 +1,20 @@
-import data  from './data.js';
-
 const app = {
     config: null,
+    data: [],
     cards: [],
     lastDisplayedCard: null,
     countDisplayedCards: 0,
     countFoundedCards: 0,
 
+    cursor: null,
+    endSentence: null,
+    btPlayAgain: null,
+
     confetti: null,
 
-    init: (config) => {
+    init: (config, data) => {
         app.config = config;
+        app.data = data;
         if (!app.checkConfig()) {
             return ;
         }
@@ -18,8 +22,17 @@ const app = {
         app.lastCard = null;
         app.initCards();
         app.confetti = new JSConfetti();
-
         document.addEventListener('DOMContentLoaded', app.initBoard);
+    },
+
+    playAgain: () => {
+        app.cards = [];
+        app.lastDisplayedCard = null,
+        app.countDisplayedCards = 0,
+        app.countFoundedCards = 0,
+        app.btPlayAgain.classList.add('hidden');
+        app.initCards();
+        app.initBoard();
     },
 
     checkConfig: () => {
@@ -45,7 +58,7 @@ const app = {
 
             cards.push(card);
 
-            const cardData = data.find(c => c.q == card);
+            const cardData = app.data.find(c => c.q == card);
 
             const number = app.cards.length;
             app.cards.push({content: cardData.q, type: 1, index: number, el: null});
@@ -61,13 +74,18 @@ const app = {
     },
 
     loadFromAll: () => {
-        app.config.cards = data.map(card => card.q);
+        app.config.cards = app.data.map(card => card.q);
     },
 
     initBoard: () => {
+        document.querySelector('#name span').textContent = `Memory « ${app.config.title} »`;
         const tplCardQuestion = document.getElementById('card-question');
         const tplCardDescription = document.getElementById('card-description');
         const board = document.getElementById('cards');
+
+        app.btPlayAgain = document.getElementById('play-again');
+
+        app.btPlayAgain.addEventListener('click', app.playAgain);
 
         board.innerHTML = '';
 
@@ -84,6 +102,15 @@ const app = {
 
             board.append(el);
         });
+
+        app.cursor = document.getElementById('cursor');
+        app.cursor.innerHTML = '';
+        for (let i = 0; i < app.config.numberCards; i++) {
+            app.cursor.append(document.createElement('span'));
+        }
+        app.cursor.querySelectorAll('span').forEach(span => span.classList.remove('answer-right', 'answer-wrong'));
+
+        app.endSentence = document.getElementById('end-sentence');
     },
 
     onClick: (e) => {
@@ -110,6 +137,8 @@ const app = {
             app.cards[app.lastDisplayedCard].el.classList.add('found');
             app.cards[app.lastDisplayedCard].el.removeEventListener('click', app.onClick);
 
+            app.cursor.querySelector(`span:nth-child(${app.countFoundedCards + 1})`).classList.add('answer-right');
+
             app.countFoundedCards++;
 
             if (app.countFoundedCards == app.config.numberCards) {
@@ -123,6 +152,7 @@ const app = {
 
     win: () => {
         app.confetti.addConfetti();
+        app.btPlayAgain.classList.remove('hidden');
         app.end();
     },
 
@@ -130,6 +160,3 @@ const app = {
         document.querySelectorAll('article:not(.found)').forEach(el => el.removeEventListener('click', app.onClick));
     }
 }
-
-import configGame from './data-memory/01-complex.js';
-app.init(configGame);

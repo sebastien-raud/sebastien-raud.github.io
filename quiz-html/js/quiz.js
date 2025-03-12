@@ -1,5 +1,4 @@
 export const quiz = {
-
     dom: null,
 
     score: 0,
@@ -12,14 +11,14 @@ export const quiz = {
 
     _questions: [],
 
-    init: (name, questions, allowedTags, numberQuestions, fnCleanData) => {
+    init: (config, data) => {
         quiz.dom = quizDom;
-        quiz._questions = questions;
-        quiz.numberQuestions = numberQuestions;
+        quiz._questions = config.q;
+        quiz.numberQuestions = config.n;
 
-        quiz.dom.init(name, numberQuestions);
+        quiz.dom.init(config.title, config.n);
 
-        quiz.tags = fnCleanData(allowedTags);
+        quiz.tags = quiz.checkConfig(config.allowed, data);
         quiz.loadQuestions();
 
         // on pose la première question
@@ -39,6 +38,20 @@ export const quiz = {
         quiz.nextQuestion();
     },
 
+    checkConfig: (allowed, data) => {
+        if (!allowed) allowed = '*';
+
+        const authorized = [];
+    
+        data.forEach(elt => {
+            if (allowed == '*' || allowed.includes(elt.name)) {
+                authorized.push(elt);
+            }
+        });
+    
+        return authorized;
+    },
+
     loadQuestions: () => {
         quiz.questions = [];
         // liste des réponses
@@ -52,7 +65,7 @@ export const quiz = {
             // on évite deux fois la même question
             if (quiz.questions.includes(q)) continue;
             // on évite deux fois la même réponse
-            if (answers.includes(q.a )) continue;
+            if (answers.includes(q.a)) continue;
 
             quiz.questions.push(q);
             answers.push(q.a);
@@ -83,12 +96,12 @@ export const quiz = {
 
         // tri aléatoire des réponses
         list.sort(() => (Math.random() > 0.5) ? 1 : -1);
-        question.answsersList = list;
+        question.answersList = list;
     },
 
     nextQuestion: () => {
         if (quiz.indexQuestion >= quiz.numberQuestions) return ;
-        quiz.dom.nextQuestion(quiz.questions[quiz.indexQuestion].q, quiz.questions[quiz.indexQuestion].answsersList);
+        quiz.dom.nextQuestion(quiz.questions[quiz.indexQuestion].q, quiz.questions[quiz.indexQuestion].answersList);
     },
 
     validateAnswer: () => {

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./js/js-confetti.browser.js" defer></script>
+    <script src="./js/app.js" defer></script>
+</head>
+<body>
+
+        <header>
+            <p id="name"><a href="./index.html">Accueil</a><span></span></p>
+            <h1>Memory</h1>
+        </header>
+
+        <main>
+            <section id="cards"></section>    
+        </main>
+
+        <footer>
+            <div id="buttons">
+                <button id="play-again" class="hidden">Rejouer</button>
+            </div>
+            <div id="cursor"></div>
+            <div id="end-sentence" class="hidden"></div>
+        </footer>
+
+    <template id="card-question">
+        <article class="card-question">
+            <span class="content">
+                <span class="front">
+                </span>
+                <span class="back">
+                </span>
+            </span>
+        </article>
+    </template>
+    <template id="card-description">
+        <article class="card-description">
+            <span class="content">
+                <span class="front">
+                </span>
+                <span class="back">
+                </span>
+            </span>
+        </article>
+    </template>
+
+    <script type="module">
+        import dataTags from './js/data.js';
+
+        import configBasics from './js/data-memory/00-data-basics.js';
+        import configSemantic from './js/data-memory/01-data-semantic.js';
+        import configTable from './js/data-memory/02-data-table.js';
+        import configForm from './js/data-memory/03-data-form.js';
+        import configMega from './js/data-memory/04-data-mega.js';
+        import configAttributes from './js/data-memory/05-data-attributes.js';
+
+        const memoryList = {
+            basics:     { config: configBasics, data: dataTags},
+            semantic:   { config: configSemantic, data: dataTags},
+            table:      { config: configTable, data: dataTags},
+            form:       { config: configForm, data: dataTags},
+            mega:       { config: configMega, data: dataTags},
+            //attributes: { config: configAttributes, data: dataAttributes},
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const q = urlParams.get('q');
+
+        if (q && memoryList[q.toLowerCase()]) {
+            const conf = memoryList[q.toLowerCase()];
+            app.init(conf.config, conf.data);
+        } else {
+            document.location.href = './index.html';
+        }
+    </script>
+    
+</body>
+</html>

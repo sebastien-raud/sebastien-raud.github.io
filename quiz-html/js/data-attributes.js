@@ -1,4 +1,4 @@
-const tags = [
+export default [
     { name: 'accesskey', desc: 'Cet attribut permet de définir un raccourci clavier pour activer un élément ou lui passer le focus.' },
     { name: 'action', 	tags: '<form>', desc: 'L\'URI d\'un programme qui traite les informations envoyées par le formulaire' },
     { name: 'alt', tags: '<img>', desc: 'Un texte alternatif à afficher lorsque l\'élément ne peut pas être affiché.' },
@@ -52,18 +52,3 @@ const tags = [
     { name: 'type', tags: '<button>, <input>, <command>, <embed>, <object>, <script>, <source>, <style>, <menu>', desc: 'Cet attribut définit le type de l\'élément.' },
     { name: 'value', tags: '<button>, <option>, <input>, <li>, <meter>, <progress>, <param>', desc: 'Cet attribut définit la valeur par défaut qui sera affichée dans l\'élément au chargement de la page. ' },
 ];
-
-export function getAttributes(allowed) {
-
-    if (!allowed) allowed = '*';
-
-    const authorizedTags = [];
-
-    tags.forEach(elt => {
-        if (allowed == '*' || allowed.includes(elt.name)) {
-            authorizedTags.push(elt);
-        }
-    });
-
-    return authorizedTags;
-}
