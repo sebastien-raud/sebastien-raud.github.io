@@ -11,7 +11,7 @@ const code = `
     <h2>La structure[[</h2>]]
     
     <p>HTML est un langage de balises qui permet de structurer un document.</p>
-    <p>En tant que langage de structure, la compréhesion du sens et de l'ordre des balises est importante.</p>
+    <p>En tant que langage de structure, la compréhension du sens et de l'ordre des balises est importante.</p>
 
     <h2>Balises de base[[</h2>]]
 
