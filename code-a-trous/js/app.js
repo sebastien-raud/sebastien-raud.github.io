@@ -57,9 +57,7 @@ const app = {
         app.points++;
 
         if (app.points == app.countElements) {
-            app.confetti.addConfetti({
-                confettiNumber: 2000,
-            });
+            app.confetti.addConfetti();
         }
     }
 };
