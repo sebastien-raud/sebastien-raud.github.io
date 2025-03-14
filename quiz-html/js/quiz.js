@@ -1,6 +1,8 @@
 export const quiz = {
     dom: null,
 
+    config: null,
+
     score: 0,
     indexQuestion: 0,
     numberQuestions: 10,
@@ -12,6 +14,7 @@ export const quiz = {
     _questions: [],
 
     init: (config, data) => {
+        quiz.config = config;
         quiz.dom = quizDom;
         quiz._questions = config.q;
         quiz.numberQuestions = config.n;
@@ -67,17 +70,18 @@ export const quiz = {
             // on évite deux fois la même réponse
             if (answers.includes(q.a)) continue;
 
-            quiz.questions.push(q);
-            answers.push(q.a);
-
             // on charge les réponses
-            quiz.loadAnswers(q);
+            if (quiz.loadAnswers(q)) {
+                quiz.questions.push(q);
+                answers.push(q.a);
+            }
         }
     },
 
     loadAnswers: (question) => {
         // on charge les réponses pour chaque question
         const ga = quiz.tags.find(t => t.name == question.a);
+        if (!ga) return false;
         const list = [{
             name: question.a,
             info: ga.desc
@@ -97,6 +101,7 @@ export const quiz = {
         // tri aléatoire des réponses
         list.sort(() => (Math.random() > 0.5) ? 1 : -1);
         question.answersList = list;
+        return true;
     },
 
     nextQuestion: () => {
@@ -241,7 +246,10 @@ const quizDom = {
             answer.label.textContent = answers[index].name;
             answer.info.textContent = answers[index].info;
             answer.checkboxElt.value = answers[index].name;
-            answer.doc.href = `https://developer.mozilla.org/fr/docs/Web/HTML/Element/${answers[index].name}`;
+            if (quiz.config.doc) {
+                answer.doc.href = `${quiz.config.doc}${answers[index].name}`;
+                answer.doc.classList.remove('hidden');
+            }
         });
     },
 

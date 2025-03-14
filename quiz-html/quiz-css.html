@@ -11,7 +11,7 @@
 
     <main>
 
-        <p id="name"><a href="./index.html">Accueil</a><span></span></p>
+        <p id="name"><a href="./index-css.html">Accueil</a><span></span></p>
         <h1 id="q"></h1>
 
         <section id="alist">
@@ -57,12 +57,12 @@
         import { quiz } from './js/quiz.js';
         
         const quizList = {
-            basics:     { type: 'html', src: '00-data-basics', data: 'data-tags' },
-            semantic:   { type: 'html', src: '01-data-semantic', data: 'data-tags' },
-            table:      { type: 'html', src: '02-data-table', data: 'data-tags' },
-            form:       { type: 'html', src: '03-data-form', data: 'data-tags' },
-            mega:       { type: 'html', src: '04-data-mega', data: 'data-tags' },
-            attributes: { type: 'html', src: '05-data-attributes', data: 'data-attributes' }
+            "css-basics": { type: 'css', src: '00-data-basics', data: 'data-css' },
+            boxmodel: { type: 'css', src: '01-data-box-model', data: 'data-css' },
+            flexbox: { type: 'css', src: '02-data-flexbox', data: 'data-css' },
+            grid: { type: 'css', src: '03-data-cssgrid', data: 'data-css' },
+            design: { type: 'css', src: '04-data-design', data: 'data-css' },
+            "css-mega": { type: 'css', src: '05-data-mega', data: 'data-css' },
         }
 
         const urlParams = new URLSearchParams(window.location.search);
@@ -76,7 +76,7 @@
             };
             quiz.init(conf.config, conf.data);
         } else {
-            document.location.href = './index.html';
+            document.location.href = './index-css.html';
         }
     </script>
 

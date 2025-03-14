@@ -296,5 +296,6 @@ export default {
     title: 'le maxi best-of',
     q,
     allowed,
-    n: 25
+    n: 25,
+    doc: 'https://developer.mozilla.org/fr/docs/Web/HTML/Element/'
 };

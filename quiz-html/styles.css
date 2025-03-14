@@ -253,32 +253,48 @@ button:hover {
     background-position: 1rem center;
 }
 /* icones https://www.svgrepo.com/collection/calcite-sharp-line-icons */
-.index .basics, .index .semantic {
+.index .basics, .index .semantic, .index .box-model {
     background-color: var(--good-color-bg) !important;
 }
-.index .table, .index .form {
+.index .table, .index .form, .index .flexbox, .index .grid {
     background-color: var(--middle-color-bg) !important;
 }
-.index .mega, .index .attributes {
+.index .mega, .index .attributes, .index .animations {
     background-color: var(--wrong-color-bg)  !important;
 }
 @media screen and (min-width: 400px) {
     .index .basics {
-        background-image: url('./img/basics.svg');
+        background-image: url('./img/html/basics.svg');
     }
     .index .semantic {
-        background-image: url('./img/semantic.svg');
+        background-image: url('./img/html/semantic.svg');
     }
     .index .table {
-        background-image: url('./img/table.svg');
+        background-image: url('./img/html/table.svg');
     }
     .index .form {
-        background-image: url('./img/form.svg');
+        background-image: url('./img/html/form.svg');
     }
     .index .mega {
-        background-image: url('./img/mega.svg');
+        background-image: url('./img/html/mega.svg');
     }
     .index .attributes {
-        background-image: url('./img/attributes.svg');
+        background-image: url('./img/html/attributes.svg');
+    }
+
+    .index .basics.css {
+        background-image: url('./img/css/basics.svg');
+    }
+    .index .box-model {
+        background-image: url('./img/css/box-model.svg');
+    }
+    .index .flexbox {
+        background-image: url('./img/css/flexbox.svg');
+    }
+    .index .grid {
+        background-image: url('./img/css/grid.svg');
+    }
+    .index .animations {
+        background-image: url('./img/css/animations.svg');
     }
 }

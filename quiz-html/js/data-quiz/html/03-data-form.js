@@ -219,5 +219,6 @@ export default {
     title: 'les formulaires',
     q,
     allowed,
-    n: 10
+    n: 10,
+    doc: 'https://developer.mozilla.org/fr/docs/Web/HTML/Element/'
 };

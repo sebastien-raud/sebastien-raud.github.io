@@ -151,5 +151,6 @@ export default {
     title: 'les tableaux',
     q,
     allowed,
-    n: 10
+    n: 10,
+    doc: 'https://developer.mozilla.org/fr/docs/Web/HTML/Element/'
 };

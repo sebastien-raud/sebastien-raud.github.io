@@ -159,5 +159,6 @@ export default {
     title: 'bases de HTML',
     q,
     allowed,
-    n: 10
+    n: 10,
+    doc: 'https://developer.mozilla.org/fr/docs/Web/HTML/Element/'
 };

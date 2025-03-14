@@ -626,5 +626,6 @@ export default {
     title: 'les attributs HTML',
     q,
     allowed,
-    n: 15
+    n: 15,
+    doc: null
 };
