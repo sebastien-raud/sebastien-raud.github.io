@@ -3,7 +3,7 @@ const code = `
 <html lang="fr">
 [[<head>]]
     <meta charset="UTF-8">
-    [[<title>]]Strurcture HTML[[</title>]]
+    [[<title>]]Structure HTML[[</title>]]
 </head>
 [[<body>]]
 
