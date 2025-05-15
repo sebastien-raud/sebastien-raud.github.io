@@ -35,11 +35,12 @@ body {
     min-height: 100vh;
 }
 main {
-    width: 95%;
+    /*width: 95%;*/
     display: flex;
     flex-direction: column;
-    min-height: 80vh;
+    min-height: 100vh;
     justify-content: space-evenly;
+    padding: .5rem;
 }
 #name {
     font-variant: small-caps;
@@ -67,8 +68,9 @@ a:hover {
     box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.15);
     text-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.15);
 
-    position: absolute;
+    position: fixed;
     top: calc(50vh - 9rem);
+    left: calc(45% / 2);
 
     display: flex;
     justify-content: center;
@@ -103,8 +105,8 @@ h1 {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    gap: 2.5rem;
-    margin: 1.5rem 0;
+    gap: 1.5rem;
+    margin: 2.5rem;
     justify-items: center;
 }
 label,
@@ -113,9 +115,7 @@ label,
     justify-content: center;
     align-items: center;
     height: 20vh;
-    min-height: 200px;
-    min-width: 100%;
-    max-width: 75%;
+    min-height: 150px;
     cursor: pointer;
     background-color: var(--primary-color-txt-color);
     border-radius: 2rem;
@@ -223,6 +223,7 @@ button:hover {
     #alist {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
+        margin: 1.5rem 0;
     }
 }
 
