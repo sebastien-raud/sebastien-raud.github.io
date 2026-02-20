@@ -1,0 +1,40 @@
+gantt
+    title Déploiement d'une infrastructure de supervision (50 serveurs)
+    dateFormat  YYYY-MM-DD
+    excludes    weekends
+    section Définition
+    Définition du besoin / Note de cadrage      :a1, 2025-01-02, 3d
+    Étude de faisabilité                         :a2, after a1, 2d
+    Opportunité / Validation initiale            :milestone, a3, after a2, 0d
+
+    section Approvisionnement
+    Achat serveurs / stockage                     :b1, after a3, 3d
+    Commande licences logiciels                   :b2, after a3, 2d
+    Livraison matériel                             :b3, after b1, 2d
+
+    section Installation & Configuration
+    Installation matériel & BIOS/RAID            :c1, after b3, 4d
+    Mise en place hyperviseur / VMs              :c2, after c1, 3d
+    Création template VM                          :c3, after c2, 2d
+    Installation agents de supervision           :c4, after c3, 3d
+    Configuration métriques CPU/RAM/Disk         :c5, after c4, 2d
+    VLAN supervision & Firewall                   :c6, after c5, 2d
+
+    section Développement & Dashboard
+    Création alertes & dashboards                 :d1, after c6, 3d
+    Définition SLA & seuils                        :d2, after c6, 2d
+
+    section Tests & Validation
+    Tests fonctionnels                             :e1, after d1, 2d
+    Tests techniques                               :e2, after d1, 2d
+    Tests de performance / HA                      :e3, after e2, 1d
+    Recette finale                                :milestone, e4, after e3, 0d
+
+    section Documentation & Formation
+    Documentation & procédures                     :f1, after e4, 2d
+    Formation utilisateurs                         :f2, after f1, 2d
+    Go/No-Go décision                               :milestone, f3, after f2, 0d
+
+    section Livraison
+    Mise en production                             :g1, after f3, 1d
+    Support post-déploiement                        :g2, after g1, 3d

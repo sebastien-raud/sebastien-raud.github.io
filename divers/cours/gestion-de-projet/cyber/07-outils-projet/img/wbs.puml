@@ -1,0 +1,65 @@
+@startwbs
+* Déploiement Infrastructure Supervision 50 serveurs
+** 1 • Serveurs & Matériel
+*** 1.1 Serveur principal
+**** Achat / sélection matériel
+**** Installation physique
+**** Configuration BIOS / RAID
+*** 1.2 Serveurs secondaires / failover
+**** Achat / sélection matériel
+**** Installation physique
+**** Configuration cluster haute disponibilité
+*** 1.3 Stockage / Base de données
+**** Installation SAN/NAS
+**** Configuration volumes
+**** Tests redondance et performance
+
+** 2 • Système & Virtualisation
+*** 2.1 Hyperviseur / VMs
+**** Installation hyperviseur
+**** Création VMs supervision
+**** Configuration réseau virtuel
+*** 2.2 Templates VM
+**** Définition template standard
+**** Déploiement template
+**** Tests template
+
+** 3 • Agents de supervision
+*** 3.1 Installation agents sur 50 serveurs
+**** Déploiement automatisé
+**** Vérification connectivité agents
+*** 3.2 Configuration métriques CPU/RAM/Disk
+**** Paramétrage seuils
+**** Validation remontée métriques
+
+** 4 • Réseau & Sécurité
+*** 4.1 VLAN supervision
+**** Création VLAN
+**** Test segmentation réseau
+*** 4.2 Firewall / accès sécurisé
+**** Configuration règles
+**** Test accès supervision
+**** VPN accès distant
+
+** 5 • Alertes & Dashboards
+*** 5.1 Alertes email / SMS
+**** Configuration destinataires
+**** Paramétrage seuils critiques
+**** Test alertes
+*** 5.2 Dashboards CPU/RAM, stockage, réseau
+**** Création dashboards
+**** Configuration graphiques et alertes visuelles
+**** Validation restitution données
+
+** 6 • Documentation & Formation
+*** 6.1 Dossier d’architecture
+**** Diagrammes réseau et serveurs
+**** Configuration VM et stockage
+*** 6.2 Procédures d’exploitation
+**** Installation / mise à jour agents
+**** Surveillance et maintenance
+*** 6.3 Plan de tests et validation
+**** Scénarios tests fonctionnels
+**** Scénarios tests performance
+**** PV de validation
+@endwbs

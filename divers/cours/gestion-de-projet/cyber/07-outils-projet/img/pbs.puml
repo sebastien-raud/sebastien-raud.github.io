@@ -1,0 +1,25 @@
+@startwbs
+
+* Infrastructure de Supervision
+** Serveurs & Matériel
+*** Serveur principal
+*** Serveurs secondaires / failover
+*** Stockage / Base de données
+** Système & Virtualisation
+*** Hyperviseur / VMs
+*** Templates VM
+** Agents de supervision
+*** Installation agents sur 50 serveurs
+*** Configuration métriques CPU/RAM/Disk
+** Réseau & Sécurité
+*** VLAN supervision
+*** Firewall / accès sécurisé
+** Alertes & Dashboards
+*** Alertes email/SMS
+*** Dashboards CPU/RAM, stockage, réseau
+** Documentation & Tests
+*** Dossier d’architecture
+*** Procédures d’exploitation
+*** Plan de tests et validation
+
+@endwbs
