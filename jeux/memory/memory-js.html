@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory</title>
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./js/js-confetti.browser.js" defer></script>
+    <script src="./js/app.js" defer></script>
+</head>
+<body>
+
+        <header>
+            <nav class="breadcrumb" aria-label="Vous êtes ici">
+                <ol>
+                    <li><a href="../index.html">Jeux</a></li>
+                    <li><a href="./index-js.html">Memory JavaScript</a></li>
+                </ol>
+            </nav>
+            <h1 id="name">Memory</h1>
+        </header>
+
+        <main>
+            <section id="cards"></section>    
+        </main>
+
+        <footer>
+            <div id="buttons">
+                <button id="play-again" class="hidden">Rejouer</button>
+            </div>
+            <div id="cursor"></div>
+            <div id="end-sentence" class="hidden"></div>
+            <!-- annonces pour les lecteurs d'écran : paires trouvées, fin de partie -->
+            <p id="live" class="sr-only" aria-live="polite"></p>
+        </footer>
+
+    <template id="card-question">
+        <button type="button" class="card card-question">
+            <span class="content">
+                <span class="front">
+                </span>
+                <span class="back">
+                </span>
+            </span>
+        </button>
+    </template>
+    <template id="card-description">
+        <button type="button" class="card card-description">
+            <span class="content">
+                <span class="front">
+                </span>
+                <span class="back">
+                </span>
+            </span>
+        </button>
+    </template>
+
+    <script type="module">
+        // Les memory JavaScript reprennent les données et les thèmes des quiz JavaScript
+        import data from '../quiz/js/data-js.js';
+
+        import basics from '../quiz/js/data-quiz/js/00-data-basics.js';
+        import dom from '../quiz/js/data-quiz/js/01-data-dom.js';
+        import events from '../quiz/js/data-quiz/js/02-data-events.js';
+        import elements from '../quiz/js/data-quiz/js/03-data-elements.js';
+        import time from '../quiz/js/data-quiz/js/04-data-time.js';
+        import oop from '../quiz/js/data-quiz/js/05-data-oop.js';
+        import mega from '../quiz/js/data-quiz/js/06-data-mega.js';
+
+        const memoryList = {
+            "js-basics": { quiz: basics, numberCards: 6 },
+            dom: { quiz: dom, numberCards: 6 },
+            events: { quiz: events, numberCards: 6 },
+            elements: { quiz: elements, numberCards: 6 },
+            time: { quiz: time, numberCards: 6 },
+            oop: { quiz: oop, numberCards: 6 },
+            "js-mega": { quiz: mega, numberCards: 8, title: 'le maxi best-of' },
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const q = urlParams.get('q');
+
+        if (q && memoryList[q.toLowerCase()]) {
+            const { quiz, numberCards, title } = memoryList[q.toLowerCase()];
+            // le memory attend { q, desc } ; les quiz utilisent { name, desc }
+            const cards = data.map(d => ({ q: d.name, desc: d.desc }));
+            app.init({ cards: quiz.allowed, numberCards, title: title ?? quiz.title }, cards);
+        } else {
+            document.location.href = './index-js.html';
+        }
+    </script>
+    
+</body>
+</html>

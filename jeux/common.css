@@ -1,0 +1,221 @@
+/* Styles communs aux jeux : accueil général, quiz, memory */
+
+:root {
+    color-scheme: light dark;
+
+    --bg-color: #fcfcfc;
+    --normal-color: #000;
+    /* fond des cartes et des réponses */
+    --surface-color: #fff;
+    /* couleurs de fond choisies pour un contraste d'au moins 4,5:1 avec le texte blanc */
+    --primary-color-bg: #B10DC9;
+    --primary-color-bg-dark: #8A0A9E;
+    --primary-color-bg-light-cursor: #BD5FCD;
+    --primary-color-txt-color: #fff;
+    --good-color-bg: #2B7A52;
+    --middle-color-bg: #AD5700;
+    --wrong-color-bg: #C0272D;
+    --link-color: #0074D9;
+    --link-color-hover: #B10DC9;
+    --shadow-color: rgba(0, 0, 0, 0.15);
+}
+
+/* mode sombre : contrastes vérifiés (texte 14:1 et plus, liens 8:1 et plus) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #121212;
+        --normal-color: #eee;
+        --surface-color: #1f1f1f;
+        --link-color: #6CB4FF;
+        --link-color-hover: #E08AF0;
+        --shadow-color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    /* relatif : respecte la taille de police choisie par l'utilisateur */
+    font-size: 87.5%;
+}
+body {
+    background-color: var(--bg-color);
+    color: var(--normal-color);
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+h1 {
+    text-align: center;
+}
+a {
+    color: var(--link-color);
+    transition: color .5s;
+}
+a:hover {
+    color: var(--link-color-hover);
+}
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--link-color);
+    outline-offset: 4px;
+}
+
+/* fil d'Ariane */
+.breadcrumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    list-style: none;
+    font-variant: small-caps;
+    border-bottom: solid 1px var(--normal-color);
+    padding-bottom: .25rem;
+}
+.breadcrumb li + li::before {
+    content: '›';
+    margin-right: .5rem;
+}
+
+/* boutons de jeu (Valider, Question suivante, Rejouer) */
+#buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+#buttons button {
+    border: none;
+    background-color: var(--primary-color-bg);
+    color: var(--primary-color-txt-color);
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    transition: transform 1s, color .5s, background-color .5s;
+}
+#buttons button:hover {
+    background-color: var(--primary-color-bg-dark);
+    color: var(--primary-color-txt-color);
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none !important;
+}
+/* masqué visuellement mais accessible au clavier et aux lecteurs d'écran */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* frise de progression : les segments se partagent la largeur, quel que soit leur nombre */
+#cursor {
+    display: flex;
+    gap: 1.75rem;
+    margin: 1.5rem 0;
+}
+#cursor span {
+    flex: 1;
+    height: .5rem;
+    background-color: var(--primary-color-bg-light-cursor);
+    border-radius: 2rem;
+}
+.answer-right {
+    background-color: var(--good-color-bg) !important;
+}
+.answer-wrong {
+    background-color: var(--wrong-color-bg) !important;
+}
+/* mauvaise réponse repérable sans la couleur (hachures) */
+#cursor span.answer-wrong {
+    background-image: repeating-linear-gradient(45deg, transparent 0 4px, rgba(255, 255, 255, .6) 4px 8px);
+}
+
+/* pages d'accueil des jeux */
+.index main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.index h1 {
+    padding-bottom: 1rem;
+    color: var(--normal-color);
+    border-bottom: solid 3px var(--normal-color);
+}
+.index .link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 5rem;
+    border-radius: 2rem;
+    box-shadow: 0 2px 14px 0 var(--shadow-color);
+    color: var(--primary-color-txt-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 1s, background-color .5s, color .5s;
+    /* icônes https://www.svgrepo.com/collection/calcite-sharp-line-icons */
+    background-repeat: no-repeat;
+    background-size: 4rem;
+    background-position: 1rem center;
+}
+.index .link:hover {
+    transform: scale(1.05);
+}
+/* niveau de difficulté */
+.index .basics, .index .semantic, .index .box-model,
+.index .js-basics, .index .dom {
+    background-color: var(--good-color-bg);
+}
+.index .table, .index .form, .index .flexbox, .index .grid,
+.index .events, .index .elements, .index .time {
+    background-color: var(--middle-color-bg);
+}
+.index .mega, .index .attributes, .index .animations, .index .oop {
+    background-color: var(--wrong-color-bg);
+}
+@media screen and (min-width: 28.125em) {
+    .index .link {
+        min-width: min(28.5rem, 100%);
+    }
+}
+
+@keyframes tilt-shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+@keyframes horizontal-shaking {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
+}
+
+/* animations réduites si l'utilisateur le demande */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+    .index .link:hover,
+    #buttons button:hover {
+        transform: none;
+    }
+}

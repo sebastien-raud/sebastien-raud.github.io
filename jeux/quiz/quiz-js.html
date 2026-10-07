@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./js/js-confetti.browser.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <nav class="breadcrumb" aria-label="Vous êtes ici">
+            <ol>
+                <li><a href="../index.html">Jeux</a></li>
+                <li><a href="./index-js.html">Quiz JavaScript</a></li>
+            </ol>
+        </nav>
+        <h1 id="name">Quiz</h1>
+    </header>
+
+    <main>
+
+        <fieldset>
+            <legend id="q"></legend>
+            <div id="alist">
+                <label for="a0">
+                    <a href="#" target="_blank" rel="noopener" title="Documentation MDN (nouvel onglet)" class="hidden">🔗</a>
+                    <span class="label"></span>
+                    <span class="info hidden"></span>
+                    <input type="radio" id="a0" name="a" value="" class="sr-only">
+                </label>
+                <label for="a1">
+                    <a href="#" target="_blank" rel="noopener" title="Documentation MDN (nouvel onglet)" class="hidden">🔗</a>
+                    <span class="label"></span>
+                    <span class="info hidden"></span>
+                    <input type="radio" id="a1" name="a" value="" class="sr-only">
+                </label>
+                <label for="a2">
+                    <a href="#" target="_blank" rel="noopener" title="Documentation MDN (nouvel onglet)" class="hidden">🔗</a>
+                    <span class="label"></span>
+                    <span class="info hidden"></span>
+                    <input type="radio" id="a2" name="a" value="" class="sr-only">
+                </label>
+                <label for="a3">
+                    <a href="#" target="_blank" rel="noopener" title="Documentation MDN (nouvel onglet)" class="hidden">🔗</a>
+                    <span class="label"></span>
+                    <span class="info hidden"></span>
+                    <input type="radio" id="a3" name="a" value="" class="sr-only">
+                </label>
+            </div>
+        </fieldset>
+
+        <div id="buttons">
+            <button id="validate">Valider</button>
+            <button id="next" class="hidden">Question suivante</button>
+            <button id="play-again" class="hidden">Rejouer</button>
+        </div>
+
+        <p id="score" class="hidden"></p>
+
+        <!-- annonces pour les lecteurs d'écran : verdict, fin de partie -->
+        <p id="live" class="sr-only" aria-live="polite"></p>
+
+    </main>
+
+    <footer>
+        <div id="cursor"></div>
+    </footer>
+
+    <div id="end-sentence" class="hidden"></div>
+
+    <script type="module">
+        import { quiz } from './js/quiz.js';
+        
+        const quizList = {
+            "js-basics": { type: 'js', src: '00-data-basics', data: 'data-js' },
+            dom: { type: 'js', src: '01-data-dom', data: 'data-js' },
+            events: { type: 'js', src: '02-data-events', data: 'data-js' },
+            elements: { type: 'js', src: '03-data-elements', data: 'data-js' },
+            time: { type: 'js', src: '04-data-time', data: 'data-js' },
+            oop: { type: 'js', src: '05-data-oop', data: 'data-js' },
+            "js-mega": { type: 'js', src: '06-data-mega', data: 'data-js' },
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const q = urlParams.get('q');
+
+        if (q && quizList[q.toLowerCase()]) {
+            const quizParams = quizList[q.toLowerCase()];
+            const conf = {
+                config: (await import(`./js/data-quiz/${quizParams.type}/${quizParams.src}.js`)).default,
+                data: (await import(`./js/${quizParams.data}.js`)).default
+            };
+            quiz.init(conf.config, conf.data);
+        } else {
+            document.location.href = './index-js.html';
+        }
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,209 @@
+/* Styles propres au memory (les styles communs sont dans ../common.css) */
+
+body {
+    justify-content: center;
+}
+header {
+    margin-bottom: 2rem;
+    width: 95%;
+}
+main {
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+}
+footer {
+    margin-top: 2rem;
+    width: 95%;
+}
+#name {
+    margin-top: 1rem;
+}
+
+/* plateau de cartes (et liste des memory sur la page d'accueil) */
+section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: min-content;
+    justify-items: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* les cartes sont des boutons : on neutralise les styles par défaut */
+.card {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    font-family: inherit;
+    color: inherit;
+    height: 10rem;
+    width: 10rem;
+    font-size: 1.2rem;
+    border-radius: 2rem;
+    perspective: 500px;
+}
+.card .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+.card.display .content,
+.card.found .content {
+    transform: rotateY(180deg);
+    transition: transform .5s;
+}
+.card.found {
+    cursor: default;
+    animation: tilt-shaking 2s;
+}
+.card.found .back {
+    background-color: var(--good-color-bg);
+}
+/* paire trouvée repérable sans la couleur */
+.card.found .back::after {
+    content: '✓';
+    position: absolute;
+    top: .75rem;
+    right: 1.25rem;
+    font-weight: bold;
+}
+
+/* faces de la carte : front (cachée), back (contenu) */
+.front,
+.back {
+    border-radius: 2rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: .5rem;
+    background: var(--surface-color);
+    color: var(--normal-color);
+    text-align: center;
+    backface-visibility: hidden;
+    box-shadow: 0 2px 14px 0 var(--shadow-color);
+}
+.back {
+    background-color: var(--primary-color-bg);
+    color: var(--primary-color-txt-color);
+    transform: rotateY(180deg);
+}
+.card-question .back {
+    font-weight: bold;
+    /* noms longs (requestAnimationFrame, localStorage.removeItem) : coupés plutôt que de déborder */
+    overflow-wrap: anywhere;
+}
+.card-description .back {
+    font-size: 1rem;
+}
+
+/* page d'accueil */
+#alist {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 2.5rem;
+    margin: 1.5rem 0;
+    justify-items: center;
+}
+.index .link {
+    min-width: 100%;
+    max-width: 75%;
+}
+@media screen and (min-width: 28.125em) {
+    .index .link {
+        min-width: min(28.5rem, 100%);
+    }
+}
+
+@media screen and (min-width: 25em) {
+    .index .basics {
+        background-image: url('./img/basics.svg');
+    }
+    .index .semantic {
+        background-image: url('./img/semantic.svg');
+    }
+    .index .table {
+        background-image: url('./img/table.svg');
+    }
+    .index .form {
+        background-image: url('./img/form.svg');
+    }
+    .index .mega {
+        background-image: url('./img/mega.svg');
+    }
+    .index .attributes {
+        background-image: url('./img/attributes.svg');
+    }
+
+    /* memory CSS et JavaScript : icônes des quiz */
+    .index .basics.css {
+        background-image: url('../quiz/img/css/basics.svg');
+    }
+    .index .box-model {
+        background-image: url('../quiz/img/css/box-model.svg');
+    }
+    .index .flexbox {
+        background-image: url('../quiz/img/css/flexbox.svg');
+    }
+    .index .grid {
+        background-image: url('../quiz/img/css/grid.svg');
+    }
+    .index .animations {
+        background-image: url('../quiz/img/css/animations.svg');
+    }
+    .index .js-basics {
+        background-image: url('../quiz/img/js/js-basics.svg');
+    }
+    .index .dom {
+        background-image: url('../quiz/img/js/dom.svg');
+    }
+    .index .events {
+        background-image: url('../quiz/img/js/events.svg');
+    }
+    .index .elements {
+        background-image: url('../quiz/img/js/elements.svg');
+    }
+    .index .time {
+        background-image: url('../quiz/img/js/time.svg');
+    }
+    .index .oop {
+        background-image: url('../quiz/img/js/oop.svg');
+    }
+}
+
+@media screen and (min-width: 43.75em) {
+    html {
+        font-size: 100%;
+    }
+    section {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (min-width: 56.25em) {
+    .index #alist {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 68.75em) {
+    header, main, footer {
+        width: 59.375rem;
+    }
+}

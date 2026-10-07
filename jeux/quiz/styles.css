@@ -1,0 +1,239 @@
+/* Styles propres au quiz (les styles communs sont dans ../common.css) */
+
+header,
+main,
+footer {
+    width: 100%;
+    padding: .5rem;
+}
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+/* nom du quiz */
+#name {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+}
+/* question : légende du groupe de réponses */
+fieldset {
+    border: 0;
+    min-width: 0;
+}
+legend {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+#end-sentence {
+    min-height: 12rem;
+    width: min(40rem, 90vw);
+
+    color: var(--primary-color-txt-color);
+    font-size: 1.75rem;
+    text-align: center;
+
+    background-color: var(--primary-color-bg);
+    border-radius: 2rem;
+    box-shadow: 0 2px 14px 0 var(--shadow-color);
+    text-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.15);
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1.5rem;
+}
+
+/* réponses (et liste des quiz sur les pages d'accueil) */
+#alist {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+    /* les éléments occupent toute la largeur de leur colonne (sinon très étroits sur mobile) */
+    justify-items: stretch;
+}
+label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 20vh;
+    min-height: 150px;
+    cursor: pointer;
+    background-color: var(--surface-color);
+    border-radius: 2rem;
+    box-shadow: 0 2px 14px 0 var(--shadow-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 1s, background-color .5s, color .5s;
+}
+label:hover {
+    transform: scale(1.05);
+}
+label:has(input:focus-visible) {
+    outline: 3px solid var(--link-color);
+    outline-offset: 4px;
+}
+body:not(.wait) label:has(input:checked) {
+    background-color: var(--primary-color-bg);
+    color: var(--primary-color-txt-color);
+}
+label.answer-right {
+    animation: tilt-shaking 2s;
+}
+label.answer-wrong {
+    animation: horizontal-shaking 2s;
+}
+label.answer-right,
+label.answer-wrong {
+    color: var(--primary-color-txt-color);
+}
+/* verdict affiché en texte, pas seulement en couleur */
+label.answer-right::before,
+label.answer-wrong::before {
+    position: absolute;
+    top: 10px;
+    left: 1.25rem;
+    font-size: .85rem;
+}
+label.answer-right::before {
+    content: '✓ Bonne réponse';
+}
+label.answer-wrong::before {
+    content: '✗ Mauvaise réponse';
+}
+/* lien vers la documentation MDN */
+label a {
+    text-decoration: none;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+label a:hover::after,
+label a:focus-visible::after {
+    content: 'Doc';
+    position: absolute;
+    font-size: .75rem;
+    font-style: italic;
+    color: var(--normal-color);
+    top: 30px;
+    left: 0px;
+    width: 15rem;
+}
+.info {
+    font-size: .85rem;
+    font-weight: normal;
+    margin: 1rem;
+}
+#score {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: right;
+}
+
+@media screen and (min-width: 28.125em) {
+    label {
+        min-width: min(28.5rem, 100%);
+    }
+}
+
+@media screen and (min-width: 56.25em) {
+    html {
+        font-size: 100%;
+    }
+    header,
+    main,
+    footer {
+        width: 90%;
+    }
+    #alist {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        margin: 1.5rem 0;
+    }
+}
+
+@media screen and (min-width: 68.75em) {
+    header,
+    main,
+    footer {
+        width: 59.375rem;
+    }
+}
+
+/* icônes des pages d'accueil */
+@media screen and (min-width: 25em) {
+    .index .basics {
+        background-image: url('./img/html/basics.svg');
+    }
+    .index .semantic {
+        background-image: url('./img/html/semantic.svg');
+    }
+    .index .table {
+        background-image: url('./img/html/table.svg');
+    }
+    .index .form {
+        background-image: url('./img/html/form.svg');
+    }
+    .index .mega {
+        background-image: url('./img/html/mega.svg');
+    }
+    .index .attributes {
+        background-image: url('./img/html/attributes.svg');
+    }
+
+    .index .basics.css {
+        background-image: url('./img/css/basics.svg');
+    }
+    .index .box-model {
+        background-image: url('./img/css/box-model.svg');
+    }
+    .index .flexbox {
+        background-image: url('./img/css/flexbox.svg');
+    }
+    .index .grid {
+        background-image: url('./img/css/grid.svg');
+    }
+    .index .animations {
+        background-image: url('./img/css/animations.svg');
+    }
+
+    .index .js-basics {
+        background-image: url('./img/js/js-basics.svg');
+    }
+    .index .dom {
+        background-image: url('./img/js/dom.svg');
+    }
+    .index .events {
+        background-image: url('./img/js/events.svg');
+    }
+    .index .elements {
+        background-image: url('./img/js/elements.svg');
+    }
+    .index .time {
+        background-image: url('./img/js/time.svg');
+    }
+    .index .oop {
+        background-image: url('./img/js/oop.svg');
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    label:hover {
+        transform: none;
+    }
+}

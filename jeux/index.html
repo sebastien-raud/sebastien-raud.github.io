@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeux de révision HTML, CSS et JavaScript</title>
+    <link rel="stylesheet" href="./common.css">
+
+    <!-- styles propres à cette page (les styles communs sont dans common.css) -->
+    <style>
+        html {
+            font-size: 100%;
+        }
+        body {
+            justify-content: center;
+            padding: 1rem;
+        }
+        main {
+            width: min(40rem, 100%);
+        }
+        ul {
+            list-style: none;
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .index .link {
+            display: block;
+            height: auto;
+            padding: 1.5rem 2rem;
+            background-color: var(--primary-color-bg);
+            font-weight: normal;
+        }
+        .index .link:hover {
+            color: var(--primary-color-txt-color);
+            background-color: var(--primary-color-bg-dark);
+            transform: scale(1.03);
+        }
+        .title {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+        .desc {
+            display: block;
+            margin-top: .25rem;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body class="index">
+
+    <main>
+        <h1>Jeux de révision</h1>
+
+        <ul>
+            <li>
+                <a href="./quiz/index.html" class="link">
+                    <span class="title">Quiz HTML</span>
+                    <span class="desc">Balises, sémantique, tableaux, formulaires, attributs</span>
+                </a>
+            </li>
+            <li>
+                <a href="./quiz/index-css.html" class="link">
+                    <span class="title">Quiz CSS</span>
+                    <span class="desc">Bases, modèle de boîte, flexbox, grilles, animations</span>
+                </a>
+            </li>
+            <li>
+                <a href="./quiz/index-js.html" class="link">
+                    <span class="title">Quiz JavaScript</span>
+                    <span class="desc">Bases, DOM, événements, éléments, temps et animation, objets et classes</span>
+                </a>
+            </li>
+            <li>
+                <a href="./memory/index.html" class="link">
+                    <span class="title">Memory HTML</span>
+                    <span class="desc">Associer chaque balise à sa description</span>
+                </a>
+            </li>
+            <li>
+                <a href="./memory/index-css.html" class="link">
+                    <span class="title">Memory CSS</span>
+                    <span class="desc">Associer chaque propriété à sa description</span>
+                </a>
+            </li>
+            <li>
+                <a href="./memory/index-js.html" class="link">
+                    <span class="title">Memory JavaScript</span>
+                    <span class="desc">Associer chaque méthode, propriété ou mot-clé à sa description</span>
+                </a>
+            </li>
+        </ul>
+    </main>
+
+</body>
+</html>
